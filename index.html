@@ -1,0 +1,939 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#090c17" />
+<title>NEXO 0.3 — O Multiverso da Minha Vida</title>
+<style>
+:root{color-scheme:dark;--bg:#080b14;--panel:#0e1425;--card:#141b2c;--white:#f7f5ff;--muted:#8894ad;--border:#293149;--amber:#ffcd83;--teal:#76e3eb;--pink:#e9a4ff;--accent:#ffcf89;--sidebar:268px;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--white);overflow:hidden}button,input,textarea,select{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--amber);outline-offset:3px}button:disabled{opacity:.45;cursor:not-allowed}.app{display:flex;height:100dvh;min-height:500px;overflow:hidden}.sidebar{flex:0 0 var(--sidebar);width:var(--sidebar);background:linear-gradient(180deg,#10182c 0%,#0b1020 100%);border-right:1px solid rgba(155,174,221,.16);position:relative;z-index:25;display:flex;flex-direction:column}.brand{padding:31px 22px 24px;border-bottom:1px solid #222b43;display:flex;align-items:center;gap:12px}.brandmark{width:43px;height:43px;border-radius:15px;display:grid;place-items:center;background:radial-gradient(circle at 30% 20%,#fac98d32,#b97fd62b 65%,#58638b14);border:1px solid #ab9b8b4b;box-shadow:0 0 28px #ae80e41a}.brandmark svg{width:27px;height:27px}.brandname{font-size:20px;font-weight:850;letter-spacing:.19em;line-height:1}.brandtag{color:#8290a8;font-size:10px;letter-spacing:.13em;margin-top:8px}.side-section{padding:21px 13px 0}.side-label{display:flex;justify-content:space-between;align-items:center;color:#7d89a4;font-weight:760;font-size:10px;letter-spacing:.18em;padding:0 13px;margin-bottom:11px;text-transform:uppercase}.side-label small{color:#9fb0d1;font-size:11px;letter-spacing:0}.line-list{display:flex;flex-direction:column;gap:7px;max-height:46vh;overflow-y:auto;scrollbar-color:#3d465e transparent;scrollbar-width:thin}.line-entry{width:100%;text-align:left;border:1px solid transparent;border-radius:14px;background:transparent;padding:13px 12px;display:flex;align-items:center;gap:12px;color:#d8deef;transition:background .18s,border-color .18s}.line-entry:hover,.line-entry.active{background:#1a2339;border-color:#303c58}.line-dot{flex:0 0 9px;height:9px;border-radius:50%;background:var(--dot);box-shadow:0 0 15px var(--dot)}.line-content{min-width:0;flex:1}.line-entry b{display:block;font-size:12px;font-weight:720;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.line-entry span.sub{display:block;font-size:10px;color:#8290a7;line-height:1.6}.side-note{margin:auto 18px 17px;border:1px solid #29334d;border-radius:18px;background:linear-gradient(145deg,#20223a,#111b31);padding:17px}.side-note .side-note-top{font-size:12px;color:#ffdcaa;letter-spacing:.025em;font-weight:790}.side-note p{margin:10px 0 14px;color:#aeb7cd;font-size:11.5px;line-height:1.6}.side-note button{border:1px solid #55627b;background:#252e43;border-radius:10px;color:#edf0f8;padding:9px 11px;font-size:11px;font-weight:720}.side-footer{display:flex;gap:7px;padding:0 15px 15px}.side-footer button{flex:1;border:1px solid #2c364f;border-radius:10px;background:#111b2c;color:#aeb9cf;font-size:11px;padding:11px 5px}.main{flex:1;position:relative;min-width:0;display:flex;flex-direction:column}.topbar{position:absolute;top:0;left:0;right:0;z-index:12;padding:29px 34px 20px;pointer-events:none;display:flex;justify-content:space-between;align-items:flex-start;gap:12px;background:linear-gradient(180deg,#090d19 4%,#090d19eb 49%,transparent)}.topbar>*{pointer-events:auto}.eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:.28em;font-weight:780;color:#c8a77d;margin:0 0 10px}.heading{font-size:clamp(20px,2.2vw,32px);line-height:1.18;margin:0;letter-spacing:-.055em;font-weight:760}.heading i{font-style:normal;color:#f2c995}.subtitle{margin:9px 0 0;color:#93a0bb;font-size:12px}.actions{display:flex;gap:9px;align-items:center}.btn{border:1px solid #3c4560;background:#1d2639;color:#eff1f7;padding:12px 14px;min-height:42px;border-radius:12px;font-size:11px;letter-spacing:.015em;font-weight:790;box-shadow:0 2px 18px #0002;white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:background .16s,transform .16s}.btn:hover{background:#29334b;transform:translateY(-1px)}.btn-primary{background:linear-gradient(130deg,#ffe0a0,#e9a6a0);border-color:#f4cc96;color:#322026;box-shadow:0 0 24px #ffbd8650}.btn-primary:hover{background:linear-gradient(130deg,#ffe7b4,#f1b2aa)}.btn-ghost{background:#11182caa}.btn-danger{border-color:#6d3645;background:#3b1c2a;color:#ffc8d1}.icon-btn{width:42px;height:42px;padding:0;font-size:19px}.mobile-menu{display:none}.stage{position:absolute;inset:0;overflow:hidden;touch-action:none;cursor:grab;user-select:none;background:radial-gradient(ellipse 700px 400px at 45% 36%,#19224664,transparent 73%),radial-gradient(ellipse 580px 380px at 84% 79%,#26203b5c,transparent 78%),radial-gradient(ellipse 700px 340px at -20% 72%,#15304733,transparent 76%),#080b14}.stage.grabbing{cursor:grabbing}.stage::before{content:"";pointer-events:none;position:absolute;inset:0;opacity:.30;background-image:linear-gradient(#57618710 1px,transparent 1px),linear-gradient(90deg,#57618710 1px,transparent 1px);background-size:68px 68px;mask-image:radial-gradient(ellipse at center,#000,transparent 90%)}.noise{position:absolute;inset:0;pointer-events:none;opacity:.10;background-image:url('data:image/svg+xml,%3Csvg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="n"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23n)" opacity="0.35"/%3E%3C/svg%3E')}.stars{position:absolute;inset:0;pointer-events:none}.star{position:absolute;border-radius:50%;background:#d6ddff;animation:twinkle var(--duration) ease-in-out infinite alternate;opacity:var(--opacity);box-shadow:0 0 9px #9fbaff33}@keyframes twinkle{from{opacity:calc(var(--opacity) * .3)}to{opacity:var(--opacity)}}.world{position:absolute;top:0;left:0;transform-origin:0 0;will-change:transform}.world-svg{position:absolute;top:-2500px;left:-1000px;overflow:visible;pointer-events:none}.world-svg .main-glow{fill:none;stroke:#efaa54;stroke-width:24;opacity:.22;filter:url(#mainBlur)}.world-svg .main-core{fill:none;stroke:#ffce83;stroke-width:4.4;stroke-linecap:round;filter:drop-shadow(0 0 7px #ffcb78)}.world-svg .flow{fill:none;stroke:#fff5d4;stroke-width:2;stroke-dasharray:4 47;stroke-linecap:round;opacity:.8;animation:flow 6s linear infinite}@keyframes flow{to{stroke-dashoffset:-255}}.world-svg .branch-glow{fill:none;stroke-width:15;opacity:.16;filter:url(#mainBlur)}.world-svg .branch-path{fill:none;stroke-width:3.6;stroke-linecap:round;filter:drop-shadow(0 0 5px currentColor)}.world-svg .branch-flow{fill:none;stroke-width:1.7;stroke-dasharray:3 38;opacity:.85;animation:flow 7s linear infinite}.world-svg .continuation{fill:none;stroke-width:2;stroke-linecap:round;stroke-dasharray:5 14;opacity:.52}.world-svg .endpoint{opacity:.9}.world-label{position:absolute;transform:translateY(-50%);white-space:nowrap;font-size:10px;letter-spacing:.19em;color:#ceac75;font-weight:850;text-shadow:0 0 18px #e8b96768;pointer-events:none}.branch-label{position:absolute;transform:translateY(-50%);max-width:310px;white-space:nowrap;font-size:9px;letter-spacing:.10em;font-weight:760;pointer-events:none;opacity:.68}.event{position:absolute;width:224px;z-index:2;transform:translate(-50%,-100%);cursor:pointer;user-select:none}.event-hit{height:23px;position:relative}.event-dot{position:absolute;left:50%;bottom:3px;transform:translate(-50%,50%);width:16px;height:16px;border:4px solid #0d1321;background:var(--line-color);border-radius:50%;box-shadow:0 0 0 1px var(--line-color),0 0 22px var(--line-color);transition:transform .2s}.event:hover .event-dot,.event.selected .event-dot{transform:translate(-50%,50%) scale(1.25)}.event-card{margin-bottom:0;background:linear-gradient(130deg,#1a2032f5,#121a2cf2);border:1px solid #49536b;border-top-color:#686f81;border-radius:16px;padding:15px 15px 14px;box-shadow:0 12px 34px #0006,0 0 30px #070d1b;transition:border-color .2s,transform .2s,box-shadow .2s;position:relative;overflow:hidden}.event-card::before{content:"";position:absolute;inset:0 0 auto 0;height:2px;background:var(--line-color);opacity:.76}.event:hover .event-card,.event.selected .event-card{border-color:var(--line-color);transform:translateY(-4px);box-shadow:0 18px 50px #0009,0 0 34px color-mix(in srgb,var(--line-color) 23%,transparent)}.event-head{display:flex;gap:6px;align-items:center;justify-content:space-between;margin-bottom:9px}.event-date{font-size:10px;font-weight:760;color:#9fadbe}.type-pill{font-size:8px;letter-spacing:.07em;font-weight:880;white-space:nowrap;border-radius:5px;padding:5px 6px;background:#25334c;color:#b6c8ea}.type-pill.nexus{background:#513351;color:#ffd6ff}.type-pill.canon{background:#493a29;color:#ffe1a9}.type-pill.thought{background:#214344;color:#a9e9db}.event-title{font-size:14px;font-weight:760;line-height:1.28;letter-spacing:-.02em;margin:0 0 6px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.event-desc{color:#8997b1;font-size:10px;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:15px}.event.nexus .event-card::after{content:"✦";position:absolute;right:8px;bottom:0px;color:#dc8fea44;font-size:34px}.bottom-bar{pointer-events:none;z-index:10;position:absolute;bottom:24px;left:28px;right:28px;display:flex;align-items:flex-end;justify-content:space-between;gap:14px}.bottom-bar>*{pointer-events:auto}.hint{max-width:420px;border:1px solid #2e374d;background:#10172bdb;backdrop-filter:blur(15px);border-radius:13px;color:#a4adc3;padding:12px 15px;font-size:11px;display:flex;align-items:center;gap:9px;box-shadow:0 8px 30px #0004}.hint svg{flex:0 0 auto}.view-controls{display:flex;flex-direction:column;gap:8px}.control{width:40px;height:40px;border:1px solid #374158;color:#d1daed;background:#1a2338dd;border-radius:10px;backdrop-filter:blur(12px);font-size:18px;font-weight:600}.control:hover{background:#33405c}.right-bottom{display:flex;align-items:flex-end;gap:15px}.minimap{position:relative;border:1px solid #3c4760;border-radius:14px;background:#11192cdb;backdrop-filter:blur(12px);width:200px;height:114px;cursor:crosshair;overflow:hidden}.minimap svg{display:block;width:100%;height:100%}.mini-viewport{position:absolute;pointer-events:none;border:1px solid #edcfa2;background:#d2aa7820;border-radius:3px}.badge-demo{position:absolute;top:147px;left:34px;z-index:8;background:#1f2540af;border:1px solid #3b4163;padding:7px 12px;border-radius:10px;color:#a8b0c9;font-weight:690;font-size:10px;letter-spacing:.025em;pointer-events:none}.detail-panel{position:absolute;z-index:20;right:25px;top:165px;width:min(330px,calc(100% - 40px));max-height:calc(100% - 320px);overflow:auto;background:linear-gradient(145deg,#1b2338f7,#101729f8);border:1px solid #4a5470;border-radius:20px;padding:21px;box-shadow:0 25px 60px #0009;backdrop-filter:blur(20px);animation:detail-in .25s ease-out}.detail-panel[hidden]{display:none}@keyframes detail-in{from{transform:translateX(14px);opacity:0}to{transform:none;opacity:1}}.detail-head{display:flex;align-items:center;justify-content:space-between;gap:10px}.detail-head .cap{text-transform:uppercase;letter-spacing:.19em;font-size:10px;color:#f7c99f;font-weight:750}.detail-x{background:none;border:0;color:#bac4da;font-size:24px;line-height:1;padding:3px 5px}.detail-panel h2{font-size:22px;letter-spacing:-.04em;line-height:1.15;margin:18px 0 8px}.detail-sub{color:#a2acc0;font-size:11px;line-height:1.6}.detail-desc{font-size:12.5px;line-height:1.72;color:#d2d9e7;white-space:pre-wrap;margin:18px 0 18px;padding:16px;background:#111829;border:1px solid #29354e;border-radius:13px}.detail-buttons{display:flex;flex-direction:column;gap:9px}.detail-buttons .btn{width:100%}.detail-buttons .rowbtn{display:flex;gap:8px}.detail-buttons .rowbtn .btn{flex:1}.detail-meta{font-size:10px;color:#9ba7bb;margin-top:18px;border-top:1px solid #354158;padding-top:14px;line-height:1.6}.overlay{position:fixed;inset:0;z-index:50;background:#000b;backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:20px}.overlay.open{display:flex}.modal{background:linear-gradient(160deg,#1b243b,#101827);border:1px solid #52607c;border-radius:22px;box-shadow:0 35px 100px #000c;width:min(530px,100%);max-height:min(90dvh,740px);overflow:auto;padding:27px}.modal-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}.modal-head h2{font-size:24px;letter-spacing:-.05em;margin:5px 0 6px}.modal-head p{font-size:11px;color:#9aa8c0;margin:0;line-height:1.6}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:23px}.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:11px;font-weight:800;color:#b5c0d5}.field input,.field select,.field textarea{width:100%;outline:none;border:1px solid #46516a;background:#11192a;color:#f2f3fa;padding:12px;border-radius:11px;font-size:13px;min-height:43px}.field input:focus,.field select:focus,.field textarea:focus{border-color:#f0c991}.field textarea{resize:vertical;min-height:90px;line-height:1.5}.form-actions{display:flex;justify-content:flex-end;gap:9px;margin-top:23px}.toast{position:absolute;z-index:30;bottom:162px;left:50%;transform:translateX(-50%) translateY(20px);padding:11px 15px;background:#29374c;border:1px solid #6b8298;color:#eef5fb;font-size:12px;font-weight:650;border-radius:12px;pointer-events:none;opacity:0;transition:opacity .24s,transform .24s;max-width:90%;text-align:center;box-shadow:0 10px 35px #0009}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}.screenreader{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.scrim{display:none}.about{font-size:11px;line-height:1.6;color:#a8b4cd;margin:12px 0 0}.about b{color:#e9dbbd}
+@media (max-width:960px){.sidebar{--sidebar:230px}.topbar{padding:24px 22px}.heading{font-size:24px}.subtitle{font-size:11px}.actions .btn{padding:10px 11px;font-size:10px}.detail-panel{right:14px}.hint{max-width:265px}}
+@media (max-width:720px){.app{min-height:0}.sidebar{position:absolute;left:0;top:0;bottom:0;z-index:41;width:min(290px,84vw);transform:translateX(-102%);transition:transform .25s ease}.sidebar.open{transform:translateX(0)}.scrim.active{display:block;position:fixed;inset:0;background:#000a;z-index:39}.topbar{padding:calc(16px + env(safe-area-inset-top)) 14px 14px;align-items:flex-start;gap:7px}.top-left{display:flex;align-items:flex-start;gap:10px}.mobile-menu{display:block;flex:0 0 auto;margin-top:4px;min-width:36px;width:36px;height:36px;min-height:36px;border-radius:11px;padding:0;font-size:17px}.eyebrow{font-size:8px;letter-spacing:.2em;margin-bottom:7px}.heading{font-size:20px;letter-spacing:-.045em}.subtitle{font-size:10px;max-width:210px;line-height:1.5}.actions{flex-direction:column;gap:7px}.actions .btn{font-size:0;width:40px;height:40px;min-height:40px;padding:0;border-radius:12px}.actions .btn span{font-size:20px}.badge-demo{top:132px;left:16px;font-size:9px}.hint{font-size:9px;padding:10px 11px;max-width:205px}.bottom-bar{bottom:calc(18px + env(safe-area-inset-bottom));left:12px;right:12px}.minimap{display:none}.detail-panel{top:auto;bottom:calc(80px + env(safe-area-inset-bottom));left:11px;right:11px;width:auto;max-height:min(55dvh,520px);padding:18px}.detail-panel h2{font-size:19px}.toast{bottom:calc(144px + env(safe-area-inset-bottom))}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.modal{padding:20px;border-radius:20px}.modal-head h2{font-size:22px}.side-note{margin-top:auto}}
+@media (prefers-reduced-motion:reduce){.star,.world-svg .flow,.world-svg .branch-flow{animation:none!important}.event-card,.event-dot{transition:none!important}}
+
+/* NEXO 0.2 — eras, identidades, observatório e apresentação */
+:root{--rose:#f5b5cf}
+.stage{overscroll-behavior:contain}
+.map-toolbar{position:absolute;top:185px;left:34px;z-index:11;display:flex;gap:8px;align-items:center;max-width:calc(100% - 68px);pointer-events:auto}
+.tool-pill{border:1px solid #3a4662;background:#101b2bcf;backdrop-filter:blur(18px);padding:9px 12px;border-radius:11px;color:#d9e0f0;min-height:38px;font-size:11px;font-weight:700;display:flex;gap:7px;align-items:center;white-space:nowrap}
+.tool-pill:hover,.tool-pill.toggled{border-color:#b3a5a4;color:#ffe2ac;background:#283047ed}
+.era-band{position:absolute;display:flex;align-items:center;gap:7px;padding:7px 12px;min-height:34px;overflow:hidden;border:1px solid color-mix(in srgb,var(--era-color) 52%,transparent);background:linear-gradient(90deg,color-mix(in srgb,var(--era-color) 18%,#121a2b),#121b2b9c);color:var(--era-color);border-radius:10px;text-align:left;z-index:3;box-shadow:inset 0 0 18px color-mix(in srgb,var(--era-color) 10%,transparent),0 0 19px #0004;transform:translateY(-50%);transition:filter .2s,box-shadow .2s;white-space:nowrap;font-size:10px;letter-spacing:.02em}
+.era-band:hover{filter:brightness(1.28);box-shadow:0 0 18px color-mix(in srgb,var(--era-color) 20%,transparent)}
+.era-star{font-size:15px;flex:0 0 auto}.era-name{font-weight:800;text-overflow:ellipsis;overflow:hidden;white-space:nowrap}.era-range{font-size:9px;margin-left:auto;opacity:.77;flex:0 0 auto}
+.branch-label-line{position:absolute;z-index:5;transform:translateY(-50%);border:0;background:transparent;color:inherit;font-size:11px;white-space:nowrap;font-weight:800;letter-spacing:.12em;text-shadow:0 0 14px currentColor;cursor:pointer;max-width:340px;overflow:hidden;text-overflow:ellipsis;text-align:left}
+.branch-label-line:hover{text-decoration:underline}
+.event-people{font-size:9px;color:#cbb5e9;margin-top:9px;padding-top:8px;border-top:1px solid #ffffff14}
+.type-pill.achievement{background:#3b4329;color:#d3f5b0}
+.side-section.eras-overview{padding-top:17px}.side-shortcuts{display:flex;gap:8px;padding:0 13px}.side-shortcuts button{flex:1;min-height:36px;border:1px solid #3b4565;border-radius:10px;background:#1a2640;color:#d7dded;font-size:10px;font-weight:730}
+.line-list{max-height:min(40vh,350px)}
+.detail-panel{max-height:calc(100% - 270px);top:215px}.detail-attrs{margin:0 0 14px;padding:12px 14px;border:1px solid #36425d;border-radius:12px;color:#bccfe7;font-size:11px;line-height:1.9;background:#0a14259c}
+.stats-panel{position:absolute;z-index:19;right:25px;top:215px;width:min(370px,calc(100% - 44px));max-height:calc(100% - 295px);overflow:auto;background:linear-gradient(160deg,#19243bf8,#0e1728fb);border:1px solid #475371;border-radius:22px;box-shadow:0 25px 80px #000b;backdrop-filter:blur(20px)}
+.stats-panel[hidden]{display:none}.stats-content{padding:21px}.stats-content h2{font-size:21px;letter-spacing:-.045em;line-height:1.16;margin:16px 0 8px}.stats-caption{font-size:11px;line-height:1.6;color:#a8b4c9;margin:0 0 13px}
+.stats-controls{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:12px;background:#111b2a;border-radius:13px;border:1px solid #293750}
+.stats-controls .field{min-width:0;grid-column:auto}.stats-controls select,.stats-controls input{font-size:11px!important;padding:9px 7px!important;min-height:38px!important}
+.stats-persona{font-size:12px;color:#f6d2a2;font-weight:820;margin:17px 1px 11px}
+.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.stat-card{border:1px solid #344059;background:linear-gradient(145deg,#222b42,#111b2d);padding:13px;border-radius:14px;min-width:0}
+.stat-name{font-size:10px;color:#aebbd4;line-height:1.4;min-height:30px}
+.stat-numbers{display:flex;align-items:baseline;gap:7px;flex-wrap:wrap;margin:6px 0 3px}.stat-numbers strong{font-size:30px;letter-spacing:-.055em;font-weight:860;color:#f2effc}
+.stat-delta{font-size:9px;color:#a9b2c6;font-weight:760}.stat-delta.pos{color:#a8f2cf}.stat-delta.neg{color:#ffbac6}.stat-base{font-size:9px;color:#7e90ae}
+.stats-list{margin:11px 0;padding:12px 13px;background:#0d1729;border:1px solid #2a3953;border-radius:12px}
+.stats-list-head{color:#d7def1;font-size:11px;font-weight:800;margin:0 0 8px}.stats-list-body{color:#a9bdd6;font-size:11px;line-height:1.65}
+.stats-note{margin:12px 0 0;font-size:10px;color:#a9b3c7;line-height:1.6;border-left:2px solid #c5a275;padding-left:10px}
+.field-help{font-size:10px;color:#91a0b7;line-height:1.45}
+.field input[type=color]{padding:5px;min-height:45px;cursor:pointer;max-width:160px}
+.deck-overlay[hidden]{display:none!important}.deck-overlay{position:fixed;z-index:70;inset:0;background:radial-gradient(ellipse 57% 73% at 50% 48%,#2a2c4d 0%,#10162c 51%,#070b15 100%);color:#f8f2ff;display:flex;flex-direction:column;overflow:hidden;isolation:isolate}
+.deck-overlay::before{content:"";position:absolute;inset:-30%;pointer-events:none;z-index:-1;background:repeating-conic-gradient(from 0deg at 50% 50%,#ffffff00 0 15deg,#bea5de0b 15deg 20deg,#ffffff00 20deg 45deg);animation:deckturn 35s linear infinite}
+.deck-overlay::after{content:"";position:absolute;z-index:-1;inset:12%;border:1px solid #bda7e715;border-radius:50%;box-shadow:0 0 0 70px #ffffff03,0 0 0 170px #ffffff02;pointer-events:none}
+@keyframes deckturn{to{transform:rotate(360deg)}}
+.deck-top{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:26px clamp(18px,5vw,75px);background:linear-gradient(#090e1fc9,transparent)}
+.deck-brand{font-weight:900;letter-spacing:.28em;color:#f0d3a2}.deck-brand small{display:block;color:#9aa6c5;font-size:9px;letter-spacing:.17em;margin-top:7px;font-weight:670}
+.deck-select{background:#121c31;border:1px solid #3d4d70;color:#dfe7ff;max-width:230px;min-height:40px;border-radius:10px;padding:8px;font-size:11px}
+.deck-close{border:1px solid #516080;background:#1a2335;color:#fff;border-radius:12px;min-width:40px;min-height:40px;font-size:22px}
+.deck-center{flex:1;display:grid;place-items:center;padding:20px 24px;overflow-y:auto}
+.deck-content{width:min(830px,100%);text-align:center;position:relative;padding:38px 30px 50px;filter:drop-shadow(0 0 44px color-mix(in srgb,var(--slide-color, #f4c985) 16%,transparent))}
+.deck-content::before{content:"";position:absolute;inset:-18px 12%;border-top:2px solid var(--slide-color,#f4c985);border-bottom:1px solid color-mix(in srgb,var(--slide-color,#f4c985) 50%,transparent);opacity:.6;pointer-events:none;transform:skewX(-12deg)}
+.deck-chapter{font-size:11px;letter-spacing:.22em;color:var(--slide-color,#f4c985);font-weight:850}
+.deck-era{margin:22px auto 27px;font-size:11px;letter-spacing:.1em;color:#b9b6d0}
+.deck-milestone{display:inline-block;padding:8px 14px;background:#f1d3a419;border:1px solid #f1d3a443;border-radius:30px;color:#ead0b3;font-size:10px;font-weight:820;letter-spacing:.14em}
+.deck-title{font-size:clamp(34px,6vw,75px);line-height:1.07;margin:28px 0 22px;letter-spacing:-.055em;text-shadow:0 7px 40px #0008}
+.deck-desc{color:#c4c9de;font-size:clamp(14px,1.6vw,20px);line-height:1.75;max-width:640px;margin:0 auto;white-space:pre-wrap}
+.deck-tags{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:27px}
+.deck-tags span{background:#141c31;border:1px solid #3c4668;color:#bdcde5;padding:10px 14px;border-radius:20px;font-size:11px}
+.deck-flip{animation:deckin .42s ease-out}@keyframes deckin{from{transform:translateY(22px) scale(.98);opacity:0}to{transform:none;opacity:1}}
+.deck-empty{font-size:20px;color:#b8c4d8}
+.deck-bottom{padding:15px clamp(18px,5vw,75px) 31px;background:linear-gradient(transparent,#080d1ff0)}
+.deck-progress{height:3px;background:#35405d;position:relative;border-radius:3px;overflow:hidden;margin-bottom:18px}.deck-progress>div{height:100%;width:0;background:linear-gradient(90deg,#b799e5,#f5d59e);transition:width .35s}
+.deck-navigation{display:flex;align-items:center;justify-content:space-between;gap:11px}.deck-navigation .btn{min-width:140px}
+.deck-count{font-size:11px;color:#bfcbe0;font-weight:780;letter-spacing:.1em;min-width:50px;text-align:center}
+.deck-persona{font-size:11px;color:#dfc9e8;font-weight:760;text-align:center}
+@media(max-width:1200px){.map-toolbar{top:175px}.tool-pill{font-size:10px;padding:8px 9px}.detail-panel,.stats-panel{top:215px}}
+@media(max-width:960px){.map-toolbar{left:20px;top:164px;max-width:calc(100% - 40px)}.detail-panel,.stats-panel{top:210px}}
+@media(max-width:720px){.map-toolbar{left:13px;right:13px;top:151px;max-width:none;overflow:auto;scrollbar-width:none;gap:6px}.map-toolbar::-webkit-scrollbar{display:none}.tool-pill{font-size:10px;padding:8px 11px;min-height:35px;flex:0 0 auto}.badge-demo{top:115px;left:15px;max-width:calc(100% - 30px);font-size:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.stats-panel,.detail-panel{top:auto;bottom:calc(67px + env(safe-area-inset-bottom));left:10px;right:10px;width:auto;max-height:min(58dvh,560px);border-radius:19px}.stats-content{padding:17px}.stats-grid{gap:7px}.stat-card{padding:11px}.deck-top{padding:17px 16px}.deck-select{max-width:145px}.deck-center{padding:10px 13px}.deck-content{padding:20px 8px 34px}.deck-bottom{padding:10px 13px 20px}.deck-navigation{gap:5px;flex-wrap:wrap;justify-content:center}.deck-navigation .btn{min-width:unset;padding:11px 10px;font-size:10px}.deck-persona{flex-basis:100%;order:-1;margin-bottom:8px}}
+@media(max-height:760px) and (min-width:721px){.map-toolbar{top:148px}.badge-demo{top:120px}.detail-panel,.stats-panel{top:198px;max-height:calc(100% - 240px)}}
+@media(prefers-reduced-motion:reduce){.deck-overlay::before,.deck-flip{animation:none}}
+
+
+/* NEXO 0.3 — endpoints, fixed color palette, personal story export */
+.map-toolbar{max-width:calc(100% - 68px)}
+.end-wrapper{position:absolute;z-index:7;width:0;height:0;overflow:visible}
+.end-marker{position:absolute;left:0;top:0;width:66px;height:66px;border-radius:50%;transform:translate(-50%,-50%);border:2.5px solid var(--end-color);background:radial-gradient(circle at 42% 30%,color-mix(in srgb,var(--end-color) 38%,#14162b),#131b2aeF 72%);color:var(--end-color);font-size:35px;font-weight:900;line-height:1;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 10px color-mix(in srgb,var(--end-color) 11%,transparent),0 0 34px color-mix(in srgb,var(--end-color) 38%,transparent),inset 0 0 20px #070b1bcf;animation:end-pulse 3s ease-in-out infinite;cursor:pointer;touch-action:manipulation}
+.end-marker:hover,.end-marker:focus-visible{outline:2px solid white;outline-offset:7px;filter:brightness(1.2);box-shadow:0 0 0 11px color-mix(in srgb,var(--end-color) 18%,transparent),0 0 48px color-mix(in srgb,var(--end-color) 68%,transparent)}
+.end-death{font-size:36px}.end-closed{font-size:25px}.end-label{display:block;position:absolute;left:44px;top:-11px;white-space:nowrap;padding:7px 12px 7px 17px;font-size:11px;font-weight:900;letter-spacing:.08em;color:#dbe1ed;pointer-events:none;text-shadow:0 2px 11px #020710}
+@keyframes end-pulse{0%,100%{filter:drop-shadow(0 0 4px color-mix(in srgb,var(--end-color) 40%,transparent))}50%{filter:drop-shadow(0 0 16px color-mix(in srgb,var(--end-color) 58%,transparent))}}
+.detail-terminal{display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:12px 15px;border:1px solid #6f5776;background:#2b2138a8;border-radius:12px;margin:8px 0 15px;font-size:11px;color:#edd9ed}
+.detail-terminal .status-symbol{width:30px;height:30px;display:grid;place-items:center;border-radius:50%;background:#eee2b919;color:#f8d475;font-size:20px;font-weight:900}
+.detail-terminal p{flex:0 0 100%;margin:0;color:#b8c0d4;line-height:1.5;overflow-wrap:anywhere}
+.btn-story{background:linear-gradient(100deg,#4b3e64,#323957)!important;border:1px solid #8272ae!important;color:#efe3ff!important}
+.line-status{font-weight:900;font-size:17px;min-width:19px;color:#f0c867}.line-entry .line-status{margin-left:auto}
+.palette-field .palette-swatches{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-top:9px}
+.palette-swatch{width:100%;height:41px;border-radius:12px;border:2px solid #ffffff19;background:var(--swatch);box-shadow:inset 0 0 20px #0002;position:relative;transition:transform .13s,border-color .13s;touch-action:manipulation}
+.palette-swatch:hover{transform:translateY(-2px);filter:brightness(1.1)}
+.palette-swatch[aria-pressed=true]{border-color:white;outline:2px solid #faead2;outline-offset:2px}
+.palette-swatch[aria-pressed=true]::after{content:'✓';position:absolute;inset:0;display:grid;place-items:center;color:#090b17;font-size:19px;font-weight:1000;text-shadow:0 1px 6px #fff9}
+.palette-chosen{font-size:11px;color:#c7d2e3;margin-top:7px}
+.story-overlay[hidden]{display:none!important}.story-overlay{position:fixed;inset:0;z-index:75;display:grid;place-items:center;background:#050911e8;backdrop-filter:blur(15px);padding:20px}
+.story-shell{display:flex;flex-direction:column;width:min(1050px,100%);height:min(94dvh,980px);min-height:0;background:linear-gradient(148deg,#1b263e,#0e1729 45%,#12172c);border:1px solid #4b5878;border-radius:22px;box-shadow:0 32px 115px #000d;overflow:hidden}
+.story-head{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:22px 29px 12px;background:#161f33}
+.story-head h2{margin:3px 0 0;font-size:22px;letter-spacing:-.03em}.story-head .eyebrow{font-size:9px;color:#e5bc82}
+.story-close{border:1px solid #576586;background:#28324c;color:#f6edff;border-radius:12px;min-width:40px;min-height:40px;font-size:22px}
+.story-controls{display:flex;align-items:end;gap:13px;flex-wrap:wrap;padding:15px 29px 18px;border-bottom:1px solid #3a4761;background:#131d30}
+.story-controls .field{min-width:220px;flex:1;max-width:390px}.story-controls .field label{color:#abbad0;font-size:11px}.story-controls select,.story-controls input{width:100%;background:#0c1728;border:1px solid #465371;border-radius:10px;color:#f2eafa;padding:10px 13px;min-height:40px;font-size:12px}
+.story-count{color:#97a9c3;font-size:11px;min-width:195px;margin-left:auto}
+.story-scroll{overflow-y:auto;min-height:0;flex:1;padding:35px 30px;background:radial-gradient(ellipse at 50% 0%,#35315530,transparent 60%)}
+.story-preview{margin:0 auto;background:linear-gradient(168deg,#1c2340c8,#101729bd);border:1px solid #46425d;box-shadow:0 15px 40px #02081081;width:min(720px,100%);padding:clamp(23px,5vw,55px);border-radius:17px;line-height:1.8}
+.story-eyebrow{display:block;color:#e8c993;font-size:9px;letter-spacing:.23em;font-weight:900;margin-bottom:8px}
+.story-title{font-size:clamp(25px,4vw,39px);letter-spacing:-.05em;color:#fef2e4;line-height:1.22;margin:13px 0 7px}
+.story-subtitle{color:#cbbde0;font-size:14px;margin:0 0 28px}.story-part{white-space:pre-wrap;overflow-wrap:anywhere;margin:0 0 15px;font-size:13px;color:#c8d2e8}
+.story-lead{font-size:14px;line-height:1.9;color:#d9dcf1;margin-bottom:25px}.story-description{line-height:1.85}
+.story-era{color:#8bd9f6;font-size:13px;margin-top:28px;font-weight:800;border-top:1px solid #ffffff20;padding-top:13px}
+.story-fork{font-size:14px;line-height:1.7;margin:28px 0 22px;border-left:3px solid #c996ef;padding:10px 15px;background:#bda1eb15;color:#e9caf9}
+.story-event{color:#ffe3b0;font-size:16px;line-height:1.4;margin:23px 0 9px;font-weight:820}
+.story-metadata{font-size:11px;color:#91a2bc}.story-ending{font-size:14px;border:1px solid #b29b7479;background:#8e71321c;border-radius:12px;padding:18px;margin:30px 0 17px;color:#f5dba7}
+.story-outro{color:#ddc9e5;margin-top:21px;border-top:1px solid #ffffff20;padding-top:18px}
+.story-footer{border-top:1px solid #ffffff20;margin-top:30px;padding-top:12px;color:#8a9cb4;font-size:10px}
+.story-actions{display:flex;justify-content:space-between;gap:9px;flex-wrap:wrap;padding:15px 20px 19px;background:#131d30;border-top:1px solid #3b4862}
+.story-actions .btn{font-size:11px;padding:10px 15px;min-height:40px}
+.story-actions .story-note{color:#8d9ab1;font-size:10px;line-height:1.4;max-width:240px;align-self:center}
+@media(max-width:720px){.story-overlay{padding:0}.story-shell{height:100dvh;width:100%;border:0;border-radius:0}.story-head{padding:14px 15px 12px}.story-head h2{font-size:19px}.story-controls{padding:12px 15px;gap:9px}.story-controls .field{flex:1;min-width:130px}.story-count{flex-basis:100%;margin:0}.story-scroll{padding:13px}.story-preview{padding:23px 18px}.story-actions{padding:10px 12px 16px;gap:7px}.story-actions .btn{flex:1;min-width:calc(50% - 5px);font-size:10px;padding:10px}.story-actions .story-note{display:none}.palette-field .palette-swatches{gap:8px}.end-label{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.end-marker{animation:none}}
+
+@media(max-width:720px){.map-toolbar{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));overflow:visible;row-gap:5px;column-gap:5px}.map-toolbar .tool-pill{font-size:9px;min-width:0;justify-content:center;white-space:nowrap;padding:7px 5px}.map-toolbar #open-story{grid-column:2 / span 2}}
+
+</style>
+</head>
+<body>
+<div class="app">
+  <div id="scrim" class="scrim"></div>
+  <aside id="sidebar" class="sidebar" aria-label="Minhas linhas do tempo">
+    <div class="brand"><div class="brandmark"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M3 23C9 23 9 10 17 10s8 9 12 9" stroke="#FBD297" stroke-width="2.5" stroke-linecap="round"/><path d="M14 11C21 11 21 25 29 25" stroke="#A5B3FF" stroke-width="2.3" stroke-linecap="round"/><circle cx="17" cy="10" r="3" fill="#FFDBAF"/></svg></div><div><div class="brandname">NEXO</div><div class="brandtag">SEU MULTIVERSO · V0.3</div></div></div>
+    <section class="side-section"><div class="side-label">Suas realidades <small id="branch-count">0 linhas</small></div><div class="line-list" id="line-list"></div></section>
+    <section class="side-section eras-overview"><div class="side-label">Eras e capítulos <small id="era-count">0 eras</small></div><div class="side-shortcuts"><button id="add-era-side" type="button" onclick="document.getElementById('add-era').click()">＋ Nova era</button><button id="stats-side" type="button" onclick="document.getElementById('open-stats').click()">▥ Comparar</button></div></section>
+    <section class="side-section"><div class="side-label">Como funciona</div><p class="about" style="padding:0 12px">Registre os <b>eventos reais</b> da sua história. Toque em um evento para criar um <b>“E se...?”</b>. Explore novas consequências e até ramificações de ramificações.</p></section>
+    <div class="side-note"><div class="side-note-top">✧ Nenhum destino é definitivo</div><p>Cada caminho alternativo é uma hipótese para imaginar, não uma previsão sobre sua vida.</p><button id="fit-side">Ver todo o multiverso ↗</button><button id="start-clean" style="margin-top:8px;width:100%;">Começar do zero ✦</button></div>
+    <div class="side-footer"><button id="export-btn" title="Baixar uma cópia dos seus dados">↓ Backup</button><button id="import-btn" title="Restaurar arquivo de backup">↑ Importar</button><input id="import-file" type="file" accept="application/json,.json" hidden /></div>
+  </aside>
+  <main class="main">
+    <div class="topbar"><div class="top-left"><button class="btn btn-ghost mobile-menu" id="mobile-menu" aria-label="Abrir menu">☰</button><div><p class="eyebrow">ARQUIVO DE REALIDADES · PROJETO PESSOAL</p><h1 class="heading">O multiverso da <i>minha vida.</i></h1><p class="subtitle">Toda escolha é um ponto. Todo “E se...?” é um novo caminho.</p></div></div><div class="actions"><button id="add-event" class="btn btn-ghost"><span>＋</span> Novo evento</button><button id="add-branch" class="btn btn-primary"><span>⌁</span> Nova variante</button></div></div>
+    <div class="badge-demo" id="demo-badge">✧ Universo de demonstração · substitua pelos seus eventos</div>
+    <div class="map-toolbar" aria-label="Ferramentas do multiverso">
+      <button id="toggle-eras" class="tool-pill toggled" aria-pressed="true" title="Exibir ou ocultar capítulos">◈ Mostrar eras</button>
+      <button id="add-era" class="tool-pill">＋ Criar era</button>
+      <button id="open-stats" class="tool-pill">▥ Estatísticas</button>
+      <button id="open-slideshow" class="tool-pill">▶ Apresentar</button>
+      <button id="open-story" class="tool-pill">↧ Exportar história</button>
+    </div>
+    <div id="stage" class="stage" aria-label="Mapa interativo das linhas do tempo">
+      <div class="stars" id="stars"></div><div class="noise"></div>
+      <div id="world" class="world"><svg id="world-svg" class="world-svg" width="8000" height="5000" viewBox="-1000 -2500 8000 5000" aria-hidden="true"><defs><linearGradient id="mainGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#9e6139"/><stop offset="40%" stop-color="#ffdc9b"/><stop offset="100%" stop-color="#f5a85a"/></linearGradient><filter id="mainBlur"><feGaussianBlur stdDeviation="10"/></filter></defs><g id="paths"></g></svg><div id="eras"></div><div id="nodes"></div><div id="endings"></div><div id="labels"></div></div>
+    </div>
+    <section class="stats-panel" id="stats-panel" aria-label="Estatísticas da realidade" hidden>
+      <div id="stats-content" class="stats-content"></div>
+      <button id="stats-close" hidden aria-hidden="true" type="button">Fechar</button>
+    </section>
+    <section class="detail-panel" id="detail" aria-live="polite" hidden></section>
+    <div class="bottom-bar"><div class="hint"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e6bc86" stroke-width="1.8" stroke-linecap="round"><path d="M7 12V6a2 2 0 0 1 4 0v4-6a2 2 0 0 1 4 0v6-3a2 2 0 0 1 4 0v7a7 7 0 0 1-7 7h-1a6 6 0 0 1-5-3l-2-3a2 2 0 0 1 3-2z"/></svg><span>Arraste para navegar · pinça ou rolagem para zoom · toque para explorar</span></div><div class="right-bottom"><div id="minimap" class="minimap" title="Clique para navegar pelo mapa"><svg id="mini-svg" viewBox="0 0 200 114" aria-hidden="true"></svg><div id="mini-window" class="mini-viewport"></div></div><div class="view-controls"><button class="control" id="zoom-in" title="Aproximar" aria-label="Aproximar">+</button><button class="control" id="zoom-out" title="Afastar" aria-label="Afastar">−</button><button class="control" id="fit-view" title="Enquadrar todas as linhas" aria-label="Enquadrar todas as linhas">⌗</button></div></div></div>
+    <div id="toast" class="toast" role="status"></div>
+  </main>
+</div>
+<section id="slideshow" class="deck-overlay" hidden role="dialog" aria-modal="true" aria-label="Apresentação do caminho">
+  <div class="deck-top">
+    <div class="deck-brand">NEXO <small>VIAGEM ENTRE REALIDADES</small></div>
+    <select id="deck-line" class="deck-select" aria-label="Escolher realidade a apresentar"></select>
+    <button id="deck-close" class="deck-close" aria-label="Sair da apresentação">×</button>
+  </div>
+  <div class="deck-center"><article id="deck-content" class="deck-content"></article></div>
+  <div class="deck-bottom">
+    <div class="deck-progress"><div id="deck-progress"></div></div>
+    <div class="deck-persona" id="deck-persona"></div>
+    <div class="deck-navigation">
+      <button class="btn btn-ghost" id="deck-prev">← Anterior</button>
+      <span class="deck-count" id="deck-current">0 / 0</span>
+      <button class="btn btn-ghost" id="deck-auto">▶ Reprodução automática</button>
+      <button class="btn btn-primary" id="deck-next">Próximo →</button>
+    </div>
+  </div>
+</section>
+<section id="story-overlay" class="story-overlay" role="dialog" aria-modal="true" aria-labelledby="story-heading" hidden>
+  <div class="story-shell">
+    <div class="story-head"><div><div class="eyebrow">O LIVRO DAS POSSIBILIDADES</div><h2 id="story-heading">Sua vida, em forma de história</h2></div><button id="story-close" class="story-close" aria-label="Fechar história">×</button></div>
+    <div class="story-controls">
+      <div class="field"><label for="story-line">Qual realidade?</label><select id="story-line"></select></div>
+      <div class="field"><label for="story-date">Acontecimentos até</label><input id="story-date" type="date" /></div>
+      <span id="story-count" class="story-count">Nenhum acontecimento</span>
+    </div>
+    <div class="story-scroll"><article id="story-preview" class="story-preview"></article></div>
+    <div class="story-actions"><div class="story-note">História composta a partir dos seus registros. Sem IA, previsões ou compartilhamento automático.</div>
+      <button class="btn btn-ghost" id="story-copy">Copiar texto</button>
+      <button class="btn btn-ghost" id="story-md">↓ Markdown</button>
+      <button class="btn btn-ghost" id="story-txt">↓ Texto .TXT</button>
+      <button class="btn btn-primary" id="story-png">↓ Imagem PNG</button>
+    </div>
+  </div>
+</section>
+<div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal"><div class="modal-head"><div><div class="eyebrow" id="modal-kicker">REGISTRAR</div><h2 id="modal-title">Novo evento</h2><p id="modal-subtitle">Um novo capítulo da sua história.</p></div><button id="modal-close" class="detail-x" aria-label="Fechar">×</button></div><form id="editor"><div id="form-fields" class="form-grid"></div><div class="form-actions"><button id="cancel" type="button" class="btn btn-ghost">Cancelar</button><button id="save" type="submit" class="btn btn-primary">Salvar no multiverso</button></div></form></div></div>
+<script>
+(() => {
+  'use strict';
+  const STORAGE = 'nexo-multiverso-v1'; // mantém os dados da versão anterior
+  const svgNS = 'http://www.w3.org/2000/svg';
+  // Cores determinadas e nomeadas; backups antigos mantêm as cores originais até serem editados.
+  const colors = [
+    {label:'Azul oceano',value:'#56C8F0'}, {label:'Azul royal',value:'#698AFF'},
+    {label:'Roxo',value:'#BC8BFF'}, {label:'Vermelho',value:'#FF6D79'},
+    {label:'Amarelo',value:'#F4CB64'}, {label:'Verde',value:'#75D4A3'},
+    {label:'Rosa',value:'#F48BBD'}, {label:'Laranja',value:'#F2A46C'},
+    {label:'Turquesa',value:'#4BD8C8'}, {label:'Cinza lunar',value:'#A6B6D0'}
+  ];
+  const palette = colors.map(c=>c.value);
+  const endings = {open:{label:'Ainda em andamento',symbol:'∞',color:'#a9b4c9'},unknown:{label:'Futuro desconhecido',symbol:'?',color:'#F4CB64'},death:{label:'Morte provável',symbol:'†',color:'#FF7384'},closed:{label:'Caminho encerrado',symbol:'■',color:'#B7A0FF'}};
+  const endKind = k => Object.hasOwn(endings,k)?k:'open';
+  const addDays=(date,days=1)=>{const d=new Date(date+'T12:00:00Z');d.setUTCDate(d.getUTCDate()+days);return d.toISOString().slice(0,10);};
+  const $ = id => document.getElementById(id);
+  const make = (tag, cls = '', txt) => {
+    const n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (txt !== undefined) n.textContent = String(txt);
+    return n;
+  };
+  const button = (text, fn, cls='btn btn-ghost') => {
+    const n=make('button',cls,text); n.type='button'; n.onclick=fn; return n;
+  };
+  const pad = n => String(n).padStart(2,'0');
+  const today = () => {const n=new Date(); return `${n.getFullYear()}-${pad(n.getMonth()+1)}-${pad(n.getDate())}`};
+  const uuid = () => 'id_'+(globalThis.crypto?.randomUUID?.()||Math.random().toString(36).slice(2)).replaceAll('-','').slice(0,18);
+  const validDate = d => /^\d{4}-\d{2}-\d{2}$/.test(d||'') && !Number.isNaN(Date.parse(d+'T12:00:00Z')) && new Date(d+'T12:00:00Z').toISOString().slice(0,10)===d;
+  const dateText = d => validDate(d) ? `${d.slice(8,10)}/${d.slice(5,7)}/${d.slice(0,4)}` : 'Sem data';
+  const yearText = d => (d||'').slice(0,4);
+  const cleanList = s => [...new Map(String(s||'').split(/[,;\n]+/).map(v=>v.trim()).filter(Boolean).map(v=>[v.toLocaleLowerCase('pt-BR'),v])).values()].slice(0,40);
+  const colorSafe = c => /^#[0-9a-fA-F]{6}$/.test(c||'') ? c : palette[0];
+  const statusLabels = {moment:['MOMENTO',''],canon:['CANÔNICO','canon'],nexus:['NEXUS','nexus'],thought:['POSSIBILIDADE','thought'],achievement:['CONQUISTA','achievement']};
+  let data, selected=null, editing=null, statsLine='main', statsAt=today(),
+      showEras=true, layout={events:{},branches:{},bounds:{minX:0,maxX:1800,minY:-400,maxY:400}},
+      camera={x:0,y:0,s:1}, layoutReady=false, drag={points:new Map(),lastDist:0,moving:false},mutatedAt=0,
+      toastTimer=null, deck={line:'main',slides:[],index:0,timer:null}, storyLine='main',storyUntil=today();
+
+  function seed(){return {version:1,demo:true,mainPersona:'Eu · Versão original',events:[
+    {id:'e1',lineId:'main',title:'Uma nova fase começa',date:'2017-02-10',type:'canon',description:'Exemplo fictício: o início de uma era pessoal.',people:['Rafa'],place:'Cidade natal'},
+    {id:'e2',lineId:'main',title:'A escolha que mudou tudo',date:'2020-03-15',type:'nexus',description:'Exemplo fictício: ficar ou aceitar uma oportunidade longe?',people:['Lia'],place:'Cidade natal'},
+    {id:'e3',lineId:'main',title:'Um encontro inesperado',date:'2022-05-20',type:'moment',description:'Neste cenário real fictício, a amizade surgiu depois da decisão de 2020.',people:['Caio','Nina'],place:'Florianópolis'},
+    {id:'e4',lineId:'main',title:'A grande conquista',date:'2024-03-12',type:'achievement',description:'Exemplo fictício: um objetivo importante finalmente alcançado.',people:[],place:'Florianópolis'},
+    {id:'e5',lineId:'main',title:'O capítulo atual',date:'2026-10-20',type:'moment',description:'A sua história real ainda está sendo escrita.',people:['Marina'],place:'Florianópolis'},
+    {id:'v1e1',lineId:'v1',title:'Primeiro dia em outra cidade',date:'2020-08-08',type:'thought',description:'Uma possibilidade: eu teria recomeçado longe de casa.',people:['Bia'],place:'Curitiba'},
+    {id:'v1e2',lineId:'v1',title:'Conhecendo outra turma',date:'2022-06-11',type:'moment',description:'Talvez novas amizades surgissem. Neste protótipo, os nomes são cadastrados manualmente.',people:['Bruno','Téo'],place:'Curitiba'},
+    {id:'v2e1',lineId:'v2',title:'Uma rotina inesperada',date:'2025-01-10',type:'thought',description:'Outro rumo após a conquista de 2024.',people:['Júlia'],place:'Florianópolis'},
+    {id:'v3e1',lineId:'v3',title:'Uma terceira possibilidade',date:'2022-09-14',type:'nexus',description:'Até universos alternativos podem criar novas bifurcações.',people:['Luna'],place:'São Paulo'}
+  ],branches:[
+    {id:'v1',fromEventId:'e2',title:'E se eu tivesse me mudado?',persona:'Eu · O viajante',description:'Uma versão que deixou tudo para trás para recomeçar.',color:palette[0],ending:{kind:'unknown',date:'2024-09-01',note:'Ainda não imaginei o que aconteceria a partir daqui.'}},
+    {id:'v2',fromEventId:'e4',title:'E se eu tivesse parado por ali?',persona:'Eu · O contemplativo',description:'Uma realidade mais calma, criada após um marco decisivo.',color:palette[1]},
+    {id:'v3',fromEventId:'v1e1',title:'E se eu tivesse recomeçado outra vez?',persona:'Eu · O andarilho',description:'Uma variante que nasceu dentro da variante.',color:palette[2],ending:{kind:'death',date:'2023-07-02',note:'Uma hipótese de desfecho trágico, não um acontecimento real.'}}
+  ],eras:[
+    {id:'era1',lineId:'main',title:'Era das descobertas',start:'2017-01-01',end:'2019-12-31',description:'Exemplo fictício: o capítulo em que eu começava a entender o mundo.',color:'#dcb47f'},
+    {id:'era2',lineId:'main',title:'Era das decisões',start:'2020-01-01',end:'2023-12-31',description:'Exemplo fictício: escolhas, caminhos e encontros.',color:'#a4b8eb'},
+    {id:'era3',lineId:'v1',title:'Era do recomeço',start:'2020-03-15',end:'2023-12-31',description:'Exemplo fictício da variante.',color:'#83d9e7'}
+  ]};}
+  function isStore(d){return d && d.version===1 && Array.isArray(d.events) && Array.isArray(d.branches) && d.events.length<1500 && d.branches.length<400 && d.events.every(e=>e&&typeof e.id==='string'&&typeof e.lineId==='string'&&typeof e.date==='string'&&typeof e.title==='string'&&typeof e.type==='string') && d.branches.every(b=>b&&typeof b.id==='string'&&typeof b.fromEventId==='string'&&typeof b.title==='string');}
+  function hydrate(d){
+    d.eras = Array.isArray(d.eras) ? d.eras.filter(e=>e&&typeof e.id==='string'&&typeof e.title==='string'&&validDate(e.start)&&validDate(e.end)).slice(0,600) : [];
+    d.mainPersona = typeof d.mainPersona==='string' ? d.mainPersona : 'Eu · Versão original';
+    d.branches.forEach(b=>{
+      b.persona=typeof b.persona==='string'?b.persona:'Outra versão de mim';b.color=colorSafe(b.color);
+      const ending=b.ending&&typeof b.ending==='object'?b.ending:{};
+      const kind=endKind(ending.kind);
+      b.ending={kind,date:validDate(ending.date)?ending.date:'',note:typeof ending.note==='string'?ending.note.slice(0,2000):''};
+    });
+    d.events.forEach(e=>{e.people = Array.isArray(e.people)? e.people.filter(s=>typeof s==='string').slice(0,40) : [];
+      e.place=typeof e.place==='string'?e.place:''; e.description=typeof e.description==='string'?e.description:'';});
+    d.eras.forEach(e=>{e.color=colorSafe(e.color);e.description=typeof e.description==='string'?e.description:''});
+    return d;
+  }
+  try{const raw=localStorage.getItem(STORAGE),loaded=raw?JSON.parse(raw):null;data=hydrate(isStore(loaded)?loaded:seed());}catch(e){data=hydrate(seed());}
+  function persist(){try{localStorage.setItem(STORAGE,JSON.stringify(data));}catch(e){toast('Não foi possível salvar. Exporte um backup para preservar seus registros.');}}
+  function toast(txt){const el=$('toast');el.textContent=txt;el.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('show'),3200);}
+  const eventById=id=>data.events.find(e=>e.id===id);
+  const branchById=id=>data.branches.find(b=>b.id===id);
+  const eraById=id=>data.eras.find(e=>e.id===id);
+  const eventsOf=line=>data.events.filter(e=>e.lineId===line).sort((a,b)=>a.date.localeCompare(b.date)||a.id.localeCompare(b.id));
+  const branchParent=b=>eventById(b?.fromEventId)?.lineId||'main';
+  const lineName=line=>line==='main'?'Linha principal':branchById(line)?.title||'Variante';
+  const personaName=line=>line==='main'?data.mainPersona:(branchById(line)?.persona||'Outra versão de mim');
+  const lineColor=line=>line==='main'?'#f5c985':colorSafe(branchById(line)?.color);
+  const lineOptions=()=>[{value:'main',label:'✦ Linha principal'},...data.branches.map(b=>({value:b.id,label:'⌁ '+b.title}))];
+  // Lista herdada, incluindo apenas a história anterior ao ponto da bifurcação.
+  function pathTo(line,stack=new Set()){
+    if(line==='main')return eventsOf('main');
+    const b=branchById(line);
+    if(!b||stack.has(line))return [];
+    stack.add(line);
+    const before=pathTo(branchParent(b),stack);
+    const forkIndex=before.findIndex(e=>e.id===b.fromEventId);
+    const inherited=forkIndex<0?[]:before.slice(0,forkIndex+1);
+    return [...inherited,...eventsOf(line)];
+  }
+  function report(line,until){
+    const es=pathTo(line).filter(e=>e.date<=until),names=new Map(),places=new Map();
+    es.forEach(e=>{
+      (e.people||[]).forEach(p=>{const label=String(p).trim();if(label&&!names.has(label.toLocaleLowerCase('pt-BR')))names.set(label.toLocaleLowerCase('pt-BR'),label)});
+      const place=(e.place||'').trim();if(place&&!places.has(place.toLocaleLowerCase('pt-BR')))places.set(place.toLocaleLowerCase('pt-BR'),place);
+    });
+    return {events:es.length,people:[...names.values()],places:[...places.values()],achievements:es.filter(e=>e.type==='achievement').length,canons:es.filter(e=>e.type==='canon'||e.type==='nexus').length};
+  }
+  function eraAt(line,date){return data.eras.filter(e=>e.lineId===line&&e.start<=date&&e.end>=date).sort((a,b)=>b.start.localeCompare(a.start))[0]||null;}
+  function svg(tag,attrs={},parent=$('paths')){const el=document.createElementNS(svgNS,tag);for(const [k,v] of Object.entries(attrs)) el.setAttribute(k,String(v));parent.append(el);return el;}
+
+  function setPositions(){
+    layout={events:{},branches:{},bounds:{minX:120,maxX:1200,minY:-210,maxY:300}};
+    const main=eventsOf('main');
+    let prior=null,x=250;
+    main.forEach(e=>{if(prior){const days=Math.max(0,(Date.parse(e.date)-Date.parse(prior.date))/86400000);x+=Math.max(340,Math.min(650,days*.32));}layout.events[e.id]={x,y:0};prior=e;});
+    const queue=data.branches.slice(),sorted=[],seen=new Set(['main']);
+    for(let loops=0;queue.length&&loops<450;loops++){
+      let progress=false;
+      for(let i=0;i<queue.length;){const b=queue[i],source=eventById(b.fromEventId);if(source&&seen.has(source.lineId)){sorted.push(b);seen.add(b.id);queue.splice(i,1);progress=true;}else i++;}
+      if(!progress)break;
+    }
+    let top=0,bottom=0;
+    sorted.forEach((b,i)=>{
+      const src=layout.events[b.fromEventId];if(!src)return;
+      const fromLine=eventById(b.fromEventId).lineId;
+      let y;
+      if(fromLine==='main'){if(i%2===0)y=-320*++top;else y=320*++bottom;}
+      else if(src.y<0)y=-320*++top;else y=320*++bottom;
+      const es=eventsOf(b.id),startX=src.x+370,positions=[];
+      es.forEach((event,j)=>{const p={event,x:startX+j*355,y};layout.events[event.id]={x:p.x,y};positions.push(p)});
+      const lastEventDate=es.at(-1)?.date||eventById(b.fromEventId)?.date||today();
+      const markerDate=validDate(b.ending?.date)?b.ending.date:lastEventDate;
+      const markerGap=Math.max(225,Math.min(560,Math.max(0,(Date.parse(markerDate)-Date.parse(lastEventDate))/86400000)*.29));
+      const tailX=positions.length?positions.at(-1).x:startX;
+      const isTerminal=b.ending?.kind&&b.ending.kind!=='open';
+      layout.branches[b.id]={fromX:src.x,fromY:src.y,startX,y,positions,color:b.color,endX:tailX+(isTerminal?markerGap:175),terminal:!!isTerminal};
+    });
+    const all=Object.values(layout.events);
+    for(const p of Object.values(layout.branches))all.push({x:p.endX+155,y:p.y});
+    if(all.length){
+      layout.bounds.minX=Math.min(...all.map(p=>p.x))-230;
+      layout.bounds.maxX=Math.max(...all.map(p=>p.x))+460;
+      layout.bounds.minY=Math.min(...all.map(p=>p.y))-270;
+      layout.bounds.maxY=Math.max(...all.map(p=>p.y))+235;
+    }
+  }
+  function renderPaths(){
+    const host=$('paths');host.replaceChildren();
+    // O SVG cresce conforme necessário, inclusive com muitas variantes ou eventos.
+    const b=layout.bounds,left=-1200,top=Math.min(-2500,Math.floor((b.minY-250)/100)*100),
+          right=Math.max(7500,b.maxX+450),bottom=Math.max(2500,b.maxY+350);
+    const sheet=$('world-svg');sheet.setAttribute('width',right-left);sheet.setAttribute('height',bottom-top);
+    sheet.setAttribute('viewBox',`${left} ${top} ${right-left} ${bottom-top}`);
+    sheet.style.left=left+'px';sheet.style.top=top+'px';
+    const main=eventsOf('main'),last=main.length?layout.events[main.at(-1).id].x:600;
+    const d=`M 90 0 L ${last+330} 0`;
+    svg('path',{d,class:'main-glow'});svg('path',{d,class:'main-core'});svg('path',{d,class:'flow'});
+    for(const br of data.branches){
+      const p=layout.branches[br.id];if(!p)continue;
+      const end=p.endX;
+      const spread=(p.startX-p.fromX)*.53;
+      const curve=`M ${p.fromX} ${p.fromY} C ${p.fromX+spread} ${p.fromY},${p.startX-spread} ${p.y},${p.startX} ${p.y}`;
+      const line=`${curve} L ${end} ${p.y}`;
+      svg('path',{d:line,stroke:br.color,class:'branch-glow'});
+      svg('path',{d:line,stroke:br.color,class:'branch-path',style:'color:'+br.color});
+      svg('path',{d:line,stroke:br.color,class:'branch-flow'});
+      if(!p.terminal){
+        svg('path',{d:`M ${end} ${p.y} h 165`,stroke:br.color,class:'continuation'});
+        svg('circle',{cx:end+165,cy:p.y,r:4,fill:br.color,class:'endpoint'});
+      }
+      svg('circle',{cx:p.fromX,cy:p.fromY,r:6,fill:br.color,opacity:.88});
+    }
+  }
+  function renderEndings(){
+    const host=$('endings');host.replaceChildren();
+    for(const br of data.branches){
+      const p=layout.branches[br.id],kind=endKind(br.ending?.kind);
+      if(!p||kind==='open')continue;
+      const spec=endings[kind],marker=button(spec.symbol,()=>select('line',br.id),'end-marker end-'+kind);
+      marker.style.left=p.endX+'px';marker.style.top=p.y+'px';marker.style.setProperty('--end-color',spec.color);
+      marker.title=spec.label+' · '+personaName(br.id)+' · '+(br.ending?.date?dateText(br.ending.date):'sem data');
+      marker.setAttribute('aria-label',marker.title);
+      const label=make('span','end-label',spec.label);
+      const wrapper=make('div','end-wrapper');wrapper.style.left=p.endX+'px';wrapper.style.top=p.y+'px';
+      marker.style.left='0px';marker.style.top='0px';wrapper.append(marker,label);host.append(wrapper);
+    }
+  }
+  function renderNodes(){
+    const host=$('nodes');host.replaceChildren();
+    for(const e of data.events){
+      const p=layout.events[e.id];if(!p)continue;
+      const color=lineColor(e.lineId);
+      const node=make('div','event'+(selected?.kind==='event'&&selected.id===e.id?' selected':'')+(e.type==='nexus'?' nexus':''));
+      node.style.left=p.x+'px';node.style.top=p.y+'px';node.style.setProperty('--line-color',color);
+      const card=make('div','event-card'),head=make('div','event-head');
+      const spec=statusLabels[e.type]||statusLabels.moment;
+      head.append(make('span','event-date',dateText(e.date)),make('span','type-pill '+spec[1],spec[0]));
+      const desc=make('div','event-desc',e.description||'Um capítulo desta realidade.');
+      card.append(head,make('h3','event-title',e.title),desc);
+      if((e.people||[]).length){card.append(make('div','event-people','◌ '+e.people.length+' pessoa'+(e.people.length===1?'':'s')+' registrada'+(e.people.length===1?'':'s')));}
+      const hit=make('div','event-hit');hit.append(make('div','event-dot'));node.append(card,hit);
+      node.setAttribute('role','button');node.tabIndex=0;node.setAttribute('aria-label',e.title+', '+dateText(e.date));
+      node.addEventListener('click',ev=>{ev.stopPropagation();if(performance.now()-mutatedAt<270)return;select('event',e.id)});
+      node.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();select('event',e.id)}});
+      host.append(node);
+    }
+  }
+  function dateX(line,d){
+    const events=eventsOf(line).filter(e=>layout.events[e.id]);
+    const positions=events.map(e=>({t:Date.parse(e.date),x:layout.events[e.id].x})),dt=Date.parse(d);
+    if(!positions.length){return line==='main'?250:layout.branches[line]?.startX||500;}
+    if(positions.length===1){return positions[0].x+Math.max(-340,Math.min(340,(dt-positions[0].t)/86400000*.27));}
+    let a,b;
+    if(dt<=positions[0].t){a=positions[0];b=positions[1];}
+    else if(dt>=positions.at(-1).t){a=positions.at(-2);b=positions.at(-1);}
+    else {for(let i=1;i<positions.length;i++)if(dt<=positions[i].t){a=positions[i-1];b=positions[i];break;}}
+    if(a.t===b.t)return a.x;
+    return Math.max(85,Math.min(layout.bounds.maxX+180,a.x+(dt-a.t)/(b.t-a.t)*(b.x-a.x)));
+  }
+  function renderEras(){
+    const host=$('eras');host.replaceChildren();
+    $('toggle-eras').classList.toggle('toggled',showEras);
+    $('toggle-eras').textContent=showEras?'◈ Ocultar eras':'◈ Mostrar eras';
+    $('toggle-eras').setAttribute('aria-pressed',String(showEras));
+    if(!showEras)return;
+    for(const era of data.eras){
+      const linePos=era.lineId==='main'?{y:0,startX:90}:layout.branches[era.lineId];if(!linePos)continue;
+      const x1=dateX(era.lineId,era.start),x2=dateX(era.lineId,era.end);
+      const left=Math.min(x1,x2),width=Math.max(110,Math.abs(x2-x1));
+      const n=button('',''+ (()=>{}),'era-band'); // handler replaced below
+      n.onclick=()=>select('era',era.id);
+      n.style.left=left+'px';n.style.top=((linePos.y||0)+90)+'px';n.style.width=width+'px';n.style.setProperty('--era-color',colorSafe(era.color));
+      n.title=`${era.title} · ${dateText(era.start)} a ${dateText(era.end)}`;
+      n.append(make('span','era-star','◈'),make('span','era-name',era.title),make('span','era-range',`${yearText(era.start)} – ${yearText(era.end)}`));
+      host.append(n);
+    }
+  }
+  function renderLabels(){
+    const host=$('labels');host.replaceChildren();
+    const main=make('div','world-label','✦  LINHA PRINCIPAL · A HISTÓRIA REAL');main.style.left='118px';main.style.top='56px';host.append(main);
+    for(const b of data.branches){const p=layout.branches[b.id];if(!p)continue;
+      const label=make('button','branch-label-line', '⌁ '+b.persona);
+      label.style.left=(p.startX+28)+'px';label.style.top=(p.y+44)+'px';label.style.color=b.color;
+      label.title=b.title;label.onclick=()=>focusLine(b.id);host.append(label);
+    }
+  }
+  function renderSidebar(){
+    const host=$('line-list');host.replaceChildren();
+    const lines=[{id:'main',title:'Linha principal',persona:data.mainPersona,color:'#f7c787'},...data.branches.map(b=>({id:b.id,title:b.title,persona:b.persona,color:b.color}))];
+    $('branch-count').textContent=lines.length+' linha'+(lines.length===1?'':'s');
+    for(const line of lines){
+      const bt=button('',()=>{closeSide();focusLine(line.id);},'line-entry'+(selected?.kind==='line'&&selected.id===line.id?' active':''));
+      bt.style.setProperty('--dot',line.color);bt.append(make('span','line-dot'));
+      const content=make('span','line-content');content.append(make('b',null,line.persona),make('span','sub',line.title+' · '+eventsOf(line.id).length+' evento(s)'));
+      bt.append(content);
+      if(line.id!=='main'&&endKind(branchById(line.id)?.ending?.kind)!=='open'){
+        const end=branchById(line.id).ending;bt.append(make('span','line-status',endings[end.kind].symbol));
+        bt.title=endings[end.kind].label;
+      }
+      host.append(bt);
+    }
+    $('era-count').textContent=data.eras.length+' eras';
+  }
+  function render(){setPositions();renderPaths();renderNodes();renderEndings();renderLabels();renderEras();renderSidebar();$('demo-badge').hidden=!data.demo;$('start-clean').hidden=!data.demo;renderMinimap();updateDetail();if(!$('stats-panel').hidden)renderStats();applyCamera();layoutReady=true;}
+  function changed(){data.demo=false;persist();render();}
+  function select(kind,id){selected={kind,id};$('stats-panel').hidden=true;renderNodes();renderSidebar();updateDetail();}
+  function focusLine(line){selected={kind:'line',id:line};$('stats-panel').hidden=true;renderNodes();renderSidebar();updateDetail();
+    const points=eventsOf(line).map(e=>layout.events[e.id]).filter(Boolean);
+    const spot=points[0]||{x:500,y:0};centerWorld(spot.x,spot.y,.8);
+  }
+  function detailClose(){selected=null;$('detail').hidden=true;renderNodes();renderSidebar();}
+  function renderDetailBase(caption,title,sub,description){
+    const p=$('detail');p.replaceChildren();p.hidden=false;
+    const top=make('div','detail-head');top.append(make('span','cap',caption));
+    const close=button('×',detailClose,'detail-x');close.setAttribute('aria-label','Fechar detalhes');top.append(close);
+    p.append(top,make('h2',null,title),make('div','detail-sub',sub),make('p','detail-desc',description));return p;
+  }
+  function detailButtons(p,buttons){const actions=make('div','detail-buttons');buttons.forEach(item=>actions.append(item));p.append(actions);}
+  function updateDetail(){
+    const p=$('detail');if(!selected){p.hidden=true;return;}
+    if(selected.kind==='line'){
+      const b=branchById(selected.id),line=selected.id;
+      if(line!=='main'&&!b){p.hidden=true;return;}
+      renderDetailBase(b?'⌁ REALIDADE ALTERNATIVA':'✦ REALIDADE PRINCIPAL',personaName(line),`${lineName(line)} · ${eventsOf(line).length} acontecimento(s)`,b?.description||'Os acontecimentos que você viveu e registrou como fatos reais.');
+      const actions=[button('＋ Adicionar acontecimento',()=>openEventEditor(null,line),'btn btn-primary'),button('◈ Adicionar era/capítulo',()=>openEraEditor(null,line))];
+      if(b&&endKind(b.ending?.kind)!=='open'){
+        const status=make('div','detail-terminal');
+        const spec=endings[endKind(b.ending.kind)];
+        status.append(make('span','status-symbol',spec.symbol),make('b',null,spec.label),make('span',null,dateText(b.ending.date)));
+        if(b.ending.note)status.append(make('p',null,b.ending.note));
+        p.append(status);
+      }
+      const row=make('div','rowbtn');row.append(button('▥ Ver estatísticas',()=>openStats(line)),button('▶ Apresentar',()=>openSlideshow(line)));actions.push(row);
+      actions.push(button('↓ Transformar esta linha em história',()=>openStory(line),'btn btn-story'));
+      const editrow=make('div','rowbtn');editrow.append(button('✎ Editar identidade',()=>openBranchEditor(b?.id||'main')));
+      if(b)editrow.append(button('⌫ Excluir linha',()=>deleteBranch(b.id),'btn btn-danger'));
+      actions.push(editrow);detailButtons(p,actions);return;
+    }
+    if(selected.kind==='era'){
+      const era=eraById(selected.id);if(!era){p.hidden=true;return;}
+      renderDetailBase('◈ ERA / CAPÍTULO',era.title,`${lineName(era.lineId)} · ${dateText(era.start)} — ${dateText(era.end)}`,era.description||'Um período da sua história com nome próprio.');
+      detailButtons(p,[button('✎ Editar era',()=>openEraEditor(era.id),'btn btn-primary'),button('⌫ Excluir era',()=>deleteEra(era.id),'btn btn-danger')]);return;
+    }
+    const e=eventById(selected.id);if(!e){p.hidden=true;return;}
+    const cap=e.type==='nexus'?'✧ EVENTO NEXUS':e.type==='canon'?'✦ EVENTO CANÔNICO':e.type==='achievement'?'★ CONQUISTA':e.type==='thought'?'◌ POSSIBILIDADE':'◇ ACONTECIMENTO';
+    renderDetailBase(cap,e.title,`${dateText(e.date)} · ${lineName(e.lineId)} · ${personaName(e.lineId)}`,e.description||'Sem descrição.');
+    const attrs=make('div','detail-attrs');
+    if(e.place)attrs.append(make('div',null,'⌁ Lugar: '+e.place));
+    if(e.people?.length)attrs.append(make('div',null,'◌ Conheci: '+e.people.join(', ')));
+    const era=eraAt(e.lineId,e.date);if(era)attrs.append(make('div',null,'◈ Capítulo: '+era.title));
+    if(attrs.children.length)p.append(attrs);
+    detailButtons(p,[button('⌁ Criar “E se...?” daqui',()=>openBranchEditor(null,e.id),'btn btn-primary'),
+      (()=>{const row=make('div','rowbtn');row.append(button('✎ Editar',()=>openEventEditor(e.id)),button('⌫ Excluir',()=>deleteEvent(e.id),'btn btn-danger'));return row;})()]);
+    p.append(make('div','detail-meta',e.lineId==='main'?'Fato registrado na linha real.':'Hipótese cadastrada manualmente. Não é uma previsão automática.'));
+  }
+  function applyCamera(){$('world').style.transform=`translate(${camera.x}px,${camera.y}px) scale(${camera.s})`;updateMiniWindow();}
+  function centerWorld(x,y,scale=camera.s){const r=$('stage').getBoundingClientRect();camera.s=Math.max(.26,Math.min(2.6,scale));camera.x=r.width*.46-x*camera.s;camera.y=r.height*.54-y*camera.s;applyCamera();}
+  function zoomAt(clientX,clientY,ratio){const r=$('stage').getBoundingClientRect(),x=clientX-r.left,y=clientY-r.top,s=Math.max(.26,Math.min(2.6,camera.s*ratio)),factor=s/camera.s;
+    camera.x=x-(x-camera.x)*factor;camera.y=y-(y-camera.y)*factor;camera.s=s;applyCamera();}
+  function fitView(){const r=$('stage').getBoundingClientRect(),b=layout.bounds;const s=Math.min(1.08,Math.max(.26,Math.min((r.width-135)/(b.maxX-b.minX),(r.height-270)/(b.maxY-b.minY))));centerWorld((b.minX+b.maxX)/2,(b.minY+b.maxY)/2,s);}
+  function renderMinimap(){const h=$('mini-svg');h.replaceChildren();const b=layout.bounds,w=b.maxX-b.minX,k=b.maxY-b.minY;const mx=x=>10+(x-b.minX)/w*180,my=y=>10+(y-b.minY)/k*94;
+    const main=eventsOf('main');if(main.length){svg('path',{d:`M ${mx(90)} ${my(0)} L ${mx(layout.events[main.at(-1).id].x+330)} ${my(0)}`,stroke:'#f5c985','stroke-width':2,fill:'none'},h);}
+    for(const br of data.branches){const p=layout.branches[br.id];if(!p)continue;
+      svg('path',{d:`M ${mx(p.fromX)} ${my(p.fromY)} Q ${mx(p.startX-50)} ${my(p.y)} ${mx(p.startX)} ${my(p.y)} L ${mx(p.endX)} ${my(p.y)}`,stroke:br.color,'stroke-width':1.6,fill:'none'},h);
+      if(p.terminal){const spec=endings[endKind(br.ending?.kind)];svg('circle',{cx:mx(p.endX),cy:my(p.y),r:4,fill:spec.color},h);}
+    }
+    for(const [id,p] of Object.entries(layout.events))svg('circle',{cx:mx(p.x),cy:my(p.y),r:2.5,fill:lineColor(eventById(id)?.lineId)},h);
+    h.dataset.bbox=JSON.stringify(b);updateMiniWindow();
+  }
+  function updateMiniWindow(){const raw=$('mini-svg').dataset.bbox;if(!raw)return;const b=JSON.parse(raw),r=$('stage').getBoundingClientRect(),w=b.maxX-b.minX,h=b.maxY-b.minY;
+    const win=$('mini-window');win.style.left=(10+(-camera.x/camera.s-b.minX)/w*180)+'px';win.style.top=(10+(-camera.y/camera.s-b.minY)/h*94)+'px';win.style.width=(r.width/camera.s/w*180)+'px';win.style.height=(r.height/camera.s/h*94)+'px';}
+  function closeSide(){$('sidebar').classList.remove('open');$('scrim').classList.remove('active');}
+  function openModal(){closeSide();$('overlay').classList.add('open');setTimeout(()=>$('editor').querySelector('input,select,textarea')?.focus(),30);}
+  function closeModal(){$('overlay').classList.remove('open');editing=null;}
+  function field(label,name,type,value='',opts={}){
+    const wrap=make('div','field'+(opts.full?' full':'')),lab=make('label',null,label);lab.htmlFor='f-'+name;let elem;
+    if(type==='select'){elem=make('select');for(const choice of opts.choices||[]){const o=make('option',null,choice.label);o.value=choice.value;elem.append(o);}}
+    else if(type==='textarea'){elem=make('textarea');elem.rows=opts.rows||3;}
+    else {elem=make('input');elem.type=type;elem.placeholder=opts.placeholder||'';}
+    elem.id='f-'+name;elem.name=name;elem.value=value??'';if(opts.required)elem.required=true;
+    if(opts.maxLength)elem.maxLength=opts.maxLength;if(opts.min)elem.min=opts.min;
+    if(opts.help)wrap.append(lab,elem,make('small','field-help',opts.help));else wrap.append(lab,elem);
+    return wrap;
+  }
+  function paletteField(label,name,previous){
+    const wrap=make('div','field full palette-field'),lab=make('label',null,label),grid=make('div','palette-swatches');
+    const hidden=make('input');hidden.type='hidden';hidden.name=name;hidden.id='f-'+name;
+    let chosen=colors.find(c=>c.value.toLowerCase()===String(previous||'').toLowerCase());
+    if(!chosen){const hex=colorSafe(previous);const rgb=c=>[1,3,5].map(i=>parseInt(c.slice(i,i+2),16));const r=rgb(hex);
+      chosen=colors.reduce((best,item)=>{const v=rgb(item.value),distance=v.reduce((s,n,i)=>s+(n-r[i])**2,0);return distance<best.distance?{item,distance}:best;},{item:colors[0],distance:Infinity}).item;
+    }
+    hidden.value=chosen.value;const chosenLabel=make('span','palette-chosen','Selecionada: '+chosen.label);
+    for(const item of colors){
+      const btn=button('',()=>{},'palette-swatch');btn.onclick=()=>{
+        hidden.value=item.value;chosenLabel.textContent='Selecionada: '+item.label;
+        grid.querySelectorAll('button').forEach(el=>el.setAttribute('aria-pressed',String(el===btn)));
+      };
+      btn.type='button';btn.title=item.label;btn.setAttribute('aria-label',item.label);
+      btn.setAttribute('aria-pressed',String(chosen.value===item.value));btn.style.setProperty('--swatch',item.value);
+      grid.append(btn);
+    }
+    wrap.append(lab,grid,chosenLabel,hidden);return wrap;
+  }
+  function editorHead(kicker,title,sub){$('modal-kicker').textContent=kicker;$('modal-title').textContent=title;$('modal-subtitle').textContent=sub;$('form-fields').replaceChildren();}
+  function openEventEditor(eventId=null,defaultLine='main'){
+    const e=eventId?eventById(eventId):null;editing={kind:'event',id:eventId};
+    editorHead('ARQUIVO DE ACONTECIMENTOS',e?'Editar acontecimento':'Novo acontecimento','Os nomes e lugares alimentam automaticamente os contadores desta realidade.');
+    const root=$('form-fields');root.append(
+      field('Título','title','text',e?.title||'',{required:true,full:true,maxLength:100,placeholder:'O dia em que tudo mudou'}),
+      field('Data','date','date',e?.date||today(),{required:true}),
+      field('Tipo de evento','type','select',e?.type||'moment',{choices:[{value:'moment',label:'Momento'},{value:'canon',label:'Evento canônico'},{value:'nexus',label:'Evento Nexus'},{value:'thought',label:'Possibilidade / hipótese'},{value:'achievement',label:'Conquista pessoal'}]}),
+      field('Em qual realidade?','lineId','select',e?.lineId||defaultLine,{full:true,choices:lineOptions()}),
+      field('Pessoas que conheci neste evento','people','textarea',(e?.people||[]).join(', '),{full:true,rows:2,maxLength:1200,placeholder:'Ex.: Ana, Bruno, Carla',help:'Separe os nomes por vírgula. Apenas pessoas cadastradas são contadas; sem IA inventando encontros.'}),
+      field('Cidade ou lugar (opcional)','place','text',e?.place||'',{full:true,maxLength:110,placeholder:'Ex.: Florianópolis'}),
+      field('Descrição e desdobramentos','description','textarea',e?.description||'',{full:true,maxLength:3000,rows:4})
+    );openModal();
+  }
+  function openBranchEditor(branchId=null,sourceEventId=null){
+    const isMain=branchId==='main',b=!isMain&&branchId?branchById(branchId):null;
+    editing={kind:isMain?'main':'branch',id:branchId};
+    editorHead(isMain?'IDENTIDADE PRINCIPAL':'DIVERGÊNCIA TEMPORAL',isMain?'Minha versão principal':b?'Editar esta realidade':'Nova variante',isMain?'Dê um nome à versão canônica de você.':'Customize o nome, a identidade e a cor dessa possibilidade.');
+    const root=$('form-fields');
+    if(isMain){root.append(field('Como sua versão principal se chama?','persona','text',data.mainPersona,{required:true,full:true,maxLength:90,placeholder:'Ex.: Daniel · Original'}));openModal();return;}
+    root.append(field('Pergunta “E se...?”','title','text',b?.title||'',{required:true,full:true,maxLength:120,placeholder:'E se eu tivesse tomado outra decisão?'}));
+    if(!b){
+      const opts=data.events.filter(e=>layout.events[e.id]).map(e=>({value:e.id,label:`${dateText(e.date)} · ${e.title}`}));
+      if(!opts.length){toast('Registre primeiro um acontecimento que será a origem da variante.');return;}
+      root.append(field('Acontecimento de origem','fromEventId','select',sourceEventId||opts[0].value,{full:true,choices:opts}));
+    }else root.append(field('Ponto de origem (fixo)','sourceInfo','text',eventById(b.fromEventId)?.title||'Origem não encontrada',{full:true}));
+    root.append(field('Nome desta versão de mim','persona','text',b?.persona||'',{required:true,full:true,maxLength:90,placeholder:'Ex.: Daniel · O Fora da Lei'}),
+      paletteField('Cor da realidade','color',b?.color||palette[data.branches.length%palette.length]),
+      field('O que muda nessa história?','description','textarea',b?.description||'',{full:true,maxLength:3000,rows:4,placeholder:'Descreva possibilidades, sem precisar afirmar que seriam inevitáveis.'}),
+      field('Situação atual da variante','endKind','select',endKind(b?.ending?.kind),{full:true,choices:[
+        {value:'open',label:'∞ Ainda em andamento / sem fim marcado'},
+        {value:'unknown',label:'? Futuro desconhecido · bolinha amarela'},
+        {value:'death',label:'† Morte provável · bolinha vermelha'},
+        {value:'closed',label:'■ Caminho encerrado · bolinha roxa'}
+      ],help:'O último ponto pode representar um limite da sua imaginação ou um desfecho hipotético.'}),
+      field('Data do ponto final (para os ramos encerrados)','endDate','date',b?.ending?.date||'',{full:true,help:'Se deixar vazio, usamos a data do último evento. O marcador sempre aparece depois do último acontecimento.'}),
+      field('Observação sobre esse desfecho','endNote','textarea',b?.ending?.note||'',{full:true,maxLength:2000,rows:3,placeholder:'Ex.: Daqui para a frente ainda não sei o que teria acontecido.'}));
+    if(!b)root.append(field('Primeiro evento desta variante','firstEvent','text','Um caminho diferente começa',{full:true,required:true,maxLength:100}));
+    openModal();if(b)$('f-sourceInfo').disabled=true;
+  }
+  function openEraEditor(eraId=null,defaultLine=null){
+    const era=eraId?eraById(eraId):null;editing={kind:'era',id:eraId};
+    editorHead('ERAS E CAPÍTULOS',era?'Editar era':'Nova era da minha história','Uma faixa opcional no mapa para representar um período, como Ensino Médio ou Era Pai de Família.');
+    const line=era?.lineId||defaultLine|| (selected?.kind==='line'?selected.id:'main');
+    $('form-fields').append(
+      field('Nome da era','title','text',era?.title||'',{full:true,required:true,maxLength:90,placeholder:'Ex.: Era do Ensino Médio'}),
+      field('Início','start','date',era?.start||`${today().slice(0,4)}-01-01`,{required:true}),
+      field('Fim','end','date',era?.end||today(),{required:true}),
+      field('Realidade','lineId','select',line,{full:true,choices:lineOptions()}),
+      paletteField('Cor do capítulo','color',era?.color||'#F4CB64'),
+      field('Descrição / mitologia pessoal','description','textarea',era?.description||'',{full:true,maxLength:2600,rows:4,placeholder:'Nomes, capítulos, objetivos, símbolos e o que essa fase significou.'})
+    );openModal();
+  }
+  function submitEditor(ev){
+    ev.preventDefault();if(!editing)return;
+    const v=Object.fromEntries(new FormData($('editor')).entries()),kind=editing.kind;
+    if(kind==='main'){data.mainPersona=String(v.persona||'').trim();if(!data.mainPersona)return toast('Informe um nome para sua versão.');}
+    else if(kind==='event'){
+      if(!validDate(v.date))return toast('Informe uma data válida.');
+      const title=String(v.title||'').trim(),line=v.lineId;
+      if(!title)return toast('Informe um título.');
+      const old=eventById(editing.id),b=branchById(line);
+      if(b&&v.date<eventById(b.fromEventId)?.date)return toast('Uma variante não pode ter eventos anteriores ao evento que a originou.');
+      if(b&&endKind(b.ending?.kind)!=='open'&&b.ending.date&&v.date>b.ending.date)return toast('A data passa do fim marcado para esta variante. Edite o desfecho primeiro.');
+      if(old&&old.lineId!==line&&data.branches.some(x=>x.fromEventId===old.id))return toast('Este evento origina uma variante. Não é possível movê-lo de linha.');
+      if(old&&data.branches.some(x=>x.fromEventId===old.id&&eventsOf(x.id).some(ch=>ch.date<v.date)))return toast('Há eventos derivados anteriores a esta nova data. Ajuste a variante antes.');
+      const patch={title,date:v.date,type:v.type,lineId:line,people:cleanList(v.people),place:String(v.place||'').trim(),description:String(v.description||'').trim()};
+      if(old){Object.assign(old,patch);selected={kind:'event',id:old.id};}
+      else{const e={id:uuid(),...patch};data.events.push(e);selected={kind:'event',id:e.id};}
+    }
+    else if(kind==='branch'){
+      const title=String(v.title||'').trim(),persona=String(v.persona||'').trim();
+      if(!title||!persona)return toast('Dê um título e um nome à sua variante.');
+      const kind=endKind(v.endKind);
+      const existing=branchById(editing.id);
+      const source=existing?eventById(existing.fromEventId):eventById(v.fromEventId);
+      if(!source)return toast('Escolha um acontecimento de origem.');
+      const lineLast=existing?(eventsOf(existing.id).at(-1)?.date||source.date):source.date;
+      const endDate=kind==='open'?'':(v.endDate||lineLast);
+      if(kind!=='open'&&(!validDate(endDate)||endDate<lineLast))return toast('O desfecho precisa acontecer na data do último evento ou depois.');
+      const patch={title,persona,description:String(v.description||'').trim(),color:colorSafe(v.color),ending:{kind,date:endDate,note:String(v.endNote||'').trim()}};
+      if(existing)Object.assign(existing,patch);
+      else{
+        const br={id:uuid(),fromEventId:source.id,...patch};data.branches.push(br);
+        data.events.push({id:uuid(),lineId:br.id,title:String(v.firstEvent||'Um novo caminho começa').trim(),date:source.date,type:'thought',description:'O primeiro instante de uma hipótese.',people:[],place:''});
+        selected={kind:'line',id:br.id};
+      }
+    }
+    else if(kind==='era'){
+      if(!validDate(v.start)||!validDate(v.end)||v.end<v.start)return toast('A data de término precisa ser igual ou posterior ao início.');
+      if(!String(v.title||'').trim())return toast('Dê um nome a esta era.');
+      const patch={title:String(v.title).trim(),lineId:v.lineId,start:v.start,end:v.end,color:colorSafe(v.color),description:String(v.description||'').trim()};
+      const existing=eraById(editing.id);if(existing)Object.assign(existing,patch);
+      else{const era={id:uuid(),...patch};data.eras.push(era);selected={kind:'era',id:era.id};}
+    }
+    closeModal();changed();toast('Seu multiverso foi atualizado.');
+  }
+  function dependent(origin){
+    const eventIds=new Set(origin),branches=new Set();let progress=true;
+    while(progress){progress=false;for(const b of data.branches){if(eventIds.has(b.fromEventId)&&!branches.has(b.id)){branches.add(b.id);data.events.filter(e=>e.lineId===b.id).forEach(e=>eventIds.add(e.id));progress=true;}}}
+    return {eventIds,branches};
+  }
+  function removeCascade(res){data.branches=data.branches.filter(b=>!res.branches.has(b.id));data.events=data.events.filter(e=>!res.eventIds.has(e.id));data.eras=data.eras.filter(e=>!res.branches.has(e.lineId));selected=null;changed();}
+  function deleteEvent(id){const e=eventById(id);if(!e)return;const res=dependent([id]);if(!confirm(`Excluir “${e.title}”? ${res.branches.size?`Isto também apaga ${res.branches.size} variante(s) derivada(s).`:''}\nAção irreversível. Faça backup primeiro.`))return;removeCascade(res);toast('Acontecimento removido.');}
+  function deleteBranch(id){const b=branchById(id);if(!b)return;const res=dependent(eventsOf(id).map(e=>e.id));res.branches.add(id);if(!confirm(`Excluir “${b.title}” e as ramificações que nasceram dela?\nFaça backup primeiro.`))return;removeCascade(res);toast('Realidade removida.');}
+  function deleteEra(id){const e=eraById(id);if(!e)return;if(!confirm(`Excluir a era “${e.title}”? Seus acontecimentos continuarão intactos.`))return;data.eras=data.eras.filter(x=>x.id!==id);selected=null;changed();toast('Era excluída.');}
+  function openStats(line){
+    if(line && (line==='main'||branchById(line)))statsLine=line;
+    else if(selected?.kind==='line')statsLine=selected.id;
+    else if(selected?.kind==='event')statsLine=eventById(selected.id)?.lineId||'main';
+    $('detail').hidden=true;selected=null;renderNodes();renderSidebar();$('stats-panel').hidden=false;renderStats();closeSide();
+  }
+  function statCard(title,v,b){const delta=v-b;const card=make('div','stat-card'),head=make('div','stat-name',title),numbers=make('div','stat-numbers');
+    numbers.append(make('strong',null,v),make('span','stat-delta'+(delta>0?' pos':delta<0?' neg':''),`${delta>0?'+':''}${delta} vs. real`));card.append(head,numbers,make('div','stat-base','Principal: '+b));return card;}
+  function renderStats(){
+    if(!branchById(statsLine)&&statsLine!=='main')statsLine='main';
+    const content=$('stats-content');content.replaceChildren();
+    const head=make('div','detail-head');head.append(make('span','cap','▥ OBSERVATÓRIO DE REALIDADES'),button('×',()=>{$('stats-panel').hidden=true;},'detail-x'));content.append(head);
+    content.append(make('h2',null,'E se eu fosse outra pessoa?'),make('p','stats-caption','Comparação com sua linha principal na MESMA data. Só os eventos cadastrados entram na conta.'));
+    const controls=make('div','stats-controls');
+    const lineField=field('Realidade observada','statsline','select',statsLine,{full:true,choices:lineOptions()});
+    lineField.querySelector('select').onchange=e=>{statsLine=e.target.value;renderStats();};
+    const dateField=field('Observar até','statsdate','date',statsAt,{full:true});dateField.querySelector('input').onchange=e=>{if(validDate(e.target.value)){statsAt=e.target.value;renderStats();}};
+    controls.append(lineField,dateField);content.append(controls);
+    content.append(make('div','stats-persona',personaName(statsLine)));
+    const result=report(statsLine,statsAt),real=report('main',statsAt);
+    const grid=make('div','stats-grid');
+    grid.append(statCard('◌ Pessoas conhecidas',result.people.length,real.people.length),statCard('⌁ Lugares registrados',result.places.length,real.places.length),statCard('★ Conquistas',result.achievements,real.achievements),statCard('✧ Marcos canônicos / Nexus',result.canons,real.canons));
+    content.append(grid);
+    const realSet=new Set(real.people.map(x=>x.toLocaleLowerCase('pt-BR'))),hypSet=new Set(result.people.map(x=>x.toLocaleLowerCase('pt-BR')));
+    const missing=real.people.filter(x=>!hypSet.has(x.toLocaleLowerCase('pt-BR')));
+    const alternate=result.people.filter(x=>!realSet.has(x.toLocaleLowerCase('pt-BR')));
+    const section=(title,items,empty)=>{const box=make('div','stats-list');box.append(make('div','stats-list-head',title),make('div','stats-list-body',items.length?items.join(' · '):empty));return box;};
+    content.append(section('Pessoas presentes neste caminho',result.people,'Nenhuma pessoa cadastrada até esta data.'));
+    if(statsLine!=='main'){
+      content.append(section('Da linha real que não constam aqui',missing,'Nenhuma diferença registrada.'),section('Registradas só nesta hipótese',alternate,'Nenhuma diferença registrada.'));
+      const b=branchById(statsLine),fork=eventById(b.fromEventId);
+      if(fork&&statsAt<fork.date)content.append(make('p','stats-note','Nesta data a divergência ainda não aconteceu, portanto os caminhos são idênticos.'));
+    }
+    content.append(make('p','stats-note','Importante: ausência no registro não significa que você definitivamente não conheceria alguém. São simulações manuais, não previsões de destino.'));
+  }
+  // Narrative export follows ancestor events only until each divergence.
+  // No invented facts or AI prediction; generated sentences derive solely from saved data.
+  function storyParts(line,until){
+    const branch=branchById(line),events=pathTo(line).filter(e=>e.date<=until);
+    const items=[{kind:'lead',text:line==='main'
+      ?'Esta é a sequência de acontecimentos registrados na minha linha principal. O texto reúne apenas os fatos e descrições que eu cadastrei.'
+      :'Esta é uma história alternativa imaginada. O passado compartilhado é herdado apenas até cada bifurcação. Os acontecimentos exclusivos das variantes são hipóteses, não previsões.'}];
+    if(branch?.description)items.push({kind:'description',text:branch.description});
+    let lastEra=null,lastLine='main',eventCount=0;
+    for(const e of events){
+      if(e.lineId!==lastLine){
+        const br=branchById(e.lineId),fork=br&&eventById(br.fromEventId);
+        if(br)items.push({kind:'fork',text:`PONTO DE DIVERGÊNCIA · ${fork?dateText(fork.date):'Data indefinida'}\n${br.title}. A partir daqui, a trajetória acompanha ${br.persona||'outra versão de mim'}.`});
+      }
+      const era=eraAt(e.lineId,e.date);
+      if(era?.id!==lastEra){
+        if(era)items.push({kind:'era',text:`◈ ${era.title} (${dateText(era.start)} a ${dateText(era.end)})${era.description?'\n'+era.description:''}`});
+        lastEra=era?.id||null;
+      }
+      items.push({kind:'event',text:`${dateText(e.date)} · ${e.title}`,type:e.type,real:e.lineId==='main'});
+      if(e.description?.trim())items.push({kind:'description',text:e.description.trim()});
+      const more=[];
+      if(e.place)more.push(`Lugar registrado: ${e.place}.`);
+      if(e.people?.length)more.push(`Pessoas registradas neste acontecimento: ${e.people.join(', ')}.`);
+      if(more.length)items.push({kind:'metadata',text:more.join(' ')});
+      lastLine=e.lineId;eventCount++;
+    }
+    if(!eventCount)items.push({kind:'description',text:'Ainda não há acontecimentos cadastrados neste caminho até a data escolhida.'});
+    if(branch){
+      const end=branch.ending||{},kind=endKind(end.kind);
+      if(kind!=='open'&&(!end.date||end.date<=until)){
+        const spec=endings[kind];
+        const detail=kind==='unknown'?'A partir deste ponto, esta possibilidade ainda não foi imaginada. Não há um futuro definido neste registro.'
+          :kind==='death'?'Neste cenário hipotético, foi considerado um desfecho de morte. Isso não é um fato da vida real nem uma previsão.'
+          :'Este caminho foi marcado como encerrado na história imaginada.';
+        items.push({kind:'ending',text:`${spec.symbol} ${spec.label.toUpperCase()}${end.date?' · '+dateText(end.date):''}\n${detail}${end.note?'\n'+end.note:''}`});
+      }else if(kind!=='open'&&end.date>until){
+        items.push({kind:'outro',text:`A narrativa foi limitada a ${dateText(until)}. Existe um desfecho registrado para ${dateText(end.date)}, posterior à data selecionada.`});
+      }else items.push({kind:'outro',text:'Esta variante continua em aberto. Não há um desfecho registrado.'});
+    }else items.push({kind:'outro',text:'A linha principal permanece aberta: sua história continua.'});
+    const counts=report(line,until);
+    items.push({kind:'footer',text:`ATÉ ${dateText(until)} · ${eventCount} acontecimentos narrados · ${counts.people.length} pessoa(s) registrada(s) · ${counts.places.length} lugar(es) registrado(s).`});
+    return {title:line==='main'?'Minha linha do tempo':(branch?.title||'Outra realidade'),
+      subtitle:personaName(line),items,until,line};
+  }
+  function storyToText(story,format='txt'){
+    const md=format==='md';
+    const lines=[md?'# '+story.title:story.title.toUpperCase(),md?'*'+story.subtitle+'*':story.subtitle,
+      `Até ${dateText(story.until)}`,''];
+    for(const item of story.items){
+      const text=item.text;
+      if(md&&['era','fork','ending'].includes(item.kind))lines.push('## '+text.replaceAll('\n','\n\n'));
+      else if(md&&item.kind==='event')lines.push('### '+text);
+      else if(!md&&['era','fork','ending'].includes(item.kind))lines.push('────────────────────────',''+text);
+      else lines.push(text);
+      lines.push('');
+    }
+    lines.push(md?'_Criado no NEXO v0.3.0 · Relatos reais e cenários hipotéticos cadastrados pelo autor._':'Criado no NEXO v0.3.0 · Narrativa baseada somente em registros fornecidos pelo autor.');
+    return lines.join('\n');
+  }
+  function openStory(line){
+    storyLine=line&&(line==='main'||branchById(line))?line:(selected?.kind==='line'?selected.id:'main');
+    if(storyLine!=='main'&&!branchById(storyLine))storyLine='main';
+    storyUntil=today();
+    const sel=$('story-line');sel.replaceChildren();lineOptions().forEach(({label,value})=>{const o=make('option',null,label);o.value=value;sel.append(o);});
+    sel.value=storyLine;$('story-date').value=storyUntil;
+    $('story-overlay').hidden=false;$('stats-panel').hidden=true;$('detail').hidden=true;closeSide();renderStory();
+  }
+  function closeStory(){$('story-overlay').hidden=true;}
+  function renderStory(){
+    if(!branchById(storyLine)&&storyLine!=='main')storyLine='main';
+    const story=storyParts(storyLine,storyUntil),preview=$('story-preview');preview.replaceChildren();
+    preview.append(make('span','story-eyebrow','NEXO · ARQUIVO DE REALIDADES'),make('h2','story-title',story.title),make('p','story-subtitle',story.subtitle+' · até '+dateText(storyUntil)));
+    for(const item of story.items){
+      const cls='story-part story-'+item.kind;
+      const tag=item.kind==='event'?'h3':['fork','era','ending'].includes(item.kind)?'h4':'p';
+      preview.append(make(tag,cls,item.text));
+    }
+    $('story-count').textContent=story.items.filter(x=>x.kind==='event').length+' acontecimentos neste recorte';
+  }
+  function storyFilename(){const line=storyLine==='main'?'principal':('variante-'+storyLine.replace(/[^a-zA-Z0-9_-]/g,''));return `nexo-historia-${line}-${storyUntil}`;}
+  function downloadStory(format){const story=storyParts(storyLine,storyUntil),txt=storyToText(story,format);
+    download(storyFilename()+'.'+format,'\uFEFF'+txt,format==='md'?'text/markdown;charset=utf-8':'text/plain;charset=utf-8');
+    toast('História exportada como '+format.toUpperCase()+'.');
+  }
+  async function copyStory(){const txt=storyToText(storyParts(storyLine,storyUntil));
+    try{if(navigator.clipboard?.writeText){await navigator.clipboard.writeText(txt);}else{
+      const a=make('textarea');a.value=txt;document.body.append(a);a.select();if(!document.execCommand('copy'))throw Error('Falha ao copiar');a.remove();}
+      toast('História copiada.');
+    }catch(e){toast('Não foi possível copiar automaticamente. Use Exportar TXT.');}
+  }
+  function downloadStoryPNG(){
+    const story=storyParts(storyLine,storyUntil),canvas=make('canvas'),ctx=canvas.getContext('2d');
+    if(!ctx)return toast('Seu navegador não oferece exportação de imagem.');
+    const W=1120,pad=95,textWidth=W-2*pad;
+    canvas.width=W;
+    const font=(kind)=>kind==='title'?'bold 49px sans-serif':kind==='subtitle'?'25px sans-serif':kind==='event'?'bold 28px sans-serif':kind==='fork'?'bold 25px sans-serif':kind==='era'?'bold 25px sans-serif':kind==='ending'?'bold 26px sans-serif':kind==='footer'?'19px sans-serif':'23px sans-serif';
+    const lineHeight=kind=>kind==='title'?63:kind==='event'?43:kind==='subtitle'?40:kind==='footer'?31:37;
+    const sections=[{kind:'title',text:story.title},{kind:'subtitle',text:story.subtitle+' · até '+dateText(story.until)},...story.items];
+    const wrap=(text,style)=>{ctx.font=font(style);const lines=[];
+      for(const paragraph of text.split('\n')){
+        if(!paragraph.trim()){lines.push('');continue;}
+        let current='';for(const word of paragraph.split(/\s+/)){
+          let candidate=current?current+' '+word:word;
+          if(ctx.measureText(candidate).width>textWidth&&current){lines.push(current);current=word;}
+          if(ctx.measureText(current).width>textWidth){let segment='';for(const char of current){if(ctx.measureText(segment+char).width>textWidth&&segment){lines.push(segment);segment=char;}else segment+=char;}current=segment;}
+          if(candidate===word&&current===word){}else if(ctx.measureText(candidate).width<=textWidth)current=candidate;
+        }
+        if(current)lines.push(current);
+      }
+      return lines;
+    };
+    const prepared=sections.map(section=>({...section,lines:wrap(section.text,section.kind)}));
+    const space=k=>['title','subtitle'].includes(k)?27:['event','fork','era','ending'].includes(k)?23:18;
+    const estimate=prepared.reduce((s,p)=>s+p.lines.length*lineHeight(p.kind)+space(p.kind),290)+145;
+    // Keep raster export within reasonable browser memory limits; TXT/MD work for any length.
+    if(estimate>15500){toast('História muito longa para um PNG único. Exporte em TXT ou Markdown.');return;}
+    canvas.height=Math.ceil(Math.max(950,estimate));
+    const g=ctx.createLinearGradient(0,0,W,canvas.height);g.addColorStop(0,'#151a36');g.addColorStop(.62,'#0c1427');g.addColorStop(1,'#090e1c');ctx.fillStyle=g;ctx.fillRect(0,0,W,canvas.height);
+    for(let i=0;i<65;i++){let x=37+(i*171)%1040,y=50+(i*263)%canvas.height;ctx.fillStyle=i%4===0?'#c5bbef45':'#ffffff1c';ctx.beginPath();ctx.arc(x,y,i%5===0?2:1,0,Math.PI*2);ctx.fill();}
+    ctx.fillStyle='#f4cb64';ctx.fillRect(pad,61,92,4);ctx.fillStyle='#dfc998';ctx.font='bold 18px sans-serif';ctx.fillText('N E X O  /  M U L T I V E R S O',pad,105);
+    let y=164;
+    for(const section of prepared){
+      ctx.font=font(section.kind);ctx.textBaseline='top';
+      ctx.fillStyle=section.kind==='title'?'#fff6e8':section.kind==='subtitle'?'#c7b1e8':section.kind==='era'?'#88d9ef':section.kind==='fork'?'#e5b4f1':section.kind==='ending'?(story.line!=='main'&&branchById(story.line)?.ending?.kind==='death'?'#ff96a4':'#f4cb64'):section.kind==='event'?'#ffe0aa':section.kind==='metadata'||section.kind==='footer'?'#96a6bf':'#dce2f2';
+      if(['fork','ending'].includes(section.kind)){const color=section.kind==='fork'?'#bc8bff':branchById(story.line)?.ending?.kind==='death'?'#ff96a4':'#f4cb64';ctx.fillStyle=color;ctx.fillRect(pad-20,y+1,4,section.lines.length*lineHeight(section.kind)-3);ctx.fillStyle=color;}
+      for(const l of section.lines){if(l)ctx.fillText(l,pad,y);y+=lineHeight(section.kind);}
+      y+=space(section.kind);
+    }
+    ctx.strokeStyle='#8e91b550';ctx.beginPath();ctx.moveTo(pad,canvas.height-83);ctx.lineTo(W-pad,canvas.height-83);ctx.stroke();
+    ctx.fillStyle='#90a2c2';ctx.font='18px sans-serif';ctx.fillText('NEXO v0.3.0 · Realidade e imaginação, sem previsões automáticas.',pad,canvas.height-64);
+    canvas.toBlob(blob=>{if(blob){downloadBlob(storyFilename()+'.png',blob);toast('História exportada em imagem PNG.');}else toast('Não foi possível criar a imagem.');},'image/png');
+  }
+
+  function slideshowClear(){if(deck.timer){clearInterval(deck.timer);deck.timer=null;}$('deck-auto').textContent='▶ Reprodução automática';}
+  function closeSlideshow(){slideshowClear();$('slideshow').hidden=true;}
+  function openSlideshow(line){const selectedLine=line||(selected?.kind==='line'?selected.id:selected?.kind==='event'?eventById(selected.id)?.lineId:'main');
+    deck.line=selectedLine&& (selectedLine==='main'||branchById(selectedLine))?selectedLine:'main';
+    deck.slides=pathTo(deck.line);deck.index=0;
+    const sel=$('deck-line');sel.replaceChildren();lineOptions().forEach(({label,value})=>{const o=make('option',null,label);o.value=value;sel.append(o);});sel.value=deck.line;
+    $('slideshow').hidden=false;$('detail').hidden=true;$('stats-panel').hidden=true;closeSide();slideshowClear();renderSlide();
+  }
+  function renderSlide(){const el=$('deck-content');el.replaceChildren();const all=deck.slides,n=deck.index,e=all[n];
+    $('deck-current').textContent=all.length?`${n+1} / ${all.length}`:'0 / 0';
+    $('deck-prev').disabled=n<=0;$('deck-next').disabled=n>=all.length-1;
+    $('deck-progress').style.width=(all.length?((n+1)/all.length)*100:0)+'%';
+    $('deck-persona').textContent=personaName(deck.line);
+    if(!e){el.append(make('div','deck-empty','Esta realidade não tem eventos. Cadastre um acontecimento para apresentá-la.'));return;}
+    const lineColorValue=lineColor(e.lineId);el.style.setProperty('--slide-color',lineColorValue);
+    const upper=make('div','deck-chapter',`${e.lineId==='main'?'✦ REALIDADE PRINCIPAL':'⌁ '+personaName(e.lineId)} · ${dateText(e.date)}`);
+    const era=eraAt(e.lineId,e.date),eraLabel=make('div','deck-era',era?'◈ '+era.title:'✧ Um instante nesta história');
+    const badge=make('div','deck-milestone',(statusLabels[e.type]||statusLabels.moment)[0]);
+    const headline=make('h2','deck-title',e.title),desc=make('p','deck-desc',e.description||'Um momento deste caminho.');
+    const refs=make('div','deck-tags');if(e.place)refs.append(make('span',null,'⌁ '+e.place));if(e.people?.length)refs.append(make('span',null,'◌ '+e.people.join(', ')));
+    el.append(upper,eraLabel,badge,headline,desc,refs);
+    el.classList.remove('deck-flip');void el.offsetWidth;el.classList.add('deck-flip');
+  }
+  function advance(dir){if(!deck.slides.length)return;const next=Math.max(0,Math.min(deck.slides.length-1,deck.index+dir));if(next===deck.index){if(dir>0)slideshowClear();return;}deck.index=next;renderSlide();}
+  function toggleAuto(){if(deck.timer){slideshowClear();return;}if(!deck.slides.length)return;if(deck.index>=deck.slides.length-1)deck.index=0;renderSlide();deck.timer=setInterval(()=>advance(1),4900);$('deck-auto').textContent='Ⅱ Pausar apresentação';}
+  function setupNavigation(){
+    const stage=$('stage');
+    stage.addEventListener('pointerdown',ev=>{if(ev.button!==0&&ev.pointerType==='mouse')return;      if(ev.target.closest('.event,.branch-label-line,.era-band,.end-marker'))return;
+      stage.setPointerCapture(ev.pointerId);drag.points.set(ev.pointerId,{x:ev.clientX,y:ev.clientY});drag.moving=false;
+      if(drag.points.size===2){const pts=[...drag.points.values()];drag.lastDist=Math.hypot(pts[0].x-pts[1].x,pts[0].y-pts[1].y);}
+    });
+    stage.addEventListener('pointermove',ev=>{if(!drag.points.has(ev.pointerId))return;const before=drag.points.get(ev.pointerId);drag.points.set(ev.pointerId,{x:ev.clientX,y:ev.clientY});const pts=[...drag.points.values()];
+      if(pts.length===2){const dist=Math.hypot(pts[0].x-pts[1].x,pts[0].y-pts[1].y);const cx=(pts[0].x+pts[1].x)/2,cy=(pts[0].y+pts[1].y)/2;
+        if(drag.lastDist)zoomAt(cx,cy,dist/drag.lastDist);drag.lastDist=dist;drag.moving=true;stage.classList.add('grabbing');return;}
+      const dx=ev.clientX-before.x,dy=ev.clientY-before.y;
+      if(dx||dy){drag.moving=true;camera.x+=dx;camera.y+=dy;stage.classList.add('grabbing');applyCamera();}
+    });
+    const release=ev=>{if(drag.points.has(ev.pointerId)){drag.points.delete(ev.pointerId);if(drag.moving)mutatedAt=performance.now();}drag.lastDist=0;if(!drag.points.size){drag.moving=false;stage.classList.remove('grabbing');}};
+    stage.addEventListener('pointerup',release);stage.addEventListener('pointercancel',release);
+    stage.addEventListener('wheel',ev=>{ev.preventDefault();zoomAt(ev.clientX,ev.clientY,Math.exp(-ev.deltaY*.00125));},{passive:false});
+    stage.addEventListener('click',ev=>{if(ev.target===stage&&performance.now()-mutatedAt>260)detailClose();});
+    $('zoom-in').onclick=()=>{const r=stage.getBoundingClientRect();zoomAt(r.left+r.width/2,r.top+r.height/2,1.24);};
+    $('zoom-out').onclick=()=>{const r=stage.getBoundingClientRect();zoomAt(r.left+r.width/2,r.top+r.height/2,1/1.24);};
+    $('fit-view').onclick=fitView;$('fit-side').onclick=()=>{closeSide();fitView();};
+    $('minimap').onclick=ev=>{const r=$('minimap').getBoundingClientRect(),b=layout.bounds;centerWorld(b.minX+(ev.clientX-r.left-10)/180*(b.maxX-b.minX),b.minY+(ev.clientY-r.top-10)/94*(b.maxY-b.minY));};
+    window.addEventListener('keydown',ev=>{
+      if(!$('slideshow').hidden){if(ev.key==='Escape')closeSlideshow();else if(ev.key==='ArrowRight')advance(1);else if(ev.key==='ArrowLeft')advance(-1);return;}
+      if(!$('story-overlay').hidden){if(ev.key==='Escape')closeStory();return;}
+      if($('overlay').classList.contains('open')){if(ev.key==='Escape')closeModal();return;}
+      if(['INPUT','TEXTAREA','SELECT'].includes(document.activeElement?.tagName))return;
+      if(ev.key==='Escape'){detailClose();$('stats-panel').hidden=true;}else if(ev.key==='+'||ev.key==='=')$('zoom-in').click();else if(ev.key==='-')$('zoom-out').click();
+      else if(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(ev.key)){
+        ev.preventDefault();const offset={ArrowLeft:[85,0],ArrowRight:[-85,0],ArrowUp:[0,85],ArrowDown:[0,-85]}[ev.key];camera.x+=offset[0];camera.y+=offset[1];applyCamera();}
+    });
+    window.addEventListener('resize',()=>{if(layoutReady)applyCamera();});
+  }
+  function downloadBlob(filename,blob){const url=URL.createObjectURL(blob),a=make('a');a.href=url;a.download=filename;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),12000);}
+  function download(filename,contents,mime='application/json'){downloadBlob(filename,new Blob([contents],{type:mime}));}
+  function setupUI(){
+    $('add-event').onclick=()=>openEventEditor();
+    $('add-branch').onclick=()=>openBranchEditor();
+    $('add-era').onclick=()=>openEraEditor();
+    $('toggle-eras').onclick=()=>{showEras=!showEras;renderEras();toast(showEras?'Eras visíveis no mapa.':'Eras ocultas — seus registros continuam salvos.');};
+    $('open-stats').onclick=()=>openStats();
+    $('stats-close').onclick=()=>{$('stats-panel').hidden=true;};
+    $('open-slideshow').onclick=()=>openSlideshow();
+    $('open-story').onclick=()=>openStory();
+    $('story-close').onclick=closeStory;
+    $('story-line').onchange=e=>{storyLine=e.target.value;renderStory();};
+    $('story-date').onchange=e=>{if(validDate(e.target.value)){storyUntil=e.target.value;renderStory();}};
+    $('story-txt').onclick=()=>downloadStory('txt');
+    $('story-md').onclick=()=>downloadStory('md');
+    $('story-png').onclick=downloadStoryPNG;
+    $('story-copy').onclick=copyStory;
+    $('story-overlay').addEventListener('pointerdown',e=>{if(e.target===$('story-overlay'))closeStory();});
+    $('deck-close').onclick=closeSlideshow;
+    $('deck-prev').onclick=()=>{slideshowClear();advance(-1);};
+    $('deck-next').onclick=()=>{slideshowClear();advance(1);};
+    $('deck-auto').onclick=toggleAuto;
+    $('deck-line').onchange=ev=>{slideshowClear();deck.line=ev.target.value;deck.slides=pathTo(deck.line);deck.index=0;renderSlide();};
+    $('mobile-menu').onclick=()=>{$('sidebar').classList.add('open');$('scrim').classList.add('active');};
+    $('scrim').onclick=closeSide;
+    $('modal-close').onclick=closeModal;$('cancel').onclick=closeModal;
+    $('overlay').addEventListener('pointerdown',ev=>{if(ev.target===$('overlay'))closeModal();});
+    $('editor').addEventListener('submit',submitEditor);
+    $('start-clean').onclick=()=>{if(!confirm('Apagar os exemplos fictícios e começar uma história vazia?\nIsso substitui os dados atuais. Faça um backup antes se quiser guardá-los.'))return;
+      data=hydrate({version:1,demo:false,mainPersona:'Minha versão original',events:[],branches:[],eras:[]});persist();selected=null;render();centerWorld(350,0,.9);closeSide();openEventEditor();};
+    $('export-btn').onclick=()=>{download('nexo-backup-'+today()+'.json',JSON.stringify({...data,exportedAt:new Date().toISOString()},null,2));toast('Backup exportado. Guarde-o em local seguro.');};
+    $('import-btn').onclick=()=>$('import-file').click();
+    $('import-file').addEventListener('change',async ev=>{const file=ev.target.files?.[0];ev.target.value='';if(!file)return;
+      try{if(file.size>5*1024*1024)throw Error('Arquivo muito grande.');const raw=JSON.parse(await file.text());if(!isStore(raw))throw Error('O arquivo não contém um backup compatível do NEXO.');
+        if(!confirm('Importar esse backup? Os dados atuais serão substituídos.'))return;
+        data=hydrate(raw);selected=null;statsLine='main';persist();render();fitView();toast('Backup restaurado!');
+      }catch(err){toast(err.message||'Não foi possível importar esse arquivo.');}
+    });
+  }
+  function stars(){let randSeed=173;const rand=()=>{randSeed=(randSeed*16807)%2147483647;return (randSeed-1)/2147483646};const host=$('stars');
+    for(let i=0;i<110;i++){const n=make('i','star'),size=rand()<.12?2.5:rand()*1.3+.5;n.style.left=rand()*100+'%';n.style.top=rand()*100+'%';n.style.width=size+'px';n.style.height=size+'px';n.style.setProperty('--duration',(1.8+rand()*5.5)+'s');n.style.setProperty('--opacity',(0.15+rand()*.6).toFixed(2));n.style.animationDelay=-rand()*7+'s';host.append(n);}}
+
+  stars();setupUI();setupNavigation();render();
+  if(window.matchMedia('(max-width:720px)').matches)centerWorld(720,0,.72);
+  else centerWorld(920,-30,.86);
+  setTimeout(()=>toast(data.demo?'Explore o exemplo fictício: eras, pessoas, variantes e apresentações.':'Seus registros anteriores foram carregados.'),900);
+})();
+
+</script>
+</body>
+</html>
