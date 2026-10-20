@@ -1,44 +1,43 @@
 # Changelog
 
-All notable project changes are listed here. The project uses semantic version tags.
+All notable changes to NEXO are documented here. Releases follow Semantic Versioning.
+
+## [0.5.0] — 2026-10-20
+
+### Added
+- Interactive **Reality Simulator** with independent saved experiments for alternative branches.
+- Guided evaluation of potentially affected events, with four author-defined outcomes and explanations.
+- Automatic causal-chain warning when another event was marked as absent in an experiment.
+- Projected chronological story combining inherited records, variant events, assessed consequences, and user-created hypothetical scenes.
+- Multiple experiments per variant; duplicate and delete individual experiments safely.
+- Simulator report exports (clipboard, Markdown, TXT, browser print to PDF).
+- New tutorial step about the simulator and mobile collapsible simulator settings.
+- Backward-compatible optional `simulations` collection in local JSON backups.
+
+### Fixed
+- Replaced full-screen guided-tour blur with an accurately positioned, transparent spotlight and four dimming regions.
+- Corrected spotlight positioning when the mobile sidebar animates open.
+- Existing alternate events already on the path are updated in scenario preview rather than shown twice.
 
 ## [0.4.0] — 2026-10-20
 
 ### Added
+- Necessary and influential causal links between earlier and later events.
+- Cause-and-effect observatory and optional visual causal connections.
+- Guided tour and PNG export of the multiverse map.
+- Print/Save as PDF story output.
 
-- Author-defined causal links between events, with **necessary** and **influence** relationships.
-- Branch divergence mode: *altered source event* vs. *new path after source event*.
-- Cause-and-effect observatory: direct and downstream affected events, unlinked non-inherited events, and conflicts involving still-recorded events.
-- Optional causal connectors on the SVG timeline map.
-- Nine-step guided onboarding that can be replayed.
-- Export of the full multiverse map to PNG using Canvas.
-- Print-friendly story view, allowing native browser **Save as PDF**.
-- Cause metadata in written narratives and exported histories.
+### Fixed
+- Sidebar scrolling on mobile and desktop.
 
-### Changed
+## [0.3.0]
 
-- Left sidebar now scrolls as a whole, including on mobile; removed the nested timeline list height limit.
-- Timeline statistics no longer automatically count people and places from a fork event explicitly marked as changed.
-- Story text explains whether an alternate branch changed its origin or began afterward.
-- Updated app and image-export version strings.
-
-### Compatibility
-
-- Retains the `nexo-multiverso-v1` local storage key and version-1 JSON backup envelope.
-- Older branches default to the conservative **after** divergence mode unless explicitly edited.
-- Existing v0.3 backups continue to load; empty causal relationships are added safely.
-
-## [0.3.0] — 2026-10-20
-
-- Timeline terminal states: unknown future, probable death, closed, open.
-- Named palettes and editable branch identities.
-- TXT, Markdown, and PNG narrative exports.
-- GitHub Pages release package and privacy guidance.
+- Named branch endings, fixed color palette, narrative story exports to TXT/Markdown/PNG.
 
 ## [0.2.0]
 
-- Eras, chapters, timeline personas, observatory statistics, and slideshow mode.
+- Personas, eras and chapters, timeline statistics, animated slideshow, ancestor-path inheritance.
 
 ## [0.1.0]
 
-- Interactive personal timeline, branching alternatives, and local JSON backups.
+- Main and alternate visual timelines, nested branches, event editor, local storage, JSON backup.

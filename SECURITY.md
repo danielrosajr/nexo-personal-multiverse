@@ -21,3 +21,7 @@ Static GitHub Pages deployment requires no embedded API key or secret. Avoid add
 ## Reporting issues
 
 If you encounter a security concern, avoid sharing real personal timeline data in public bug reports. Reproduce issues using fictional examples and remove identifying information from screenshots and logs.
+
+## Version 0.5 experiment privacy
+
+The `simulations` collection is stored in the same browser-local JSON blob as the original personal timeline. The simulator does not call external services. Causal assumptions and exported narratives should be treated as personal data; store backups securely and do not commit them to a public repository.
