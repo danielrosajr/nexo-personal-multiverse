@@ -1,129 +1,104 @@
 # NEXO — Your Personal Multiverse
 
-**NEXO** is a personal, local-first, interactive timeline for exploring your real life and the paths you *might* have taken. Your real history is the golden primary timeline; alternative realities branch from specific recorded events.
+A visual, browser-based journal for mapping your life, exploring alternate paths, and recording the consequences of hypothetical decisions. Inspired by the *concept* of branching timelines; not affiliated with Marvel or any other franchise.
 
-> NEXO is a creative, reflective tool. Alternative events, potential deaths, and hypothetical outcomes are **not scientific predictions, facts, or diagnoses**.
+![NEXO cause-and-effect observatory](assets/preview-desktop.png)
 
-![NEXO timeline demo](docs/screenshots/timeline-desktop.png)
+## Version
 
-## Features
+**Current version: `0.4.0`** — *Cause & Effect*
 
-- **Interactive timelines:** pan with a mouse or finger, zoom with a mouse wheel or pinch, and navigate with the minimap.
-- **The main timeline:** record events, dates, descriptions, places, people you met, achievements, canonical moments, and Nexus events.
-- **Alternative realities:** create branches from any event, including branches of branches. Each branch has its own title, persona, description, and editable color.
-- **Named chapters:** create date-range eras (for example, "High School Years") and show or hide their overlays.
-- **Reality Observatory:** compare manually recorded people, locations, achievements, and milestones with the main timeline at the **same date**.
-- **Slideshow mode:** watch a selected timeline unfold chronologically, with manual or timed progression.
-- **Timeline endings (new in v0.3.0):** mark a branch as unfinished (`?` in yellow), a hypothetical death (`†` in red), or a closed scenario (`■` in purple), or keep it open. Customize the date and explanation.
-- **Fixed color swatches (new in v0.3.0):** select a clearly named color (blue, purple, red, yellow, and more) rather than using an arbitrary RGB picker.
-- **Story export (new in v0.3.0):** turn the main timeline or a selected variant into a chronological narrative with recorded chapters, descriptions, branching decisions, and endings; copy it or download **TXT**, **Markdown**, or a shareable **PNG** image.
-- **Local backups:** export your entire timeline as JSON and restore it later. Previous NEXO v0.1/v0.2 JSON data formats are accepted by this version.
+NEXO is a standalone, zero-dependency static website. You can run it by opening `index.html` in a browser or publish it using GitHub Pages.
 
-![NEXO narrative export](docs/screenshots/story-mobile.png)
+## What's inside
 
-## Start using NEXO
+- **Sacred/main timeline:** Record dated, real-life events, descriptions, people, places, canonical moments, Nexus events, and achievements.
+- **Alternative timelines:** Branch from an event, name an alternate persona, customize a branch color, create nested branches, or mark an uncertain ending / hypothetical death / closed path.
+- **Eras and chapters:** Organize periods using optional colored labels and descriptions.
+- **Cause & effect (new):** Open an event and use **Edit causes and effects** to link earlier events as either a **necessary condition** or **influence**. The causal observatory flags explicitly linked outcomes that could be affected by altered decisions. It never invents or deletes outcomes.
+- **Divergence modes (new):** Choose whether a variant *changes the source event* or *begins afterward*. This determines whether the source is considered disrupted in causal analysis. Existing branches imported from older releases default to the safer "begins afterward" setting until you edit them.
+- **Connection visualization (new):** Display dotted causal links between events on the map.
+- **Guided tour (new):** Nine steps introducing the map, event registration, variants, causal relationships, exports, slideshow, and backups.
+- **Scrollable sidebar (fixed):** All sections remain accessible on desktop and mobile.
+- **Statistics:** Compare known people, places, achievements, and significant events on different timeline paths. When a variant explicitly changes the source event, that source event's people and places are not automatically considered established in the variant.
+- **Slideshow:** Present a timeline as an animated chronological sequence.
+- **Narrative export:** Copy or download a written history as `.txt`, `.md`, or a long `.png`; use **PDF / Print** and select *Save as PDF* in the browser print dialog.
+- **Map image export (new):** Export the complete visual multiverse as a `.png`, including the current event cards, branches, era bars, and terminal markers.
+- **JSON import/export:** Make portable backups of your entire data set and restore on another browser/device manually.
 
-No installation, build pipeline, account, API key, or external dependencies are required.
+## Quick start
 
-1. Open `index.html` in a modern browser.
-2. Explore the fictional sample timeline to learn how branching works.
-3. Click **Começar do zero** ("Start from scratch") to create your own history (export a backup first if you want to preserve the demo).
-4. Add an event to the main timeline, then create a branch using **"What if...?"**.
-5. Open a branch's **Editar identidade** ("Edit identity") action to set its persona, color, and optional ending.
-6. Choose **Exportar história** ("Export story") in the toolbar to preview or export the narrative for any reality.
+1. Open `index.html` in a current version of Chrome, Chromium, Edge, Firefox, or Safari (GitHub Pages/HTTPS is recommended).
+2. Follow the **Guided Tour**. You can replay it from the toolbar or the sidebar.
+3. Inspect the fictional example. Select **Start from scratch** in the sidebar to replace it with your own records.
+4. Create an event in the main timeline. Add dates, places, people, and descriptions as appropriate.
+5. Select the event and create an alternative branch. Determine whether the original event changed or the branch starts after it.
+6. To record dependency, open a subsequent event and choose **Edit causes and effects**. Only earlier events from its timeline history are eligible.
+7. Open **Cause & Effect** and choose a variant to inspect possible affected outcomes. Enable **Show Connections** to see relationships visually.
+8. Export a **JSON backup** regularly. Narratives, prints and map PNGs are additional exports, *not backups*.
 
-The app interface is currently in **Brazilian Portuguese (pt-BR)**. This README is in English to make the repository easier to maintain and share.
+## How the causal model works
 
-## Important rule: how branches inherit the past
+Suppose the main timeline records:
 
-A branch inherits only events that belong to its **ancestor path up to (and including) the event where the branch started**. It does not automatically inherit later main-timeline events.
+- 2020: A decision to remain in a city.
+- 2022: Meeting a friend, registered as **dependent on** the 2020 decision.
+- 2024: Achieving a personal goal, registered as **influenced by** the 2022 meeting.
 
-For example, if you met someone in 2020 but a variant diverged in 2010, that friend is **not automatically recorded** in the new reality. You can manually add people and outcomes to that variant. This does not mean that a person could never appear in that scenario; it simply reflects what you have recorded.
+If you create a variant that *changes the 2020 decision*, NEXO highlights the 2022 event as a possible direct effect and the 2024 event as a possible downstream effect. Events registered **without causal links** are classified as simply outside that inherited timeline. Neither category represents proof that something definitely would or would not have happened.
 
-Nested variants work the same way: they inherit their own parent's history only up to the latest divergence.
+**Important limitations:**
 
-## How the ending markers work
-
-| Marker | Status | Meaning |
-| --- | --- | --- |
-| Yellow `?` | Unknown future | Your imagination stops here, without assuming a particular outcome. |
-| Red `†` | Probable death | You have chosen to mark death as a *hypothetical* outcome of this scenario. |
-| Purple `■` | Closed path | The imagined scenario has an explicit ending. |
-| No terminal marker | Open path | The alternate timeline remains open to further exploration. |
-
-![NEXO terminal markers demo](docs/screenshots/timeline-endings.png)
-
-End markers are **per-branch metadata**, not real-world events. Their date must be on or after the latest event recorded directly in that branch. You can reopen or edit a branch later. Branch color does not determine its ending type.
-
-## How narrative exports work
-
-1. Click **Exportar história** in the toolbar, or open a reality and select **Transformar esta linha em história**.
-2. Choose a reality and the date up to which you want to narrate (today by default).
-3. Read the preview. Save TXT or Markdown for editable text, or PNG for a long, shareable story card.
-
-The exported narrative uses only information stored in your timeline; **it does not call an AI, invent events, or infer life outcomes**. Events after the selected cut-off date do not appear. Very long stories may exceed the maximum size of a single PNG; in that case use TXT or Markdown.
+- All causal links are authored by the user; NEXO does not predict timelines.
+- An existing alternative timeline includes the original fork event as historical context; if you mark its source as altered, its people/places do not count as guaranteed encounters in the variant.
+- The causal observatory compares a nested branch against its immediate parent trajectory and also accounts for altered forks inherited from earlier branches. No events are removed automatically.
+- Events occurring on the same date cannot be causally linked through the current editor; assign distinct days if sequential ordering matters.
+- Extremely large multiverse PNG exports can exceed the browser's canvas limits.
 
 ## GitHub Pages deployment
 
-This repository is a static site. Its deployment entry point is **`index.html` in the repository root**.
+1. Create a repository, for example **`nexo-personal-multiverse`**.
+2. Upload all project files, keeping `index.html` at the repository root.
+3. In **Settings → Pages**, select **Deploy from a branch**, your `main` branch, and `/(root)`.
+4. After Pages has deployed, visit `https://YOUR-USERNAME.github.io/nexo-personal-multiverse/`.
 
-1. Create a repository (suggested name: `nexo-personal-multiverse`).
-2. Upload the files in the archive to the **root** of the repository (not into a nested ZIP folder), or clone the repository and commit the files.
-3. Navigate to **Settings → Pages**.
-4. Under **Build and deployment**, select **Deploy from a branch**, then branch **`main`**, directory **`/(root)`**, and save.
-5. Open the Pages URL GitHub provides when the site is deployed.
+Do **not** upload personal JSON backups or exported personal narratives. The files in this repository are application code and fictional preview illustrations only.
 
-GitHub Pages will publish the **application code and bundled fictional sample**. **Never commit your personal JSON backups, exports, or private life details into a public repository.**
+## Updating from v0.3.x
 
-## Privacy and data
+1. **Export a JSON backup in the old version before updating.**
+2. Replace `index.html`; add the documentation and asset files from this release.
+3. Keep using the **same GitHub Pages URL** and browser to access locally stored data.
+4. If necessary, import your JSON backup through the NEXO interface.
+5. Existing timelines, eras, endings, personas, and narrative exports remain supported. Earlier branches default to *starts after source event* until you explicitly change the divergence mode.
 
-- NEXO stores its timeline in the browser's **`localStorage`** using the key `nexo-multiverso-v1` to preserve compatibility with older versions.
-- The published app is static. There is **no NEXO backend, login, analytics, third-party JavaScript dependency, or automatic cloud synchronization**.
-- Data does **not** follow you to another browser or device automatically. Different origins (`file://`, your Pages URL, or another domain) can have separate browser storage.
-- Clearing site data, using private browsing, or switching domains may make your local records unavailable. **Make regular JSON backups and import them when switching origins.**
-- Browser storage is **not encrypted**. Do not use shared or untrusted devices for sensitive personal information.
+Version updates may be cached by your browser. Reload/refresh the page after a deployment.
 
-## Project structure
+## Data privacy and storage
 
-```text
-index.html                 # Complete static application (HTML + CSS + JavaScript)
-README.md                  # Documentation (English)
-CHANGELOG.md               # Version history
-RELEASE_NOTES_v0.3.0.md    # Notes for the GitHub Release
-.gitignore                 # Prevents accidental inclusion of personal exports
-SECURITY.md                # Local data and privacy guidance
-docs/screenshots/          # Screenshots of fictional demo data only
-```
+NEXO currently uses the browser's `localStorage` (`nexo-multiverso-v1`). There is **no account system, cloud database, or synchronization**. Each browser profile stores its own data. Clearing site data or using another device without importing a backup may result in data loss.
 
-## Development and versioning
+- Users are responsible for backups.
+- Treat exports and JSON backups as highly personal information. They are **not encrypted**.
+- NEXO does not require API keys, third-party CDNs, analytics, or cloud services.
+- GitHub Pages publishes the app files, **not** data stored locally inside visitors' browsers.
 
-NEXO follows [Semantic Versioning](https://semver.org/) starting with `v0.3.0`, while it remains a pre-1.0 experimental personal app. The local data format remains backward-compatible; changing application code does not require deleting existing records.
+## Technical architecture
 
-Recommended commit message:
+Single-file HTML / CSS / vanilla JavaScript. Interactive timeline paths use SVG; map image export uses Canvas 2D; PDF is created via the browser's native print-to-PDF capability. No server, database, build pipeline, or external dependencies are required.
 
-```text
-feat: add terminal timeline markers and narrative exports
-```
+## Roadmap ideas
 
-Recommended release tag: `v0.3.0`.
+- Editable causal graphs, confidence indicators, and uncertainty controls
+- Exporting just one selected visual timeline (rather than the whole map)
+- Extended cinematic timeline transitions
+- Portable encrypted backups and optional cloud sync
+- Choice-driven "What If?" narrative RPG
 
-To create the tag **after** committing the release:
+## Changelog and security
 
-```bash
-git tag -a v0.3.0 -m "NEXO v0.3.0 — Endings and Story Export"
-git push origin main
-git push origin v0.3.0
-```
+See [`CHANGELOG.md`](CHANGELOG.md), [`RELEASE_NOTES_v0.4.0.md`](RELEASE_NOTES_v0.4.0.md), and [`SECURITY.md`](SECURITY.md).
 
-If a tag already exists, do not overwrite it; choose the correct next version instead.
+---
 
-## Known limitations
-
-- No artificial intelligence or automated prediction of alternate outcomes.
-- No account, remote synchronization, or collaborative timeline editing.
-- PNG export creates a single tall image; exceptionally long stories should be exported as TXT or Markdown.
-- Personal timeline data is stored per browser origin, not inside the HTML file itself.
-
-## License
-
-No open-source license has been included automatically. The repository owner may add one if they want to grant reuse permissions to others.
+NEXO is a personal storytelling and reflection tool. It is **not** a scientific prediction system or professional mental health assessment.
