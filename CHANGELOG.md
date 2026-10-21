@@ -1,5 +1,31 @@
 # Changelog
 
+## [0.10.0] — 2026-10-21 — Shared Events & Semantic Branch Colors
+
+### Added
+- Multi-select event importer between timelines, accessible from toolbar, sidebar, selected event and selected reality.
+- Independent copy, synchronized occurrence, and convergence modes with separate behavior.
+- Group metadata for relationships between event copies; cyan/purple map links and card badges.
+- Optional unlink action, without deleting the occurrence.
+- Inline semantic guide for the ten deterministic branch colors, including negative, neutral, romance, friendship and growth suggestions.
+- Expanded explanations for formerly ambiguous branch/event form fields.
+- Tutorial steps for copying events and semantic colors.
+
+### Changed
+- New branch's first event is optional. You can start an empty branch and continue it later.
+- Endpoint date/note inputs hide when a branch remains open.
+- Events already inherited or previously imported from the same original record are excluded from repeated imports.
+- Import rejects event time windows outside a destination branch's valid dates.
+- Shared edits synchronize descriptive fields while keeping dates and causal relations independent.
+- New event copies never inherit old causal links automatically.
+
+### Compatibility
+- Same `localStorage` key (`nexo-multiverso-v1`) and `version: 1` JSON backup structure.
+- Older events lacking sharing metadata are normalized without modification to their meaning or date precision.
+- No cloud service, database, API key, external AI or build tool required.
+
+---
+
 ## [0.9.0] — 2026-10-21 — Approximate Dates & Adaptive Intervals
 
 ### Added

@@ -1,104 +1,95 @@
 # NEXO — Your Personal Multiverse
 
-**An interactive life timeline for memories, alternate paths, and “what if?” stories.** Build a real-life history, branch it into alternate scenarios, record people and eras, explore cause-and-effect connections, and export narratives.
+**An interactive timeline of real memories, divergent histories, and personal “what if?” scenarios.** NEXO runs as a single static HTML file, with no external AI, backend, or required cloud account.
 
-![NEXO v0.9: approximate events as visual intervals](assets/preview-timeline.png)
+**Release:** `0.10.0` · **Git tag:** `v0.10.0` · **Hosting:** GitHub Pages or any static file host · **Language:** Brazilian Portuguese.
 
-**Release:** `0.9.0` · **Tag:** `v0.9.0` · **Stack:** single static HTML file with embedded CSS and JavaScript · **Hosting:** GitHub Pages · **Cloud/database:** none required.
+![Cross-timeline import dialog](assets/shared-events-importer.png)
 
-## What's new in v0.9 — approximate event dates
+## New in v0.10 — Shared Events & Semantic Branch Colors
 
-You can save an event without making up an exact calendar date. In the event editor, select:
+### Three ways to bring an event into another reality
 
-| Date mode | Example shown on your timeline | Meaning |
+Open **Trazer eventos** from the toolbar/sidebar, or select an event and choose **Copiar / compartilhar com outra linha**. Choose a source timeline, a destination timeline, one or more events, and one import behavior:
+
+| Behavior | What it means | What happens when edited |
 |---|---|---|
-| Exact day | `14/08/2002` | Known date |
-| Month and year | `agosto de 2002 (dia incerto)` | Could have happened at any point in that month |
-| Year only | `Em 2006 (dia e mês incertos)` | Could have happened at any point in the year |
-| Between years | `Entre 2007 e 2013` | Could have happened at any point in these inclusive years |
-| Between dates | `Entre 14/08/2007 e 03/12/2013` | Could have happened at any point inside the inclusive date interval |
+| **Independent copy** | Similar event occurs in the destination; no permanent shared record | All changes remain local to that copy |
+| **Same event / shared** | The event is considered to have occurred in both realities | Title, type, description, people and place stay synchronized between linked records; **dates and causal dependencies remain independent** |
+| **Convergence** | Different paths reach similar outcomes | Independent event details, but a recorded and visually displayed convergence link |
 
-![Event editor date precision controls](assets/preview-date-editor.png)
+The timeline draws **cyan dashed links** for shared occurrences and **purple dotted links** for convergences. Event cards carry corresponding labels. You can unlink an occurrence from its details panel without deleting it. Copies and links are represented by optional metadata (`copiedFromId`, `sharedGroupId`, `convergenceGroupId`) in the usual event records.
 
-**Visual behavior:** an uncertain event gets a dashed marker and a range segment with an ending marker. It is anchored at the **earliest possible day**, strictly for display. Its line extends through the **latest possible day**. The label never claims it occurred on that first day.
+![Timeline after creating a convergence](assets/linked-events-map.png)
 
-When a new dated event is added between the boundaries (for example, an event in 2010 inside a `2007–2013` range), the timeline automatically introduces an intermediate position and redraws the interval across that new event. This is a visual overlap, **not a claim that the uncertain event preceded or caused the 2010 event**.
+**Safety and chronology:**
 
-### Data semantics
+- The app automatically excludes events already inherited at the divergence point or previously imported from the same source (root event ID).
+- A destination branch only accepts events whose entire known/possible occurrence window falls **after its origin** and, when there is an explicit ending date, **before its ending**. Uncertain dates with overlapping windows cannot be placed confidently across the boundary and are excluded.
+- Original event records are never removed by copying/importing.
+- New copies **do not copy causal links**, since the causal conditions in an alternative reality may differ. Add the destination's causal dependencies manually if appropriate.
+- Syncing a shared event edits common descriptive fields in its linked copies; this is an intentional **bidirectional** effect. Unlink first if you want independent descriptions. An event's place/person details are potentially sensitive.
+- Importing between timelines is an authoring operation; it does **not** calculate a future probability or establish that the event was inevitable.
 
-```json
-{
-  "id": "example",
-  "lineId": "main",
-  "title": "An uncertain memory",
-  "date": "2007-01-01",
-  "time": {
-    "precision": "range-years",
-    "start": "2007-01-01",
-    "end": "2013-12-31"
-  },
-  "type": "moment"
-}
-```
+### Semantic color guide
 
-`time.start` and `time.end` define the possible **occurrence window**. The legacy `date` field is retained as the normalized first possible date for compatibility; it **must not be interpreted as the actual day** when `time.precision` is not `exact`.
+The branch editor now includes a **Guide to colors**, with a named fixed palette and optional interpretations:
 
-Legacy event data lacking `time` is automatically interpreted as an exact-day event, preserving old histories. Exports retain the precision metadata. A story export explicitly labels uncertain events; when the chosen story cutoff falls *inside* a date interval, it warns that the event may not yet have happened. Statistics conservatively count these events only once the end of the possible interval has passed.
+| Color | Narrative suggestion |
+|---|---|
+| Ocean blue | Neutral alternatives / ordinary life |
+| Royal blue | Learning, plans, opportunity |
+| Purple | Identity, introspection, mystery |
+| Red | Adversity, loss, danger or negative paths |
+| Yellow | Uncertainty, decisions, open possibilities |
+| Green | Achievement, healing, personal growth |
+| Pink | Love, romance and dating |
+| Orange | Adventure, major changes, impulsiveness |
+| Turquoise | Friendship, family and support |
+| Lunar gray | Distance, colder periods, solitude or uncertain tone |
 
-For causal-link choices, the latest possible date of a proposed cause must be strictly earlier than the earliest possible day of its effect. If they overlap, their order is unknown, so NEXO will not automatically assert a causal order. A branch originating from an uncertain event begins after the interval's latest possible date. These constraints are intentionally conservative.
+These color meanings are **suggestions only**, never judgments or predictions. Branch color does not affect calculated narrative plausibility, terminal state, or event classification.
 
-## Other features
+![Color guide inside the branch editor](assets/branch-color-guide.png)
 
-- Animated and pannable timeline with zoom, minimap, and unlimited-in-concept nested what-if branches (practical local performance limits apply).
-- Continue the same timeline from any event, with suggested dates and **Save and Add Next**.
-- Personas for different versions of yourself, optional named eras/chapters, marker endings (unknown, hypothetical death, closed).
-- Event types: Moment, Milestone, Nexus, Canonical, Achievement, Thought, with optional offline rule-based classification suggestions.
-- Explicit cause-and-effect links, visual connections, and the Cause & Effect Observatory.
-- Independent Reality Simulator experiments with what-if outcomes and imagined scenes.
-- Optional, **illustrative** narrative plausibility map with editable heuristic weights.
-- Tutorial, slideshow, comparative statistics, and local JSON backups.
-- Export multiverse map as PNG; individual narrative as TXT, Markdown, PNG, or browser Print → Save as PDF; export simulator reports.
+### Friendlier editor forms
 
-**A narrative index percentage is not a scientifically calculated likelihood, personal prediction, or a risk-of-death estimate.** Read [FORMULA.md](FORMULA.md) for the formula and limitations.
+Inline help now explains **Event description and repercussions**, **Description of this alternate reality**, **Current branch state**, **Endpoint date**, and **Endpoint note**. Endpoint date/note are only displayed for closed/unknown/hypothetical-death branches. **First event of this variant is now optional**; leave it blank and use **Continue this timeline** later.
 
-## Using the app
+The guided tutorial now includes importing shared events and semantic colors.
 
-1. Open `index.html` in a modern browser or publish to GitHub Pages.
-2. Start with the fictional demo or choose a clean history.
-3. Add an event and choose the appropriate date precision instead of supplying a made-up day.
-4. Continue the line or create an alternate “what if?” branch; add optional causal relationships.
-5. Export JSON backups frequently. The browser stores data locally and does not sync devices.
+## Other features retained
 
-![Date controls on a phone](assets/preview-date-mobile.png)
+- Five supported event date precisions: exact day, month/year, year, between years, between dates. Uncertain time windows are displayed as dashed spans without inventing a specific day.
+- Chronological reflow, same-line continuation, named eras, personas, endings and local event categorization suggestions.
+- Explicit cause-and-effect relations, simulator experiments, narrative plausibility view (illustrative only), story slideshow and statistics.
+- PNG exports of the map and written stories, TXT/Markdown story exports, print-to-PDF and full JSON backup/restore.
 
-## Deploy to GitHub Pages
+See [FORMULA.md](FORMULA.md) for limitations of the narrative plausibility index.
 
-Upload **all the contents** of this release ZIP to the **root of your repository**, with `index.html` at the root. Open **Settings → Pages**, choose **Deploy from a branch**, `main`, `/ (root)`.
+## Installation / GitHub Pages
 
-Suggested repository name: `nexo-personal-multiverse`. A typical public URL is `https://YOUR-USERNAME.github.io/nexo-personal-multiverse/`.
+1. Download and extract the release archive. Upload its **contents** (not the outer folder) into the root of your GitHub repository, including `index.html`, `README.md`, the release docs, and `assets/`.
+2. In GitHub: **Settings → Pages → Deploy from a branch**, select `main` and `/ (root)`. GitHub Pages will serve the root `index.html`.
+3. Suggested repository name: `nexo-personal-multiverse`. Typical URL: `https://YOUR-USERNAME.github.io/nexo-personal-multiverse/`.
+4. Alternatively, open the `index.html` file directly in a compatible browser. Storage behavior depends on the browser and page origin.
 
-## Upgrade from v0.8.0 or earlier
+## Upgrading from v0.9.0 or earlier
 
-1. In your existing NEXO, **Export JSON backup** and store it somewhere private, outside any public repository.
-2. Replace the repository's root `index.html` and update the documentation/assets from this release.
-3. Keep the **same repository Pages URL** if you want the same browser-local data to remain available.
-4. Reload. Old saved events are automatically treated as exact-day records. If your data is missing, use Import JSON on the original backup.
-5. Commit and create the tag/release. No schema migration or server is required.
+1. Open your existing app and **export a JSON backup**, storing it privately and outside public source control.
+2. Replace the root `index.html` and refresh your documentation/assets.
+3. Keep the **same Pages origin/URL** where possible: browser-local data is tied to the origin, not to your GitHub account.
+4. Refresh and verify existing events/branches/eras/simulations. If necessary, restore using **Import JSON**. An existing `version:1` data envelope is supported.
+5. Create tag `v0.10.0` and a release titled **NEXO v0.10.0 — Shared Events & Semantic Branch Colors**.
 
-```text
-feat: support approximate event dates and adaptive time ranges
-```
+Suggested commit: `feat: add cross-timeline event sharing and semantic branch color guide`
 
-**Git tag:** `v0.9.0`  
-**Release title:** `NEXO v0.9.0 — Approximate Dates & Adaptive Timeline Ranges`  
-**Release notes:** [`RELEASE_NOTES_v0.9.0.md`](RELEASE_NOTES_v0.9.0.md).
+## Privacy and known limitations
 
-## Privacy and limitations
+NEXO saves history to browser `localStorage` under the existing key `nexo-multiverso-v1`. There is no automatic device synchronization, encrypted cloud backup, account login, or server-side recovery. Clearing browser storage can erase personal data; use JSON backups regularly. Backups, narratives and images are **not encrypted**. Never upload real personal history exports or API credentials to a public repository. Read [SECURITY.md](SECURITY.md).
 
-NEXO keeps history in browser `localStorage` under the key `nexo-multiverso-v1`. Clearing site data or switching browser profiles can erase or hide locally saved histories. Backups and exported personal stories are **not encrypted**. Do not upload private histories to your public source-code repository. See [SECURITY.md](SECURITY.md) and `.gitignore`.
+The app is a personal storytelling and reflection tool, **not** a system for predicting death, crime, relationships or future events. The narrative plausibility percentage is illustrative, not a measured probability. A branch's red color also does not imply any factual likelihood of harm.
 
-The app is written in Portuguese (Brazil). There is no AI service, backend, login, automatic cloud recovery, or account synchronization. Branch outcomes remain speculative and are created by the author, not predicted by software.
+## Project and attribution
 
-## Project status & attribution
-
-Personal experiment. No license has been granted to third parties by default; add a license when you decide how the source can be reused. The time-branching metaphor is an original implementation concept and is not affiliated with Marvel or any entertainment franchise.
+NEXO is a personal software experiment, not affiliated with Marvel or any entertainment franchise. No reuse license has been granted by default; add a license when you decide how other developers may reuse the source.

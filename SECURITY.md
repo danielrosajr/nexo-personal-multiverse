@@ -33,3 +33,7 @@ The map percentage is deliberately illustrative and must never be interpreted as
 ## Version 0.9 date precision metadata
 
 Approximate dates are stored in the same locally saved history. Although an event may have an imprecise timestamp, its title, people, description, and place may still be sensitive. The app does not transmit these details to an AI provider or an external database.
+
+## Version 0.10 shared occurrences
+
+Linked events can propagate edits to text, people and places across different variants *on the same device and within the same browser dataset*. Links do not publish or transmit data. Check whether a shared occurrence should retain the same personal details in each story before enabling synchronization.
