@@ -1,5 +1,29 @@
 # Changelog
 
+## [0.9.0] — 2026-10-21 — Approximate Dates & Adaptive Intervals
+
+### Added
+- Five event date precisions: exact day, known month, year only, year-to-year interval, and date-to-date interval.
+- Distinct styling for uncertain events, with dashed on-map interval segments and endpoint markers.
+- Automatic chronological reflow when intermediate events are created within a previously saved date window.
+- Explanations distinguishing possible occurrence windows from confirmed duration or exact dates.
+- New tutorial step for dates with uncertainty and a sample overlapping interval in the fictional demo.
+
+### Improved
+- Moved the date precision picker directly after the event title in the editor.
+- Continued-event date suggestions now follow the **end** of an uncertain interval instead of its earliest possible date.
+- Text, Markdown, PDF/print, and PNG story exports show approximate intervals rather than presenting fictional exact days.
+- Map PNG includes dashed date-range overlays.
+- Causal links can only be assigned when the cause is earlier than the effect without ambiguous overlap; statistics require the possible interval to have ended.
+- New branches originating from uncertain events use the latest possible date as a conservative temporal boundary.
+
+### Backward compatibility
+- Legacy v0.8 and earlier events without `time` metadata remain exact-date events.
+- Data continues using the `nexo-multiverso-v1` localStorage key and the v1 JSON backup envelope.
+- No database or dependency migration.
+
+---
+
 ## [0.8.0] — 2026-10-20
 
 ### Added

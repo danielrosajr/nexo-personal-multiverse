@@ -1,86 +1,104 @@
 # NEXO — Your Personal Multiverse
 
-**A private visual timeline of life events and alternative “what if?” paths.** Record your actual history, build hypothetical branches, inspect causal connections, and compare imagined realities. No account, build tooling, external AI, or cloud database is required.
+**An interactive life timeline for memories, alternate paths, and “what if?” stories.** Build a real-life history, branch it into alternate scenarios, record people and eras, explore cause-and-effect connections, and export narratives.
 
-![NEXO v0.8 narrative plausibility mode](assets/preview-plausibility-desktop.png)
+![NEXO v0.9: approximate events as visual intervals](assets/preview-timeline.png)
 
-## Current release
+**Release:** `0.9.0` · **Tag:** `v0.9.0` · **Stack:** single static HTML file with embedded CSS and JavaScript · **Hosting:** GitHub Pages · **Cloud/database:** none required.
 
-**NEXO `0.8.0` — Narrative Plausibility Map** · Git tag: `v0.8.0` · HTML + CSS + JavaScript · GitHub Pages ready.
+## What's new in v0.9 — approximate event dates
 
-## New in v0.8: narrative plausibility map
+You can save an event without making up an exact calendar date. In the event editor, select:
 
-Toggle **“◉ Mapa de plausibilidade”** in the toolbar to temporarily switch event cards and branch routes into **percentages with a red → amber → green visual scale**. This can be switched off without modifying any events.
+| Date mode | Example shown on your timeline | Meaning |
+|---|---|---|
+| Exact day | `14/08/2002` | Known date |
+| Month and year | `agosto de 2002 (dia incerto)` | Could have happened at any point in that month |
+| Year only | `Em 2006 (dia e mês incertos)` | Could have happened at any point in the year |
+| Between years | `Entre 2007 e 2013` | Could have happened at any point in these inclusive years |
+| Between dates | `Entre 14/08/2007 e 03/12/2013` | Could have happened at any point inside the inclusive date interval |
 
-- Each alternate branch displays a **narrative proximity index**, measured relative to the documented primary timeline.
-- Event cards show that index; branch paths and labels change color with the index.
-- The comparison panel ranks all branches by the index at each branch's last dated event or terminal marker. Select a branch to navigate directly to it.
-- Tune three parameters using sliders: divergence penalty, time decay, and penalty per hypothetical event.
-- Edit a branch and choose **Mild**, **Moderate**, or **Radical** divergence intensity. A stronger deviation reduces the index more than a mild deviation.
-- Export the entire timeline as **PNG while the index mode is on** to include colored paths and percentages.
-- The guided tutorial now explains this feature. Existing JSON exports include the optional `plausibility` settings and each branch's `impact` value.
+![Event editor date precision controls](assets/preview-date-editor.png)
 
-![Mobile screenshot](assets/preview-plausibility-mobile.png)
+**Visual behavior:** an uncertain event gets a dashed marker and a range segment with an ending marker. It is anchored at the **earliest possible day**, strictly for display. Its line extends through the **latest possible day**. The label never claims it occurred on that first day.
 
-### How the model works
+When a new dated event is added between the boundaries (for example, an event in 2010 inside a `2007–2013` range), the timeline automatically introduces an intermediate position and redraws the interval across that new event. This is a visual overlap, **not a claim that the uncertain event preceded or caused the 2010 event**.
 
-For an alternate timeline, the current index is:
+### Data semantics
 
-```text
-Narrative index = round(
-  100 × (1 - forkPenalty / 100) ^ (sum of branch-impact weights)
-      × (1 - yearPenalty / 100) ^ yearsSinceFirstDivergence
-      × (1 - assumptionPenalty / 100) ^ hypotheticalEventsOnThisPath
-)
+```json
+{
+  "id": "example",
+  "lineId": "main",
+  "title": "An uncertain memory",
+  "date": "2007-01-01",
+  "time": {
+    "precision": "range-years",
+    "start": "2007-01-01",
+    "end": "2013-12-31"
+  },
+  "type": "moment"
+}
 ```
 
-Default values are `forkPenalty = 28%`, `yearPenalty = 4% per year`, and `assumptionPenalty = 3% per event`. Impact weights: mild `0.65`, moderate `1`, radical `1.5`. The displayed index is limited to `1%–99%` for alternate paths and `100%` for the real timeline, which means **recorded history, not a predicted certainty**. Time is counted from the first divergence along the selected path. Descendant branches inherit their ancestor branch penalties. Events outside a path, including sibling branches, do **not** automatically decrease its score.
+`time.start` and `time.end` define the possible **occurrence window**. The legacy `date` field is retained as the normalized first possible date for compatibility; it **must not be interpreted as the actual day** when `time.precision` is not `exact`.
 
-The index describes **distance from the primary narrative under a user-editable heuristic**. It is **not** a calibrated likelihood, frequency, actuarial model, safety assessment, prediction, or percentage chance of crime, injury, death, or any other personal outcome. More distance from an observed life history does not scientifically imply a smaller chance of a different life event. The default percentages were selected for visualization, not based on population data. Do not use these scores for consequential decisions.
+Legacy event data lacking `time` is automatically interpreted as an exact-day event, preserving old histories. Exports retain the precision metadata. A story export explicitly labels uncertain events; when the chosen story cutoff falls *inside* a date interval, it warns that the event may not yet have happened. Statistics conservatively count these events only once the end of the possible interval has passed.
 
-See [FORMULA.md](FORMULA.md) for interpretation, examples, and limitations.
+For causal-link choices, the latest possible date of a proposed cause must be strictly earlier than the earliest possible day of its effect. If they overlap, their order is unknown, so NEXO will not automatically assert a causal order. A branch originating from an uncertain event begins after the interval's latest possible date. These constraints are intentionally conservative.
 
-## Features carried forward
+## Other features
 
-- Interactive primary timeline and nested alternate branches, drag/pinch zoom and minimap.
-- One-click **continue this timeline** buttons, automatically suggested date, and “Save & Add Next” flow.
-- Story identities, named eras/chapters, editable fixed colors, Nexus/Canonical/Moment/Milestone/Achievement/Thought event types, local rule-based type suggestions.
-- Editable unknown future (`?`), hypothetical probable-death (`†`), and closed (`■`) terminal markers; these are story labels, **not forecasts**.
-- Explicit causal links with warnings about potentially affected events.
-- Sandbox reality simulations with independent what-if experiments.
-- Step-by-step guided tutorial, normal timeline statistics, presentation/slideshow mode.
-- Exports: map as PNG, story as TXT/Markdown/PNG, browser print-to-PDF, simulation reports and full JSON backups.
-- Phone and desktop UI; independently scrolling sidebar; entirely local history by default.
+- Animated and pannable timeline with zoom, minimap, and unlimited-in-concept nested what-if branches (practical local performance limits apply).
+- Continue the same timeline from any event, with suggested dates and **Save and Add Next**.
+- Personas for different versions of yourself, optional named eras/chapters, marker endings (unknown, hypothetical death, closed).
+- Event types: Moment, Milestone, Nexus, Canonical, Achievement, Thought, with optional offline rule-based classification suggestions.
+- Explicit cause-and-effect links, visual connections, and the Cause & Effect Observatory.
+- Independent Reality Simulator experiments with what-if outcomes and imagined scenes.
+- Optional, **illustrative** narrative plausibility map with editable heuristic weights.
+- Tutorial, slideshow, comparative statistics, and local JSON backups.
+- Export multiverse map as PNG; individual narrative as TXT, Markdown, PNG, or browser Print → Save as PDF; export simulator reports.
 
-## Installation and publishing
+**A narrative index percentage is not a scientifically calculated likelihood, personal prediction, or a risk-of-death estimate.** Read [FORMULA.md](FORMULA.md) for the formula and limitations.
 
-**Local:** open `index.html` in a modern browser.
+## Using the app
 
-**GitHub Pages:** upload the contents of the ZIP at the **root** of your repository (not within a nested version folder). In **Settings → Pages**, choose **Deploy from a branch**, branch `main`, folder `/(root)`. Typical URL: `https://YOUR-USERNAME.github.io/nexo-personal-multiverse/`.
+1. Open `index.html` in a modern browser or publish to GitHub Pages.
+2. Start with the fictional demo or choose a clean history.
+3. Add an event and choose the appropriate date precision instead of supplying a made-up day.
+4. Continue the line or create an alternate “what if?” branch; add optional causal relationships.
+5. Export JSON backups frequently. The browser stores data locally and does not sync devices.
 
-## Updating from v0.7 or earlier
+![Date controls on a phone](assets/preview-date-mobile.png)
 
-1. **Export a private JSON backup** from your current installation and keep it outside any public repository.
-2. Replace the old root `index.html` with the new one, add the documentation, and replace preview images if desired.
-3. Preserve the existing Pages URL. NEXO still reads browser data under the unchanged `nexo-multiverso-v1` key; old branches default to moderate divergence and default index settings.
-4. Reload the page; if the browser no longer has data, use Import JSON and restore your backup.
-5. Create git tag **`v0.8.0`**, with release title **`NEXO v0.8.0 — Narrative Plausibility Map`**. Publish the notes in `RELEASE_NOTES_v0.8.0.md`.
+## Deploy to GitHub Pages
 
-Suggested commit:
+Upload **all the contents** of this release ZIP to the **root of your repository**, with `index.html` at the root. Open **Settings → Pages**, choose **Deploy from a branch**, `main`, `/ (root)`.
+
+Suggested repository name: `nexo-personal-multiverse`. A typical public URL is `https://YOUR-USERNAME.github.io/nexo-personal-multiverse/`.
+
+## Upgrade from v0.8.0 or earlier
+
+1. In your existing NEXO, **Export JSON backup** and store it somewhere private, outside any public repository.
+2. Replace the repository's root `index.html` and update the documentation/assets from this release.
+3. Keep the **same repository Pages URL** if you want the same browser-local data to remain available.
+4. Reload. Old saved events are automatically treated as exact-day records. If your data is missing, use Import JSON on the original backup.
+5. Commit and create the tag/release. No schema migration or server is required.
 
 ```text
-feat: add narrative plausibility map and branching index
+feat: support approximate event dates and adaptive time ranges
 ```
 
-No database migration, dependencies, or build step is required.
+**Git tag:** `v0.9.0`  
+**Release title:** `NEXO v0.9.0 — Approximate Dates & Adaptive Timeline Ranges`  
+**Release notes:** [`RELEASE_NOTES_v0.9.0.md`](RELEASE_NOTES_v0.9.0.md).
 
-## Privacy and limits
+## Privacy and limitations
 
-- Personal life histories, exported images, and JSON backups are **private data**. Do not commit them to a public repo. See [SECURITY.md](SECURITY.md) and `.gitignore`.
-- Data is stored in `localStorage`, independently in each browser profile and URL. It does **not** automatically synchronize between browsers/devices. Clearing site data can erase it; export backups routinely.
-- The index is intentionally **illustrative**. Do not treat alternate-timeline percentages as statistical predictions.
-- Larger timelines may exhaust the browser's storage or canvas memory limits when exporting images.
+NEXO keeps history in browser `localStorage` under the key `nexo-multiverso-v1`. Clearing site data or switching browser profiles can erase or hide locally saved histories. Backups and exported personal stories are **not encrypted**. Do not upload private histories to your public source-code repository. See [SECURITY.md](SECURITY.md) and `.gitignore`.
 
-## License and attribution
+The app is written in Portuguese (Brazil). There is no AI service, backend, login, automatic cloud recovery, or account synchronization. Branch outcomes remain speculative and are created by the author, not predicted by software.
 
-This repository does not automatically grant third-party reuse rights; add a license if you intend to distribute the code for reuse. Visual branching timelines are presented as a narrative metaphor and NEXO is not affiliated with Marvel or any franchise.
+## Project status & attribution
+
+Personal experiment. No license has been granted to third parties by default; add a license when you decide how the source can be reused. The time-branching metaphor is an original implementation concept and is not affiliated with Marvel or any entertainment franchise.

@@ -29,3 +29,7 @@ The `simulations` collection is stored in the same browser-local JSON blob as th
 ## Version 0.8 narrative indexes
 
 The map percentage is deliberately illustrative and must never be interpreted as a scientific likelihood or as a prediction of violence, mortality, crime, or any real-world outcome.
+
+## Version 0.9 date precision metadata
+
+Approximate dates are stored in the same locally saved history. Although an event may have an imprecise timestamp, its title, people, description, and place may still be sensitive. The app does not transmit these details to an AI provider or an external database.
