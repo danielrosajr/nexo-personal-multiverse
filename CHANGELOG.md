@@ -1,5 +1,66 @@
 # Changelog
 
+## [0.8.0] — 2026-10-20
+
+### Added
+- Toggleable narrative plausibility view with per-event and per-branch percentages and gradient coloring.
+- Formula panel with adjustable weights and a clear fictional-index disclaimer.
+- Editable mild/moderate/radical divergence impacts.
+- Compatible JSON fields `plausibility` and `branches[].impact`.
+- Narrative-index PNG map export and guided tutorial step.
+
+### Changed
+- Browser-only calculations; no AI or cloud API.
+- Branch comparisons based only on ancestor forks and hypothetical events in the selected path; sibling branches are not treated as exhaustive or equiprobable.
+- Mobile panel placement and toggle accessibility.
+
+### Compatibility
+- Preserves existing v0.7 and earlier timeline data, events, causes, eras, simulations, and export flows.
+
+---
+
+## [0.7.0] — 2026-10-20 — Timeline Continuation
+
+### Added
+- **Continue this timeline** action on event details (same branch, not a new variant).
+- Quick `+` action directly on event cards; touch-visible and keyboard-focusable.
+- **Continue from latest event** command in the timeline details panel.
+- Contextual editor banner identifying the originating event and timeline.
+- Default date one day after the reference event, with editable date and boundary checks.
+- **Save and create next** button for successive event entry.
+- Condensed local-classifier presentation during event continuation; expand for full options.
+- Guided-tutorial step explaining event continuations.
+
+### Changed
+- Events with identical dates maintain narrative insertion order, making backfilled stories easier to browse.
+- Newly created events are centered in the map after saving.
+- Continued events cannot inadvertently move to another branch; the line ID is fixed for the continuation flow.
+
+### Preserved
+- Existing `localStorage` key; v0.6 and earlier JSON backups load as before.
+- All prior branches, eras, relationships, simulation experiments, and exports.
+
+---
+
+## [0.6.0] — Smart Event Classification
+
+### Added
+- Offline, rule-based classification suggestions while typing an event title and description (Brazilian Portuguese).
+- Plain-language reasons and alternative category suggestions.
+- New **Milestone** event type, distinct from personal achievements.
+- Optional automatic application; manual overrides disable the auto-update.
+- `typeSource` metadata for newly saved event records.
+- An additional guided-tour step describing classification.
+
+### Maintained
+- No AI requests, API keys, backend, account or database.
+- Data compatibility with v0.5 and earlier; no automatic reclassification of prior events.
+- Reality Simulator, causal linking, branches, eras, stories, PNG/PDF exports and JSON backups.
+
+### Limitations
+- Heuristics are intentionally simple and can misclassify unfamiliar phrases. They do not predict the future or infer personal meaning reliably.
+
+
 All notable changes to NEXO are documented here. Releases follow Semantic Versioning.
 
 ## [0.5.0] — 2026-10-20

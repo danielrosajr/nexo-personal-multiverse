@@ -25,3 +25,7 @@ If you encounter a security concern, avoid sharing real personal timeline data i
 ## Version 0.5 experiment privacy
 
 The `simulations` collection is stored in the same browser-local JSON blob as the original personal timeline. The simulator does not call external services. Causal assumptions and exported narratives should be treated as personal data; store backups securely and do not commit them to a public repository.
+
+## Version 0.8 narrative indexes
+
+The map percentage is deliberately illustrative and must never be interpreted as a scientific likelihood or as a prediction of violence, mortality, crime, or any real-world outcome.

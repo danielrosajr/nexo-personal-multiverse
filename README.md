@@ -1,106 +1,86 @@
 # NEXO — Your Personal Multiverse
 
-A visual, private, browser-based life timeline for exploring **what-if** questions. Track real moments on a primary timeline, branch into alternate lives, connect events through cause and effect, and explore how different choices *might* change later chapters. The branching-universe aesthetic is a storytelling motif; NEXO is not associated with Marvel or another franchise.
+**A private visual timeline of life events and alternative “what if?” paths.** Record your actual history, build hypothetical branches, inspect causal connections, and compare imagined realities. No account, build tooling, external AI, or cloud database is required.
 
-![Reality Simulator — desktop](assets/preview-simulator.png)
+![NEXO v0.8 narrative plausibility mode](assets/preview-plausibility-desktop.png)
 
-## Release
+## Current release
 
-**Version `0.5.0` — Reality Simulator** | Tag: `v0.5.0` | No build tools, API keys, accounts, databases, or external dependencies.
+**NEXO `0.8.0` — Narrative Plausibility Map** · Git tag: `v0.8.0` · HTML + CSS + JavaScript · GitHub Pages ready.
 
-Open `index.html` locally or publish these files on **GitHub Pages**. Each browser stores its own private data locally via `localStorage`.
+## New in v0.8: narrative plausibility map
 
-## New in 0.5.0
+Toggle **“◉ Mapa de plausibilidade”** in the toolbar to temporarily switch event cards and branch routes into **percentages with a red → amber → green visual scale**. This can be switched off without modifying any events.
 
-### Reality Simulator (new)
+- Each alternate branch displays a **narrative proximity index**, measured relative to the documented primary timeline.
+- Event cards show that index; branch paths and labels change color with the index.
+- The comparison panel ranks all branches by the index at each branch's last dated event or terminal marker. Select a branch to navigate directly to it.
+- Tune three parameters using sliders: divergence penalty, time decay, and penalty per hypothetical event.
+- Edit a branch and choose **Mild**, **Moderate**, or **Radical** divergence intensity. A stronger deviation reduces the index more than a mild deviation.
+- Export the entire timeline as **PNG while the index mode is on** to include colored paths and percentages.
+- The guided tutorial now explains this feature. Existing JSON exports include the optional `plausibility` settings and each branch's `impact` value.
 
-1. Create at least one alternate timeline by branching from a dated event.
-2. Open **Reality Simulator** from the toolbar or sidebar. A new experiment is created for your selected branch (or choose an existing one).
-3. Name your experiment, choose its alternate timeline, set the last date you want to explore, and describe the hypothetical change.
-4. Under **Effects & Choices**, review events missing from the inherited timeline or flagged by the causal model. Mark individual outcomes as **Unknown**, **Would still happen**, **Would not happen**, or **Would happen differently**. Add your own reasoning for each event.
-5. Under **Projected Path**, view the chronological story assembled from the inherited record, events already on the alternative timeline, decisions made inside the experiment, and your manually created hypothetical scenes.
-6. Save multiple experiments for the same branch, duplicate or delete them without changing actual events. All edits save locally and are included in JSON backup.
-7. Copy or export the scenario as TXT, Markdown, or use the browser's **Print / Save as PDF** function.
+![Mobile screenshot](assets/preview-plausibility-mobile.png)
 
-**Important:** This is an interactive, rules-based hypothesis organizer **without generative AI**. It does not create new life events automatically, compute likelihoods, or tell you what would actually have happened. A dependency is an author's assumption, not a scientific prediction. Statements such as “would not happen” are choices made **inside that experiment only**.
+### How the model works
 
-![Scenario path](assets/preview-projected-path.png)
+For an alternate timeline, the current index is:
 
-### Guided tour (fixed)
+```text
+Narrative index = round(
+  100 × (1 - forkPenalty / 100) ^ (sum of branch-impact weights)
+      × (1 - yearPenalty / 100) ^ yearsSinceFirstDivergence
+      × (1 - assumptionPenalty / 100) ^ hypotheticalEventsOnThisPath
+)
+```
 
-- Ten steps including the new simulator.
-- The old full-screen blur has been replaced with a spotlight that dims only the area outside the indicated UI element.
-- The spotlight updates after the mobile sidebar's opening animation, rather than remaining positioned over its old location.
-- Mobile experiments offer a collapsible setup area so the scenario results are visible sooner.
-- Replay the tour from the toolbar or sidebar. Existing completion of the v0.4 tour is respected.
+Default values are `forkPenalty = 28%`, `yearPenalty = 4% per year`, and `assumptionPenalty = 3% per event`. Impact weights: mild `0.65`, moderate `1`, radical `1.5`. The displayed index is limited to `1%–99%` for alternate paths and `100%` for the real timeline, which means **recorded history, not a predicted certainty**. Time is counted from the first divergence along the selected path. Descendant branches inherit their ancestor branch penalties. Events outside a path, including sibling branches, do **not** automatically decrease its score.
 
-![Mobile tour](assets/preview-guided-tour.png)
+The index describes **distance from the primary narrative under a user-editable heuristic**. It is **not** a calibrated likelihood, frequency, actuarial model, safety assessment, prediction, or percentage chance of crime, injury, death, or any other personal outcome. More distance from an observed life history does not scientifically imply a smaller chance of a different life event. The default percentages were selected for visualization, not based on population data. Do not use these scores for consequential decisions.
 
-## Existing features
+See [FORMULA.md](FORMULA.md) for interpretation, examples, and limitations.
 
-- **Primary timeline** for real events: dates, descriptions, people, places, canonical moments, Nexus events, and personal achievements.
-- **Alternate branches**, including branches off other branches, with individual names, persona identities, colors and hypothetical endings (unknown future / likely death / closed / open).
-- **Eras and chapters** with time ranges and descriptions.
-- **Cause & Effect Observatory**, where earlier events may be declared *necessary* or *influential* for later events. An altered fork highlights connected outcomes for review, including downstream links. The model never automatically deletes records.
-- **Visual causal links** as optional dotted lines.
-- **People/place statistics** reflecting recorded events and inheritance at the fork date.
-- **Presentation mode** to play through the recorded events in a selected timeline.
-- **Story exports:** TXT, Markdown, tall PNG image, and browser printing to PDF.
-- **Full multiverse map PNG export**, including event cards, colored branches, eras, and terminal markers.
-- **Portable JSON backup and restore** for all timelines, eras, causal links, endings, and simulator experiments.
+## Features carried forward
 
-## Running locally or on GitHub Pages
+- Interactive primary timeline and nested alternate branches, drag/pinch zoom and minimap.
+- One-click **continue this timeline** buttons, automatically suggested date, and “Save & Add Next” flow.
+- Story identities, named eras/chapters, editable fixed colors, Nexus/Canonical/Moment/Milestone/Achievement/Thought event types, local rule-based type suggestions.
+- Editable unknown future (`?`), hypothetical probable-death (`†`), and closed (`■`) terminal markers; these are story labels, **not forecasts**.
+- Explicit causal links with warnings about potentially affected events.
+- Sandbox reality simulations with independent what-if experiments.
+- Step-by-step guided tutorial, normal timeline statistics, presentation/slideshow mode.
+- Exports: map as PNG, story as TXT/Markdown/PNG, browser print-to-PDF, simulation reports and full JSON backups.
+- Phone and desktop UI; independently scrolling sidebar; entirely local history by default.
 
-1. Download this release ZIP and unzip it.
-2. Double-click `index.html` to start using NEXO. GitHub Pages over HTTPS is recommended for consistent browser storage and exporting.
-3. To publish, create a repository named, for example, **`nexo-personal-multiverse`**, and upload everything in the ZIP while keeping `index.html` at the root.
-4. Go to **Repository Settings → Pages → Build and deployment → Deploy from a branch**, choose `main` and `/(root)`.
-5. Visit `https://YOUR-USERNAME.github.io/nexo-personal-multiverse/` once Pages has finished deploying.
+## Installation and publishing
 
-**Do not upload personal export files to a public repository.** Your browser's local records are not deployed with the static website.
+**Local:** open `index.html` in a modern browser.
 
-## Updating from 0.4.x (and earlier)
+**GitHub Pages:** upload the contents of the ZIP at the **root** of your repository (not within a nested version folder). In **Settings → Pages**, choose **Deploy from a branch**, branch `main`, folder `/(root)`. Typical URL: `https://YOUR-USERNAME.github.io/nexo-personal-multiverse/`.
 
-1. In the old version, click **Backup**, save its JSON file, and keep an additional copy outside the repository.
-2. Replace the previous `index.html` with the one in this release; also update documentation and screenshots.
-3. Keep using the **exact same GitHub Pages URL and browser profile** to retain browser-local data. The storage key remains `nexo-multiverso-v1`, with backward-compatible hydration of older objects.
-4. If the browser lost its local data, use **Import** to restore the exported JSON file.
-5. Refresh the page after deployment. If a cached release remains, hard-refresh/reopen the tab.
+## Updating from v0.7 or earlier
 
-**Version 0.5.0 adds** an optional `simulations` array to the JSON structure; older data loads with `simulations: []` and continues to work.
+1. **Export a private JSON backup** from your current installation and keep it outside any public repository.
+2. Replace the old root `index.html` with the new one, add the documentation, and replace preview images if desired.
+3. Preserve the existing Pages URL. NEXO still reads browser data under the unchanged `nexo-multiverso-v1` key; old branches default to moderate divergence and default index settings.
+4. Reload the page; if the browser no longer has data, use Import JSON and restore your backup.
+5. Create git tag **`v0.8.0`**, with release title **`NEXO v0.8.0 — Narrative Plausibility Map`**. Publish the notes in `RELEASE_NOTES_v0.8.0.md`.
 
-## Storage, privacy, and limits
+Suggested commit:
 
-- Local data is stored in browser **localStorage**; there are **no accounts, cloud sync, server APIs, trackers or analytics**.
-- Clearing browser site data, changing the site URL/origin, switching devices, or using private browsing can cause data loss. Export and safely store **JSON backups** often.
-- Exports can contain sensitive personal information and are **not encrypted**; treat them as private documents.
-- The simulator runs on your own causal links and manual assumptions, not a trained model or a probability engine.
-- No AI inference, external web search, PDF service, image hosting service, or online content uploads occur.
-- Large maps may exceed browser image export memory limits. Use narrative text or partial exports where applicable.
-- GitHub Pages is static hosting. Multi-device sync would require optional backend development in a future release.
+```text
+feat: add narrative plausibility map and branching index
+```
 
-## Technical architecture
+No database migration, dependencies, or build step is required.
 
-Single-file HTML, CSS, and vanilla JavaScript. SVG-based timeline, Canvas PNG export, browser-native PDF printing, client-side data persistence, no build pipeline.
+## Privacy and limits
 
-The simulator persists a collection of `{ id, branchId, name, until, premise, answers, scenes }` objects; event identities and causal references are reused rather than duplicated in user data. Scenario responses and scenes **never mutate** the timeline's event collection.
+- Personal life histories, exported images, and JSON backups are **private data**. Do not commit them to a public repo. See [SECURITY.md](SECURITY.md) and `.gitignore`.
+- Data is stored in `localStorage`, independently in each browser profile and URL. It does **not** automatically synchronize between browsers/devices. Clearing site data can erase it; export backups routinely.
+- The index is intentionally **illustrative**. Do not treat alternate-timeline percentages as statistical predictions.
+- Larger timelines may exhaust the browser's storage or canvas memory limits when exporting images.
 
-## Repository versioning
+## License and attribution
 
-- Suggested repository: `nexo-personal-multiverse`
-- Current release tag: **`v0.5.0`**
-- Release title: **`NEXO v0.5.0 — Reality Simulator`**
-- Conventional commit: **`feat: add reality simulator and fix guided tour spotlight`**
-- See [`CHANGELOG.md`](CHANGELOG.md) and [`RELEASE_NOTES_v0.5.0.md`](RELEASE_NOTES_v0.5.0.md).
-
-## Roadmap ideas
-
-- Optional AI-assisted suggestions with explicit consent and clear confidence/uncertainty labeling
-- Per-simulation charts for changes in acquaintances, places and achievements
-- Interactive choice-based RPG mode / convergence comparison
-- Stronger backups, encrypted archives, opt-in cloud sync
-- Improved accessibility, keyboard navigation, larger-scale performance
-
-## License
-
-No open-source license is included with this release. The project owner can choose an appropriate license before inviting public contributions or redistributing modified versions.
+This repository does not automatically grant third-party reuse rights; add a license if you intend to distribute the code for reuse. Visual branching timelines are presented as a narrative metaphor and NEXO is not affiliated with Marvel or any franchise.
