@@ -1,3 +1,22 @@
+## [0.11.0] — 2026-10-21
+
+### Added
+- A private Fragments memory inbox with fast capture, freeform notes, questions, and tags.
+- People/place metadata, multiple optional approximate date precisions, filter and accent-insensitive full-text search.
+- Non-destructive conversion from a memory fragment to an ordinary timeline event; explicit unknown-date review step.
+- Main-timeline gap prompts and an open-question idea list; neither makes claims about missing memories.
+- Bulk note import (one note per line; duplicate detection) and plain-text memory export.
+- Fragment persistence in the existing browser-local JSON envelope and backward-compatible migration.
+- Fragment step in the guided tour, toolbar/sidebar entry points and mobile responsive view.
+
+### Fixed
+- Prevent the first-run tutorial from appearing on top of an already opened Fragment Inbox or event editor.
+- Preserve the existing timeline and simulation state on upgrades from v0.10 and prior.
+
+### Security / limitations
+- Memory fragments contain potentially sensitive biographical notes; export is not encrypted and uses the browser's localStorage.
+- No AI is used to invent memories or guess dates. All dates and memories are user-provided.
+
 # Changelog
 
 ## [0.10.0] — 2026-10-21 — Shared Events & Semantic Branch Colors

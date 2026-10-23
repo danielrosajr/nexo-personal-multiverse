@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="theme-color" content="#090c17" />
-<title>NEXO 0.10 — O Multiverso da Minha Vida</title>
+<title>NEXO 0.11 — O Multiverso da Minha Vida</title>
 <style>
 :root{color-scheme:dark;--bg:#080b14;--panel:#0e1425;--card:#141b2c;--white:#f7f5ff;--muted:#8894ad;--border:#293149;--amber:#ffcd83;--teal:#76e3eb;--pink:#e9a4ff;--accent:#ffcf89;--sidebar:268px;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--white);overflow:hidden}button,input,textarea,select{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--amber);outline-offset:3px}button:disabled{opacity:.45;cursor:not-allowed}.app{display:flex;height:100dvh;min-height:500px;overflow:hidden}.sidebar{flex:0 0 var(--sidebar);width:var(--sidebar);background:linear-gradient(180deg,#10182c 0%,#0b1020 100%);border-right:1px solid rgba(155,174,221,.16);position:relative;z-index:25;display:flex;flex-direction:column}.brand{padding:31px 22px 24px;border-bottom:1px solid #222b43;display:flex;align-items:center;gap:12px}.brandmark{width:43px;height:43px;border-radius:15px;display:grid;place-items:center;background:radial-gradient(circle at 30% 20%,#fac98d32,#b97fd62b 65%,#58638b14);border:1px solid #ab9b8b4b;box-shadow:0 0 28px #ae80e41a}.brandmark svg{width:27px;height:27px}.brandname{font-size:20px;font-weight:850;letter-spacing:.19em;line-height:1}.brandtag{color:#8290a8;font-size:10px;letter-spacing:.13em;margin-top:8px}.side-section{padding:21px 13px 0}.side-label{display:flex;justify-content:space-between;align-items:center;color:#7d89a4;font-weight:760;font-size:10px;letter-spacing:.18em;padding:0 13px;margin-bottom:11px;text-transform:uppercase}.side-label small{color:#9fb0d1;font-size:11px;letter-spacing:0}.line-list{display:flex;flex-direction:column;gap:7px;max-height:46vh;overflow-y:auto;scrollbar-color:#3d465e transparent;scrollbar-width:thin}.line-entry{width:100%;text-align:left;border:1px solid transparent;border-radius:14px;background:transparent;padding:13px 12px;display:flex;align-items:center;gap:12px;color:#d8deef;transition:background .18s,border-color .18s}.line-entry:hover,.line-entry.active{background:#1a2339;border-color:#303c58}.line-dot{flex:0 0 9px;height:9px;border-radius:50%;background:var(--dot);box-shadow:0 0 15px var(--dot)}.line-content{min-width:0;flex:1}.line-entry b{display:block;font-size:12px;font-weight:720;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.line-entry span.sub{display:block;font-size:10px;color:#8290a7;line-height:1.6}.side-note{margin:auto 18px 17px;border:1px solid #29334d;border-radius:18px;background:linear-gradient(145deg,#20223a,#111b31);padding:17px}.side-note .side-note-top{font-size:12px;color:#ffdcaa;letter-spacing:.025em;font-weight:790}.side-note p{margin:10px 0 14px;color:#aeb7cd;font-size:11.5px;line-height:1.6}.side-note button{border:1px solid #55627b;background:#252e43;border-radius:10px;color:#edf0f8;padding:9px 11px;font-size:11px;font-weight:720}.side-footer{display:flex;gap:7px;padding:0 15px 15px}.side-footer button{flex:1;border:1px solid #2c364f;border-radius:10px;background:#111b2c;color:#aeb9cf;font-size:11px;padding:11px 5px}.main{flex:1;position:relative;min-width:0;display:flex;flex-direction:column}.topbar{position:absolute;top:0;left:0;right:0;z-index:12;padding:29px 34px 20px;pointer-events:none;display:flex;justify-content:space-between;align-items:flex-start;gap:12px;background:linear-gradient(180deg,#090d19 4%,#090d19eb 49%,transparent)}.topbar>*{pointer-events:auto}.eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:.28em;font-weight:780;color:#c8a77d;margin:0 0 10px}.heading{font-size:clamp(20px,2.2vw,32px);line-height:1.18;margin:0;letter-spacing:-.055em;font-weight:760}.heading i{font-style:normal;color:#f2c995}.subtitle{margin:9px 0 0;color:#93a0bb;font-size:12px}.actions{display:flex;gap:9px;align-items:center}.btn{border:1px solid #3c4560;background:#1d2639;color:#eff1f7;padding:12px 14px;min-height:42px;border-radius:12px;font-size:11px;letter-spacing:.015em;font-weight:790;box-shadow:0 2px 18px #0002;white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:background .16s,transform .16s}.btn:hover{background:#29334b;transform:translateY(-1px)}.btn-primary{background:linear-gradient(130deg,#ffe0a0,#e9a6a0);border-color:#f4cc96;color:#322026;box-shadow:0 0 24px #ffbd8650}.btn-primary:hover{background:linear-gradient(130deg,#ffe7b4,#f1b2aa)}.btn-ghost{background:#11182caa}.btn-danger{border-color:#6d3645;background:#3b1c2a;color:#ffc8d1}.icon-btn{width:42px;height:42px;padding:0;font-size:19px}.mobile-menu{display:none}.stage{position:absolute;inset:0;overflow:hidden;touch-action:none;cursor:grab;user-select:none;background:radial-gradient(ellipse 700px 400px at 45% 36%,#19224664,transparent 73%),radial-gradient(ellipse 580px 380px at 84% 79%,#26203b5c,transparent 78%),radial-gradient(ellipse 700px 340px at -20% 72%,#15304733,transparent 76%),#080b14}.stage.grabbing{cursor:grabbing}.stage::before{content:"";pointer-events:none;position:absolute;inset:0;opacity:.30;background-image:linear-gradient(#57618710 1px,transparent 1px),linear-gradient(90deg,#57618710 1px,transparent 1px);background-size:68px 68px;mask-image:radial-gradient(ellipse at center,#000,transparent 90%)}.noise{position:absolute;inset:0;pointer-events:none;opacity:.10;background-image:url('data:image/svg+xml,%3Csvg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="n"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23n)" opacity="0.35"/%3E%3C/svg%3E')}.stars{position:absolute;inset:0;pointer-events:none}.star{position:absolute;border-radius:50%;background:#d6ddff;animation:twinkle var(--duration) ease-in-out infinite alternate;opacity:var(--opacity);box-shadow:0 0 9px #9fbaff33}@keyframes twinkle{from{opacity:calc(var(--opacity) * .3)}to{opacity:var(--opacity)}}.world{position:absolute;top:0;left:0;transform-origin:0 0;will-change:transform}.world-svg{position:absolute;top:-2500px;left:-1000px;overflow:visible;pointer-events:none}.world-svg .main-glow{fill:none;stroke:#efaa54;stroke-width:24;opacity:.22;filter:url(#mainBlur)}.world-svg .main-core{fill:none;stroke:#ffce83;stroke-width:4.4;stroke-linecap:round;filter:drop-shadow(0 0 7px #ffcb78)}.world-svg .flow{fill:none;stroke:#fff5d4;stroke-width:2;stroke-dasharray:4 47;stroke-linecap:round;opacity:.8;animation:flow 6s linear infinite}@keyframes flow{to{stroke-dashoffset:-255}}.world-svg .branch-glow{fill:none;stroke-width:15;opacity:.16;filter:url(#mainBlur)}.world-svg .branch-path{fill:none;stroke-width:3.6;stroke-linecap:round;filter:drop-shadow(0 0 5px currentColor)}.world-svg .branch-flow{fill:none;stroke-width:1.7;stroke-dasharray:3 38;opacity:.85;animation:flow 7s linear infinite}.world-svg .continuation{fill:none;stroke-width:2;stroke-linecap:round;stroke-dasharray:5 14;opacity:.52}.world-svg .endpoint{opacity:.9}.world-label{position:absolute;transform:translateY(-50%);white-space:nowrap;font-size:10px;letter-spacing:.19em;color:#ceac75;font-weight:850;text-shadow:0 0 18px #e8b96768;pointer-events:none}.branch-label{position:absolute;transform:translateY(-50%);max-width:310px;white-space:nowrap;font-size:9px;letter-spacing:.10em;font-weight:760;pointer-events:none;opacity:.68}.event{position:absolute;width:224px;z-index:2;transform:translate(-50%,-100%);cursor:pointer;user-select:none}.event-hit{height:23px;position:relative}.event-dot{position:absolute;left:50%;bottom:3px;transform:translate(-50%,50%);width:16px;height:16px;border:4px solid #0d1321;background:var(--line-color);border-radius:50%;box-shadow:0 0 0 1px var(--line-color),0 0 22px var(--line-color);transition:transform .2s}.event:hover .event-dot,.event.selected .event-dot{transform:translate(-50%,50%) scale(1.25)}.event-card{margin-bottom:0;background:linear-gradient(130deg,#1a2032f5,#121a2cf2);border:1px solid #49536b;border-top-color:#686f81;border-radius:16px;padding:15px 15px 14px;box-shadow:0 12px 34px #0006,0 0 30px #070d1b;transition:border-color .2s,transform .2s,box-shadow .2s;position:relative;overflow:hidden}.event-card::before{content:"";position:absolute;inset:0 0 auto 0;height:2px;background:var(--line-color);opacity:.76}.event:hover .event-card,.event.selected .event-card{border-color:var(--line-color);transform:translateY(-4px);box-shadow:0 18px 50px #0009,0 0 34px color-mix(in srgb,var(--line-color) 23%,transparent)}.event-head{display:flex;gap:6px;align-items:center;justify-content:space-between;margin-bottom:9px}.event-date{font-size:10px;font-weight:760;color:#9fadbe}.type-pill{font-size:8px;letter-spacing:.07em;font-weight:880;white-space:nowrap;border-radius:5px;padding:5px 6px;background:#25334c;color:#b6c8ea}.type-pill.nexus{background:#513351;color:#ffd6ff}.type-pill.canon{background:#493a29;color:#ffe1a9}.type-pill.thought{background:#214344;color:#a9e9db}.event-title{font-size:14px;font-weight:760;line-height:1.28;letter-spacing:-.02em;margin:0 0 6px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.event-desc{color:#8997b1;font-size:10px;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:15px}.event.nexus .event-card::after{content:"✦";position:absolute;right:8px;bottom:0px;color:#dc8fea44;font-size:34px}.bottom-bar{pointer-events:none;z-index:10;position:absolute;bottom:24px;left:28px;right:28px;display:flex;align-items:flex-end;justify-content:space-between;gap:14px}.bottom-bar>*{pointer-events:auto}.hint{max-width:420px;border:1px solid #2e374d;background:#10172bdb;backdrop-filter:blur(15px);border-radius:13px;color:#a4adc3;padding:12px 15px;font-size:11px;display:flex;align-items:center;gap:9px;box-shadow:0 8px 30px #0004}.hint svg{flex:0 0 auto}.view-controls{display:flex;flex-direction:column;gap:8px}.control{width:40px;height:40px;border:1px solid #374158;color:#d1daed;background:#1a2338dd;border-radius:10px;backdrop-filter:blur(12px);font-size:18px;font-weight:600}.control:hover{background:#33405c}.right-bottom{display:flex;align-items:flex-end;gap:15px}.minimap{position:relative;border:1px solid #3c4760;border-radius:14px;background:#11192cdb;backdrop-filter:blur(12px);width:200px;height:114px;cursor:crosshair;overflow:hidden}.minimap svg{display:block;width:100%;height:100%}.mini-viewport{position:absolute;pointer-events:none;border:1px solid #edcfa2;background:#d2aa7820;border-radius:3px}.badge-demo{position:absolute;top:147px;left:34px;z-index:8;background:#1f2540af;border:1px solid #3b4163;padding:7px 12px;border-radius:10px;color:#a8b0c9;font-weight:690;font-size:10px;letter-spacing:.025em;pointer-events:none}.detail-panel{position:absolute;z-index:20;right:25px;top:165px;width:min(330px,calc(100% - 40px));max-height:calc(100% - 320px);overflow:auto;background:linear-gradient(145deg,#1b2338f7,#101729f8);border:1px solid #4a5470;border-radius:20px;padding:21px;box-shadow:0 25px 60px #0009;backdrop-filter:blur(20px);animation:detail-in .25s ease-out}.detail-panel[hidden]{display:none}@keyframes detail-in{from{transform:translateX(14px);opacity:0}to{transform:none;opacity:1}}.detail-head{display:flex;align-items:center;justify-content:space-between;gap:10px}.detail-head .cap{text-transform:uppercase;letter-spacing:.19em;font-size:10px;color:#f7c99f;font-weight:750}.detail-x{background:none;border:0;color:#bac4da;font-size:24px;line-height:1;padding:3px 5px}.detail-panel h2{font-size:22px;letter-spacing:-.04em;line-height:1.15;margin:18px 0 8px}.detail-sub{color:#a2acc0;font-size:11px;line-height:1.6}.detail-desc{font-size:12.5px;line-height:1.72;color:#d2d9e7;white-space:pre-wrap;margin:18px 0 18px;padding:16px;background:#111829;border:1px solid #29354e;border-radius:13px}.detail-buttons{display:flex;flex-direction:column;gap:9px}.detail-buttons .btn{width:100%}.detail-buttons .rowbtn{display:flex;gap:8px}.detail-buttons .rowbtn .btn{flex:1}.detail-meta{font-size:10px;color:#9ba7bb;margin-top:18px;border-top:1px solid #354158;padding-top:14px;line-height:1.6}.overlay{position:fixed;inset:0;z-index:50;background:#000b;backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:20px}.overlay.open{display:flex}.modal{background:linear-gradient(160deg,#1b243b,#101827);border:1px solid #52607c;border-radius:22px;box-shadow:0 35px 100px #000c;width:min(530px,100%);max-height:min(90dvh,740px);overflow:auto;padding:27px}.modal-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}.modal-head h2{font-size:24px;letter-spacing:-.05em;margin:5px 0 6px}.modal-head p{font-size:11px;color:#9aa8c0;margin:0;line-height:1.6}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:23px}.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:11px;font-weight:800;color:#b5c0d5}.field input,.field select,.field textarea{width:100%;outline:none;border:1px solid #46516a;background:#11192a;color:#f2f3fa;padding:12px;border-radius:11px;font-size:13px;min-height:43px}.field input:focus,.field select:focus,.field textarea:focus{border-color:#f0c991}.field textarea{resize:vertical;min-height:90px;line-height:1.5}.form-actions{display:flex;justify-content:flex-end;gap:9px;margin-top:23px}.toast{position:absolute;z-index:30;bottom:162px;left:50%;transform:translateX(-50%) translateY(20px);padding:11px 15px;background:#29374c;border:1px solid #6b8298;color:#eef5fb;font-size:12px;font-weight:650;border-radius:12px;pointer-events:none;opacity:0;transition:opacity .24s,transform .24s;max-width:90%;text-align:center;box-shadow:0 10px 35px #0009}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}.screenreader{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.scrim{display:none}.about{font-size:11px;line-height:1.6;color:#a8b4cd;margin:12px 0 0}.about b{color:#e9dbbd}
 @media (max-width:960px){.sidebar{--sidebar:230px}.topbar{padding:24px 22px}.heading{font-size:24px}.subtitle{font-size:11px}.actions .btn{padding:10px 11px;font-size:10px}.detail-panel{right:14px}.hint{max-width:265px}}
@@ -279,7 +279,7 @@
 .lk-footnote{font-size:10px;line-height:1.55;color:#8d9eb8;margin-top:12px}
 @media(max-width:720px){.likelihood-panel{top:325px;right:9px;width:min(324px,calc(100% - 18px));max-height:calc(100dvh - 359px);padding:15px 13px}.lk-top h2{font-size:18px}.event-score-display strong{font-size:30px}}
 
-/* NEXO v0.10.0 · uncertain dates are explicit spans, never invented exact dates */
+/* NEXO v0.11.0 · uncertain dates are explicit spans, never invented exact dates */
 .event.uncertain .event-card{border-style:dashed;border-color:#8397c29e}
 .event.uncertain .event-dot{border-radius:6px;transform:translate(-50%,50%) rotate(45deg);width:14px;height:14px}
 .event.uncertain:hover .event-dot,.event.uncertain.selected .event-dot{transform:translate(-50%,50%) rotate(45deg) scale(1.2)}
@@ -317,27 +317,54 @@
 .field[hidden]{display:none!important}
 .bridge-svg{fill:none;pointer-events:none;stroke:#7de3e5;stroke-width:2.6;stroke-dasharray:8 9;opacity:.74;filter:drop-shadow(0 0 6px #76e3eb55)}
 .bridge-svg.convergence{stroke:#ca93f5;stroke-width:2.5;stroke-dasharray:3 9;opacity:.66}
+
+/* NEXO v0.11 — Fragments · Memory Inbox */
+.frag-side-action{flex:1 0 100%!important;text-align:left!important;background:linear-gradient(115deg,#39406c,#263c4e)!important;border-color:#7a84b0!important;color:#eef0ff!important;font-weight:800!important;display:flex;align-items:center;justify-content:space-between}
+.frag-side-action span{background:#101a30;border-radius:30px;padding:2px 8px;color:#cbe0fd}
+.btn-frag-top{background:linear-gradient(120deg,#253452,#344665);border-color:#7784a9;color:#e7e8ff}.frag-toolbar-btn{border-color:#6883aa;background:#203149}
+.frag-toolbar-btn span{color:#b2cee8;margin-left:4px}.fragment-overlay[hidden]{display:none!important}
+.fragment-overlay{position:fixed;inset:0;z-index:85;display:flex;align-items:center;justify-content:center;background:#060b17e8;backdrop-filter:blur(12px);padding:16px}
+.fragment-shell{width:min(1220px,100%);height:min(94dvh,970px);min-height:0;overflow:hidden;border-radius:25px;border:1px solid #61718c;display:flex;flex-direction:column;background:radial-gradient(ellipse at 8% 0%,#2c36594d,transparent 50%),linear-gradient(135deg,#18233a,#101729 62%,#151c35);box-shadow:0 30px 100px #000c}
+.fragment-head{padding:24px 28px 17px;display:flex;align-items:flex-start;justify-content:space-between;gap:12px;border-bottom:1px solid #35415f}.fragment-head h2{font-size:clamp(24px,2.6vw,32px);letter-spacing:-.055em;margin:3px 0 6px}.fragment-head p{margin:0;color:#abbad0;line-height:1.5;font-size:12px}.fragment-head .eyebrow{margin:0;color:#e4b9a9;font-size:9px}
+.frag-close{border:1px solid #5a6b8a;color:#f2f0ff;background:#293951;border-radius:12px;width:42px;height:42px;font-size:25px;flex:0 0 42px}
+.frag-capture{padding:18px 28px 17px;border-bottom:1px solid #35415f;display:flex;flex-direction:column;gap:9px;background:#121d32c8}
+.frag-capture label{font-size:11px;letter-spacing:.06em;font-weight:800;color:#cbd5ec}.frag-capture textarea{width:100%;min-height:80px;max-height:155px;resize:vertical;background:#0d1628;border:1px solid #506284;color:#eff5ff;border-radius:14px;padding:13px 15px;font-size:13px;line-height:1.6;outline:0}.frag-capture textarea:focus{border-color:#dcc69d}.frag-capture-row{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.frag-capture-hint{font-size:11px;color:#9caec7}.frag-capture-row .btn{min-height:38px;padding:9px 15px}
+.frag-workspace{display:grid;grid-template-columns:minmax(0,1fr) 354px;gap:0;min-height:0;flex:1}
+.frag-browser{padding:18px 22px 24px;overflow-y:auto;min-width:0;scrollbar-width:thin}.frag-sidebar{overflow:auto;border-left:1px solid #34415e;padding:20px 19px 30px;background:#0b1528b8;min-width:0;scrollbar-width:thin}
+.frag-filter-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:12px}.frag-search{flex:1;min-width:180px;max-width:100%;border:1px solid #435673;background:#0e182a;border-radius:11px;color:#f0f1ff;padding:11px 13px;outline:none;font-size:12px;min-height:42px}.frag-filter{border:1px solid #485976;border-radius:10px;background:#1a2740;color:#d5def2;padding:10px;font-size:11px;min-height:42px;max-width:170px}
+.frag-filter-tabs{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 14px}.frag-filter-tabs button{padding:9px 11px;background:#1b2b43;color:#9cacc8;border:1px solid #394c68;border-radius:10px;font-size:11px;font-weight:750}.frag-filter-tabs button.active{background:#3a4767;border-color:#e3c396;color:#ffdfaa}
+.frag-browser-tools{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;align-items:center;margin:11px 0 14px}.frag-browser-tools span{font-size:11px;color:#a3b3cc}.frag-minor-btn{border:1px solid #435771;background:#1c2a40;color:#d4e3fa;padding:8px 11px;border-radius:9px;font-size:11px;font-weight:750}
+.frag-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(228px,1fr));gap:12px}.frag-card{background:linear-gradient(135deg,#202c46d6,#152038f0);border:1px solid #455675;border-radius:16px;padding:15px;display:flex;flex-direction:column;min-height:158px;position:relative;transition:border-color .15s,transform .15s;overflow-wrap:anywhere}.frag-card:hover{border-color:#adbad5;transform:translateY(-2px)}.frag-card-head{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:9px}.frag-chip{font-size:9px;color:#e7cba0;background:#594a3657;border:1px solid #bfa57355;padding:4px 8px;border-radius:30px;font-weight:800}.frag-chip.conversion{color:#a6e2c8;background:#21534a59;border-color:#4fa98777}.frag-chip.question{color:#c5b5ff;background:#5142765a;border-color:#9b7edd70}.frag-card h3{font-size:14px;margin:0 0 7px;line-height:1.4}.frag-card p{margin:0 0 10px;line-height:1.6;font-size:11px;color:#b3c1d9;white-space:pre-wrap;display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}.frag-meta{color:#8c9bb8;font-size:10px;margin-top:auto;line-height:1.5}.frag-tags{display:flex;flex-wrap:wrap;gap:5px;margin:8px 0}.frag-tag{font-size:9px;color:#b3c8f3;border:1px solid #435b80;background:#1c304c;border-radius:30px;padding:3px 6px}.frag-card-actions{display:flex;gap:7px;margin-top:11px;flex-wrap:wrap}.frag-card-actions button{flex:1;min-height:33px;border:1px solid #536887;background:#2b3d59;color:#e1ecff;border-radius:9px;padding:7px;font-size:10px;font-weight:780;white-space:nowrap}.frag-card-actions .frag-convert{background:#514361;border-color:#9b81a5;color:#ffdbeb}
+.frag-empty{padding:36px 24px;border:1px dashed #526384;border-radius:16px;text-align:center;color:#acbad0;line-height:1.8;font-size:12px}.frag-side-section{border-bottom:1px solid #34425e;padding-bottom:17px;margin-bottom:18px}.frag-side-section h3{margin:0 0 12px;color:#f3e0cd;font-size:13px;letter-spacing:.03em}.frag-side-section p{font-size:11px;line-height:1.65;color:#a9b7cf}.frag-datefields [hidden]{display:none!important}.frag-side-section label{display:block;margin:11px 0 5px;font-size:10px;font-weight:800;color:#c5d0e6}.frag-side-section input,.frag-side-section textarea,.frag-side-section select{width:100%;min-height:39px;border:1px solid #455675;border-radius:10px;background:#101d31;color:#f1f1ff;padding:9px 10px;font-size:12px}.frag-side-section textarea{min-height:108px;resize:vertical;line-height:1.55}.frag-datefields{display:grid;grid-template-columns:1fr 1fr;gap:9px}.frag-datefields>div{min-width:0}.frag-datefields input{min-width:0}.frag-editor-buttons{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}.frag-editor-buttons button{flex:1;padding:10px;font-size:11px;border-radius:9px;border:1px solid #64799b;color:#ecf3ff;background:#273b53;font-weight:800}.frag-editor-buttons .primary{background:#ddc6a4;color:#241b24;border-color:#efdec1}.frag-editor-buttons .danger{border-color:#955668;background:#472735;color:#f9d2da}
+.frag-gap{padding:10px 11px;margin:9px 0;background:#1a304766;border:1px solid #4c6781;border-radius:11px}.frag-gap b{display:block;font-size:11px;color:#d3e9ff}.frag-gap small{display:block;font-size:10px;line-height:1.6;color:#a4b7d0;margin:4px 0 9px}.frag-gap button{border:1px solid #617c9d;color:#dfedff;background:#2a415c;border-radius:8px;padding:7px 9px;font-size:10px}
+.frag-side-tip{border:1px solid #8a77588a;background:#493e2e55;padding:13px;border-radius:13px;font-size:11px;color:#f0d8b5;line-height:1.65}.frag-import textarea{min-height:96px}
+.frag-light{color:#e9d4b3}.frag-counter{font-size:10px;color:#bcd0eb;padding:1px 6px;border-radius:20px;background:#36435b}
+@media(max-width:970px){.frag-workspace{grid-template-columns:minmax(0,1fr) 295px}.frag-browser{padding:14px}.frag-sidebar{padding:16px}}
+@media(max-width:720px){.fragment-overlay{padding:0;backdrop-filter:none}.fragment-shell{width:100%;height:100dvh;min-height:0;border:0;border-radius:0}.fragment-head{padding:calc(13px + env(safe-area-inset-top)) 14px 12px}.fragment-head h2{font-size:25px}.fragment-head p{font-size:10px}.frag-capture{padding:12px 13px}.frag-capture textarea{min-height:60px;max-height:95px}.frag-workspace{display:flex;flex-direction:column;overflow:auto;flex:1}.frag-browser{overflow:visible;padding:14px;flex:0 0 auto}.frag-sidebar{overflow:visible;flex:0 0 auto;border-left:0;border-top:1px solid #475676;padding:15px 14px calc(25px + env(safe-area-inset-bottom))}.frag-grid{grid-template-columns:1fr 1fr;gap:9px}.frag-card{padding:12px;min-height:148px}.frag-card h3{font-size:12px}.frag-card p{font-size:10px}.frag-card-actions{flex-direction:column}.frag-card-actions button{width:100%}.frag-datefields{grid-template-columns:1fr 1fr}.topbar .btn-frag-top{display:none}.map-toolbar #open-fragments{grid-column:auto}.frag-filter-tabs{gap:5px}.frag-filter-tabs button{padding:8px;font-size:10px}}
+@media(max-width:420px){.frag-grid{grid-template-columns:1fr}.frag-filter{width:100%;max-width:100%}.frag-search{min-width:100%}}
+@media(prefers-reduced-motion:reduce){.frag-card{transition:none}}
 </style>
 </head>
 <body>
 <div class="app">
   <div id="scrim" class="scrim"></div>
   <aside id="sidebar" class="sidebar" aria-label="Minhas linhas do tempo">
-    <div class="brand"><div class="brandmark"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M3 23C9 23 9 10 17 10s8 9 12 9" stroke="#FBD297" stroke-width="2.5" stroke-linecap="round"/><path d="M14 11C21 11 21 25 29 25" stroke="#A5B3FF" stroke-width="2.3" stroke-linecap="round"/><circle cx="17" cy="10" r="3" fill="#FFDBAF"/></svg></div><div><div class="brandname">NEXO</div><div class="brandtag">SEU MULTIVERSO · V0.10</div></div></div>
+    <div class="brand"><div class="brandmark"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M3 23C9 23 9 10 17 10s8 9 12 9" stroke="#FBD297" stroke-width="2.5" stroke-linecap="round"/><path d="M14 11C21 11 21 25 29 25" stroke="#A5B3FF" stroke-width="2.3" stroke-linecap="round"/><circle cx="17" cy="10" r="3" fill="#FFDBAF"/></svg></div><div><div class="brandname">NEXO</div><div class="brandtag">SEU MULTIVERSO · V0.11</div></div></div>
     <section class="side-section"><div class="side-label">Suas realidades <small id="branch-count">0 linhas</small></div><div class="line-list" id="line-list"></div></section>
     <section class="side-section eras-overview"><div class="side-label">Eras e capítulos <small id="era-count">0 eras</small></div><div class="side-shortcuts"><button id="add-era-side" type="button" onclick="document.getElementById('add-era').click()">＋ Nova era</button><button id="stats-side" type="button" onclick="document.getElementById('open-stats').click()">▥ Comparar</button></div></section>
-    <section class="side-section"><div class="side-label">Ferramentas</div><div class="side-shortcuts" style="flex-wrap:wrap"><button id="tutorial-side" type="button">❖ Tutorial guiado</button><button id="cause-side" type="button">⟡ Causa & efeito</button><button id="sim-side" type="button">✧ Simular realidades</button><button id="import-events-side" type="button" style="flex-basis:100%">⧉ Copiar eventos entre realidades</button><button id="export-map-side" type="button" style="flex-basis:100%">↓ Exportar mapa em PNG</button></div></section>
+    <section class="side-section"><div class="side-label">Ferramentas</div><div class="side-shortcuts" style="flex-wrap:wrap"><button id="open-fragments-side" type="button" class="frag-side-action">◈ Fragmentos · minhas memórias <span id="fragment-side-count"></span></button><button id="tutorial-side" type="button">❖ Tutorial guiado</button><button id="cause-side" type="button">⟡ Causa & efeito</button><button id="sim-side" type="button">✧ Simular realidades</button><button id="import-events-side" type="button" style="flex-basis:100%">⧉ Copiar eventos entre realidades</button><button id="export-map-side" type="button" style="flex-basis:100%">↓ Exportar mapa em PNG</button></div></section>
     <section class="side-section"><div class="side-label">Como funciona</div><p class="about" style="padding:0 12px">Registre os <b>eventos reais</b> da sua história. Toque em um evento para criar um <b>“E se...?”</b>. Explore novas consequências e até ramificações de ramificações.</p></section>
     <div class="side-note"><div class="side-note-top">✧ Nenhum destino é definitivo</div><p>Cada caminho alternativo é uma hipótese para imaginar, não uma previsão sobre sua vida.</p><button id="fit-side">Ver todo o multiverso ↗</button><button id="start-clean" style="margin-top:8px;width:100%;">Começar do zero ✦</button></div>
     <div class="side-footer"><button id="export-btn" title="Baixar uma cópia dos seus dados">↓ Backup</button><button id="import-btn" title="Restaurar arquivo de backup">↑ Importar</button><input id="import-file" type="file" accept="application/json,.json" hidden /></div>
   </aside>
   <main class="main">
-    <div class="topbar"><div class="top-left"><button class="btn btn-ghost mobile-menu" id="mobile-menu" aria-label="Abrir menu">☰</button><div><p class="eyebrow">ARQUIVO DE REALIDADES · PROJETO PESSOAL</p><h1 class="heading">O multiverso da <i>minha vida.</i></h1><p class="subtitle">Toda escolha é um ponto. Todo “E se...?” é um novo caminho.</p></div></div><div class="actions"><button id="add-event" class="btn btn-ghost"><span>＋</span> Novo evento</button><button id="add-branch" class="btn btn-primary"><span>⌁</span> Nova variante</button></div></div>
+    <div class="topbar"><div class="top-left"><button class="btn btn-ghost mobile-menu" id="mobile-menu" aria-label="Abrir menu">☰</button><div><p class="eyebrow">ARQUIVO DE REALIDADES · PROJETO PESSOAL</p><h1 class="heading">O multiverso da <i>minha vida.</i></h1><p class="subtitle">Toda escolha é um ponto. Todo “E se...?” é um novo caminho.</p></div></div><div class="actions"><button id="add-event" class="btn btn-ghost"><span>＋</span> Novo evento</button><button id="add-branch" class="btn btn-primary"><span>⌁</span> Nova variante</button><button id="open-fragments-quick" class="btn btn-frag-top" title="Anotar uma lembrança"><span>◈</span> Lembrar</button></div></div>
     <div class="badge-demo" id="demo-badge">✧ Universo de demonstração · substitua pelos seus eventos</div>
     <div class="map-toolbar" aria-label="Ferramentas do multiverso">
       <button id="toggle-eras" class="tool-pill toggled" aria-pressed="true" title="Exibir ou ocultar capítulos">◈ Mostrar eras</button>
       <button id="add-era" class="tool-pill">＋ Criar era</button>
       <button id="open-stats" class="tool-pill">▥ Estatísticas</button>
+      <button id="open-fragments" class="tool-pill frag-toolbar-btn">◈ Fragmentos <span id="fragment-toolbar-count"></span></button>
       <button id="open-slideshow" class="tool-pill">▶ Apresentar</button>
       <button id="open-story" class="tool-pill">↧ Exportar história</button>
       <button id="open-causality" class="tool-pill">⟡ Causa e efeito</button>
@@ -442,6 +469,25 @@
     <div class="cross-list" id="cross-list"></div>
     <div class="cross-foot"><p>Eventos já herdados não são duplicados. Os vínculos de causa e efeito não são copiados automaticamente; revise-os depois da importação.</p><div><button type="button" class="btn btn-ghost" id="cross-cancel">Cancelar</button><button type="button" class="btn btn-primary" id="cross-apply">Trazer selecionados</button></div></div>
   </div>
+</section>
+
+<!-- Memory Inbox: completely local, never sent anywhere -->
+<section id="fragment-overlay" class="fragment-overlay" role="dialog" aria-modal="true" aria-labelledby="fragment-heading" hidden>
+ <div class="fragment-shell">
+  <header class="fragment-head"><div><div class="eyebrow">ARQUIVO DE LEMBRANÇAS · FRAGMENTS</div><h2 id="fragment-heading">◈ Fragmentos</h2><p>Anote primeiro. Organize depois. Nenhuma data ou categoria é obrigatória.</p></div><button type="button" id="fragment-close" class="frag-close" aria-label="Fechar fragmentos">×</button></header>
+  <section class="frag-capture"><label for="frag-quick">O que você acabou de lembrar?</label><textarea id="frag-quick" maxlength="5000" placeholder="Ex.: Lembrei da casa da minha avó... Acho que foi quando estudava no fundamental. Ainda não sei o ano."></textarea><div class="frag-capture-row"><span class="frag-capture-hint">Ctrl+Enter salva · você poderá acrescentar detalhes quando quiser</span><button type="button" id="frag-quick-save" class="btn btn-primary">＋ Guardar lembrança</button></div></section>
+  <div class="frag-workspace"><section class="frag-browser" aria-label="Memórias registradas">
+   <div class="frag-filter-row"><input id="frag-search" class="frag-search" type="search" placeholder="⌕ Pesquisar texto, pessoas, lugares ou etiquetas..." aria-label="Pesquisar fragmentos"><select id="frag-datefilter" class="frag-filter" aria-label="Filtrar período"><option value="all">Todos os períodos</option><option value="undated">Sem data definida</option><option value="dated">Com período estimado</option></select></div>
+   <div class="frag-filter-tabs" id="frag-tabs"><button type="button" data-frag-filter="all" class="active">Todos</button><button type="button" data-frag-filter="pending">Pendentes</button><button type="button" data-frag-filter="converted">Convertidos</button><button type="button" data-frag-filter="question">Perguntas</button></div>
+   <div class="frag-browser-tools"><span id="frag-tally">0 fragmentos</span><div><button type="button" id="frag-export-txt" class="frag-minor-btn">↓ Texto</button> <button type="button" id="frag-open-import" class="frag-minor-btn">⧉ Colar várias</button></div></div>
+   <div id="frag-list" class="frag-grid"></div>
+  </section><aside class="frag-sidebar" aria-label="Detalhes e organização"><div id="frag-editor-host"></div>
+   <section class="frag-side-section frag-import" id="frag-import-section" hidden><h3>⧉ Importar anotações</h3><p>Uma lembrança por linha. Importa como pendente, sem inventar datas.</p><textarea id="frag-import-text" placeholder="Conheci Wanderley na escola\nLembro de uma viagem com minha avó\nNão sei quando comecei a mexer em computadores"></textarea><div class="frag-editor-buttons"><button id="frag-import-apply" type="button" class="primary">Importar linhas</button><button id="frag-import-cancel" type="button">Cancelar</button></div></section>
+   <section class="frag-side-section"><h3>◷ Lacunas da história</h3><p>Intervalos com poucos eventos cadastrados na linha principal. Isso não significa que nada aconteceu.</p><div id="frag-gaps"></div></section>
+   <section class="frag-side-section"><h3>❔ Perguntas para lembrar</h3><div id="frag-prompts"></div></section>
+   <div class="frag-side-tip">✦ Os fragmentos ficam <b>somente neste navegador</b> e entram no backup JSON. Uma lembrança pode ser incerta; não é preciso transformá-la em evento antes de estar pronto.</div>
+  </aside></div>
+ </div>
 </section>
 <div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal"><div class="modal-head"><div><div class="eyebrow" id="modal-kicker">REGISTRAR</div><h2 id="modal-title">Novo evento</h2><p id="modal-subtitle">Um novo capítulo da sua história.</p></div><button id="modal-close" class="detail-x" aria-label="Fechar">×</button></div><form id="editor"><div id="form-fields" class="form-grid"></div><div class="form-actions"><button id="cancel" type="button" class="btn btn-ghost">Cancelar</button><button id="save-next" type="submit" class="btn btn-ghost" hidden>Salvar e criar próximo ↗</button><button id="save" type="submit" class="btn btn-primary">Salvar</button></div></form></div></div>
 <script>
@@ -574,6 +620,17 @@
     const cfg=d.plausibility&&typeof d.plausibility==='object'?d.plausibility:{};
     const clamp=(v,min,max,otherwise)=>Number.isFinite(Number(v))?Math.min(max,Math.max(min,Number(v))):otherwise;
     d.plausibility={fork:clamp(cfg.fork,5,55,28),year:clamp(cfg.year,0,15,4),assumption:clamp(cfg.assumption,0,15,3)};
+    d.fragments = Array.isArray(d.fragments)?d.fragments.filter(f=>f&&typeof f.id==='string'&&typeof f.body==='string').slice(0,1000).map(f=>({
+      id:f.id.slice(0,80),body:f.body.slice(0,5000),title:typeof f.title==='string'?f.title.slice(0,120):'',
+      kind:['memory','question','idea'].includes(f.kind)?f.kind:'memory',
+      tags:Array.isArray(f.tags)?f.tags.filter(v=>typeof v==='string').slice(0,20).map(v=>v.slice(0,40)):[],
+      people:Array.isArray(f.people)?f.people.filter(v=>typeof v==='string').slice(0,20).map(v=>v.slice(0,60)):[],
+      place:typeof f.place==='string'?f.place.slice(0,160):'',
+      when:f.when&&typeof f.when==='object'&&['exact','month','year','range-years'].includes(f.when.precision)&&validDate(f.when.start)&&validDate(f.when.end)&&f.when.end>=f.when.start?normalizeTime(f.when,f.when.start):null,
+      eventId:typeof f.eventId==='string'?f.eventId.slice(0,80):'',
+      createdAt:typeof f.createdAt==='string'?f.createdAt:new Date().toISOString(),
+      updatedAt:typeof f.updatedAt==='string'?f.updatedAt:new Date().toISOString()
+    })):[];
     d.eras = Array.isArray(d.eras) ? d.eras.filter(e=>e&&typeof e.id==='string'&&typeof e.title==='string'&&validDate(e.start)&&validDate(e.end)).slice(0,600) : [];
     d.simulations = Array.isArray(d.simulations) ? d.simulations.filter(s=>s&&typeof s.id==='string'&&typeof s.branchId==='string'&&typeof s.name==='string').slice(0,120).map(s=>({
       id:s.id,branchId:s.branchId,name:s.name.slice(0,100),until:validDate(s.until)?s.until:today(),
@@ -1459,7 +1516,8 @@
       if(old&&(old.causes||[]).some(c=>{const src=eventById(c.id);return src&&eventEnd(src)>=time.start}))return toast('Esse período se sobrepõe a uma causa cadastrada. Revise os vínculos causais antes.');
       if(old&&directEffects(old.id).some(other=>eventStart(other)<=time.end))return toast('Este evento tem efeitos causais que ocorrem antes da nova data. Revise as relações primeiro.');
       if(old&&data.branches.some(x=>x.fromEventId===old.id&&eventsOf(x.id).some(ch=>eventStart(ch)<time.end)))return toast('Há eventos derivados anteriores a esta nova data. Ajuste a variante antes.');
-      const patch={title,date:time.start,time,type:v.type,typeSource:editorAutoClass?'local-rules':'manual',lineId:line,people:cleanList(v.people),place:String(v.place||'').trim(),description:String(v.description||'').trim()};
+      if(editing.sourceFragmentId&&editing.fragmentDateNeedsReview&&!v.fragmentDateReviewed)return toast('Revise a data e confirme a precisão antes de converter o fragmento.');
+      const patch={title,date:time.start,time,type:v.type,typeSource:editorAutoClass?'local-rules':'manual',lineId:line,people:cleanList(v.people),place:String(v.place||'').trim(),description:String(v.description||'').trim(),...(editing.sourceFragmentId?{sourceFragmentId:editing.sourceFragmentId}:{})};
       if(old){Object.assign(old,patch);old.causes=(old.causes||[]).filter(c=>availableCauses(old).some(a=>a.id===c.id));
         if(old.sharedGroupId){for(const peer of data.events){if(peer.id!==old.id&&peer.sharedGroupId===old.sharedGroupId){Object.assign(peer,{title:old.title,type:old.type,description:old.description,people:[...old.people],place:old.place,typeSource:old.typeSource});}}}
         selected={kind:'event',id:old.id};}
@@ -1504,6 +1562,7 @@
     }
     const next=kind==='event'&&!editing.id&&ev.submitter?.id==='save-next'&&selected?.kind==='event'?{id:selected.id,line:eventById(selected.id)?.lineId}:null;
     const created=kind==='event'&&!editing.id&&selected?.kind==='event'?selected.id:null;
+    if(kind==='event'&&editing.sourceFragmentId&&selected?.kind==='event'){const frag=data.fragments.find(f=>f.id===editing.sourceFragmentId);if(frag){frag.eventId=selected.id;frag.updatedAt=new Date().toISOString();}}
     closeModal();changed();
     if(created)focusEvent(created);
     if(next?.line){openEventEditor(null,next.line,next.id);toast('Evento salvo. Agora registre o próximo capítulo.');}
@@ -1615,7 +1674,7 @@
       else lines.push(text);
       lines.push('');
     }
-    lines.push(md?'_Criado no NEXO v0.10.0 · Relatos reais e cenários hipotéticos cadastrados pelo autor._':'Criado no NEXO v0.10.0 · Narrativa baseada somente em registros fornecidos pelo autor.');
+    lines.push(md?'_Criado no NEXO v0.11.0 · Relatos reais e cenários hipotéticos cadastrados pelo autor._':'Criado no NEXO v0.11.0 · Narrativa baseada somente em registros fornecidos pelo autor.');
     return lines.join('\n');
   }
   function openStory(line){
@@ -1689,7 +1748,7 @@
       y+=space(section.kind);
     }
     ctx.strokeStyle='#8e91b550';ctx.beginPath();ctx.moveTo(pad,canvas.height-83);ctx.lineTo(W-pad,canvas.height-83);ctx.stroke();
-    ctx.fillStyle='#90a2c2';ctx.font='18px sans-serif';ctx.fillText('NEXO v0.10.0 · Realidade e imaginação, sem previsões automáticas.',pad,canvas.height-64);
+    ctx.fillStyle='#90a2c2';ctx.font='18px sans-serif';ctx.fillText('NEXO v0.11.0 · Realidade e imaginação, sem previsões automáticas.',pad,canvas.height-64);
     canvas.toBlob(blob=>{if(blob){downloadBlob(storyFilename()+'.png',blob);toast('História exportada em imagem PNG.');}else toast('Não foi possível criar a imagem.');},'image/png');
   }
 
@@ -1731,7 +1790,7 @@
       }
       for(const br of data.branches){const p=layout.branches[br.id];if(!p)continue;const x=tx(p.startX+26),y=ty(p.y+50);c.font='bold 15px system-ui';c.fillStyle=showLikelihood?likelihoodColor(branchScore(br).score):br.color;c.fillText(br.persona||br.title,x,y,460);
         const end=endings[endKind(br.ending?.kind)];if(endKind(br.ending?.kind)!=='open'){c.beginPath();c.fillStyle='#151a2a';c.strokeStyle=end.color;c.lineWidth=4;c.arc(tx(p.endX),ty(p.y),31,0,2*Math.PI);c.fill();c.stroke();c.font='bold 33px system-ui';c.textAlign='center';c.textBaseline='middle';c.fillStyle=end.color;c.fillText(end.symbol,tx(p.endX),ty(p.y));c.textAlign='left';c.textBaseline='alphabetic';c.font='bold 13px system-ui';c.fillText(end.label,tx(p.endX)+38,ty(p.y)+3,250);}}
-      c.font='12px system-ui';c.fillStyle='#aab7d1';c.fillText(showLikelihood?'NEXO v0.10.0 · Porcentagens são índices narrativos, NÃO probabilidades reais.':'NEXO v0.10.0 · Realidades alternativas são hipóteses, não previsões.',50,logicalH-24);
+      c.font='12px system-ui';c.fillStyle='#aab7d1';c.fillText(showLikelihood?'NEXO v0.11.0 · Porcentagens são índices narrativos, NÃO probabilidades reais.':'NEXO v0.11.0 · Realidades alternativas são hipóteses, não previsões.',50,logicalH-24);
       canvas.toBlob(blob=>{if(blob){downloadBlob('nexo-'+(showLikelihood?'plausibilidade':'multiverso')+'-'+today()+'.png',blob);toast('Mapa completo exportado em PNG.');}else toast('Falha ao gerar PNG.');},'image/png');
     }catch(err){toast(err.message||'Não foi possível exportar este mapa.');}
   }
@@ -1901,6 +1960,7 @@
   const tourSteps=[
     {target:'line-list',title:'Bem-vindo ao seu multiverso',description:'Aqui ficam a Linha Principal e todas as variantes. Você pode selecionar uma realidade para ver sua identidade, seus acontecimentos e seus desfechos.'},
     {target:'stage',title:'Navegue pela linha do tempo',description:'Arraste o mapa com mouse ou dedo, use a rolagem ou gesto de pinça para aproximar e toque nas bolinhas dos eventos para abrir os detalhes.'},
+    {target:'open-fragments',title:'Guarde lembranças sem se preocupar com datas',description:'Abra Fragmentos para escrever qualquer memória, pesquisar e organizar depois. Você pode criar perguntas em aberto, importar várias linhas e converter uma lembrança em evento quando estiver pronto.'},
     {target:'add-event',title:'Registre acontecimentos',description:'Adicione uma data, descrição, pessoas conhecidas e lugar. Os eventos principais são reais; nas variantes, descreva apenas o que você imagina que poderia ocorrer.'},
     {target:'add-event',title:'Datas aproximadas e intervalos',description:'Não lembra o dia? No cadastro do evento, escolha somente o mês, apenas o ano, um intervalo entre anos ou entre datas. O NEXO desenha uma faixa tracejada e reorganiza os eventos que ocorrerem dentro dela, sem inventar um dia exato.'},
     {target:'add-event',title:'Classifique com uma sugestão local',description:'Ao digitar o título de um evento, o NEXO sugere automaticamente Momento, Marco, Nexus, Canônico, Conquista ou Possibilidade. Você vê o motivo, pode desligar a sugestão e escolher manualmente. Nada é enviado para uma IA.'},
@@ -2020,6 +2080,7 @@
       if(!$('story-overlay').hidden){if(ev.key==='Escape')closeStory();return;}
       if(!$('sim-overlay').hidden){if(ev.key==='Escape')closeSimulator();return;}
       if(!$('cross-overlay').hidden){if(ev.key==='Escape')closeCrossImport();return;}
+      if(!$('fragment-overlay').hidden){if(ev.key==='Escape')closeFragments();return;}
       if($('overlay').classList.contains('open')){if(ev.key==='Escape')closeModal();return;}
       if(['INPUT','TEXTAREA','SELECT'].includes(document.activeElement?.tagName))return;
       if(ev.key==='Escape'){detailClose();$('stats-panel').hidden=true;$('cause-panel').hidden=true;}else if(ev.key==='+'||ev.key==='=')$('zoom-in').click();else if(ev.key==='-')$('zoom-out').click();
@@ -2030,6 +2091,186 @@
   }
   function downloadBlob(filename,blob){const url=URL.createObjectURL(blob),a=make('a');a.href=url;a.download=filename;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),12000);}
   function download(filename,contents,mime='application/json'){downloadBlob(filename,new Blob([contents],{type:mime}));}
+
+  // NEXO 0.11 — Fragmentos: a non-destructive memory inbox.
+  let fragFilter='all',fragSelected=null,fragDateRefresh=null;
+  const fragmentById=id=>data.fragments.find(f=>f.id===id);
+  const fragText=f=>f.title?.trim()||f.body.split('\n')[0].trim().slice(0,85)||'Lembrança sem título';
+  const fragConverted=f=>Boolean(f.eventId&&eventById(f.eventId));
+  const fragSearchNormalize=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('pt-BR');
+  const fragKinds={memory:'Lembrança',question:'Pergunta',idea:'Ideia'};
+  const fragNow=()=>new Date().toISOString();
+  function openFragments(select=null){
+    closeSide();if(!$('coach-overlay').hidden)closeTour();
+    $('fragment-overlay').hidden=false;if(select&&fragmentById(select))fragSelected=select;
+    renderFragments();
+    setTimeout(()=>$(select?'frag-edit-body':'frag-quick')?.focus(),25);
+  }
+  function closeFragments(){$('fragment-overlay').hidden=true;}
+  function fragCreate(body,props={}){
+    if(data.fragments.length>=1000){toast('Limite de 1.000 fragmentos neste navegador. Exporte um backup antes de continuar.');return null;}
+    const f={id:uuid(),body:String(body||'').trim().slice(0,5000),title:'',kind:'memory',tags:[],people:[],place:'',when:null,eventId:'',createdAt:fragNow(),updatedAt:fragNow(),...props};
+    if(!f.body)return null;
+    data.fragments.unshift(f);persist();renderFragmentCounts();return f;
+  }
+  function fragmentQuickSave(){const el=$('frag-quick'),body=el.value.trim();if(!body){el.focus();return toast('Digite algo de que você lembrou.');}
+    const f=fragCreate(body);if(!f)return;el.value='';fragSelected=f.id;fragFilter='all';renderFragments();toast('Lembrança guardada. Você pode organizá-la mais tarde.');
+  }
+  function fragmentWhenText(f){if(!f.when)return 'Data ainda desconhecida';return eventWhenText({time:f.when,date:f.when.start});}
+  function fragmentSuggestedPrompts(){return [
+    'Onde eu estudava nessa época?', 'Com quem eu passava mais tempo?', 'Foi antes ou depois de uma mudança?',
+    'Que pessoa poderia confirmar essa lembrança?', 'Havia uma cidade, casa ou escola envolvida?',
+    'Qual acontecimento veio logo depois?'
+  ];}
+  function computeMemoryGaps(){
+    const records=eventsOf('main').slice().sort((a,b)=>eventStart(a).localeCompare(eventStart(b)));
+    const spans=[];let previous=null;
+    for(const e of records){if(previous){const from=Number(eventEnd(previous).slice(0,4))+1,to=Number(eventStart(e).slice(0,4))-1;
+      if(to-from+1>=2&&to>=from){spans.push({start:from,end:to,years:to-from+1});}}
+      if(!previous||eventEnd(e)>eventEnd(previous))previous=e;
+    }
+    return spans.sort((a,b)=>b.years-a.years).slice(0,4);
+  }
+  function renderFragmentCounts(){const pending=data.fragments.filter(f=>!fragConverted(f)).length;
+    for(const id of ['fragment-side-count','fragment-toolbar-count']){const e=$(id);if(e)e.textContent=pending?String(pending):'';}
+  }
+  function renderFragments(){renderFragmentCounts();
+    const host=$('frag-list');host.replaceChildren();
+    const text=fragSearchNormalize($('frag-search').value),whenFilter=$('frag-datefilter').value;
+    const filtered=data.fragments.filter(f=>{
+      if(fragFilter==='pending'&&fragConverted(f))return false;
+      if(fragFilter==='converted'&&!fragConverted(f))return false;
+      if(fragFilter==='question'&&f.kind!=='question')return false;
+      if(whenFilter==='undated'&&f.when)return false;
+      if(whenFilter==='dated'&&!f.when)return false;
+      return !text||fragSearchNormalize([f.title,f.body,f.place,...f.tags,...f.people].join(' ')).includes(text);
+    }).sort((a,b)=>String(b.createdAt).localeCompare(String(a.createdAt)));
+    $('frag-tally').textContent=`${filtered.length} de ${data.fragments.length} fragmento(s) · ${data.fragments.filter(f=>!fragConverted(f)).length} pendente(s)`;
+    $('frag-tabs').querySelectorAll('button').forEach(btn=>{btn.classList.toggle('active',btn.dataset.fragFilter===fragFilter);btn.setAttribute('aria-pressed',String(btn.dataset.fragFilter===fragFilter));});
+    if(!filtered.length){const empty=make('div','frag-empty');empty.style.gridColumn='1/-1';empty.textContent=data.fragments.length?'Nenhum fragmento corresponde a esta busca. Tente outro filtro.':'A caixa de memórias está vazia. Escreva qualquer lembrança acima, mesmo sem data.';host.append(empty);}
+    for(const f of filtered){
+      const card=make('article','frag-card'),head=make('div','frag-card-head');
+      head.append(make('span','frag-chip'+(f.kind==='question'?' question':''),fragKinds[f.kind]||'Lembrança'));
+      if(fragConverted(f))head.append(make('span','frag-chip conversion','✓ Convertido'));
+      const h=make('h3',null,fragText(f)),p=make('p',null,f.body),meta=make('div','frag-meta',fragmentWhenText(f));
+      card.append(head,h,p);
+      if(f.tags.length){const tags=make('div','frag-tags');for(const t of f.tags.slice(0,4))tags.append(make('span','frag-tag','#'+t));card.append(tags);}
+      card.append(meta);
+      const actions=make('div','frag-card-actions');
+      actions.append(button('✎ Organizar',()=>{fragSelected=f.id;renderFragmentEditor();document.querySelector('.frag-sidebar').scrollTop=0;},''));
+      actions.lastChild.className='';
+      actions.append(button(fragConverted(f)?'↗ Ver evento':'↗ Virar evento',()=>convertFragment(f.id),'frag-convert'));
+      card.append(actions);host.append(card);
+    }
+    renderFragmentEditor();renderFragmentGaps();
+  }
+  function renderFragmentGaps(){const el=$('frag-gaps');el.replaceChildren();const gaps=computeMemoryGaps();
+    if(!gaps.length){el.append(make('p',null,'Nenhuma lacuna longa foi encontrada entre os eventos registrados. Você pode continuar anotando livremente.'));}
+    else for(const gap of gaps){const row=make('div','frag-gap');row.append(make('b',null,`${gap.start}–${gap.end} · ${gap.years} ano(s)`),make('small',null,'Poucos registros nesse intervalo; talvez você tenha lembranças para acrescentar.'));
+      row.append(button('＋ Lembrar desse período',()=>{
+        const f=fragCreate(`O que eu lembro do período entre ${gap.start} e ${gap.end}?`,{kind:'question',when:{precision:'range-years',start:`${gap.start}-01-01`,end:`${gap.end}-12-31`}});
+        if(f){fragSelected=f.id;renderFragments();toast('Pergunta criada com o intervalo sugerido.');}
+      },''));el.append(row);}
+    const prompts=$('frag-prompts');prompts.replaceChildren();
+    for(const q of fragmentSuggestedPrompts().slice(0,4)){const b=button('＋ '+q,()=>{const f=fragCreate(q,{kind:'question'});if(f){fragSelected=f.id;renderFragments();}},'frag-minor-btn');b.style.display='block';b.style.width='100%';b.style.textAlign='left';b.style.marginBottom='6px';prompts.append(b);}
+  }
+  function fragEditorInput(host,label,id,value='',type='text',max=160){
+    const l=make('label',null,label),el=make(type==='textarea'?'textarea':'input');l.htmlFor=id;el.id=id;
+    if(type!=='textarea')el.type=type;el.value=value;el.maxLength=max;host.append(l,el);return el;
+  }
+  function renderFragmentEditor(){const root=$('frag-editor-host');root.replaceChildren();
+    const f=fragmentById(fragSelected);
+    if(!f){const sect=make('section','frag-side-section');sect.append(make('h3',null,'◈ Organize no seu ritmo'),make('p',null,'Selecione uma lembrança para adicionar nomes, lugares, etiquetas ou um período aproximado. Nada disso é obrigatório para guardar um fragmento.'));root.append(sect);return;}
+    const sect=make('section','frag-side-section');sect.append(make('h3',null,'✎ Organizar fragmento'));
+    fragEditorInput(sect,'Título curto (opcional)','frag-edit-title',f.title,'text',120);
+    fragEditorInput(sect,'Sua lembrança ou pergunta','frag-edit-body',f.body,'textarea',5000);
+    const kindLabel=make('label',null,'Que tipo de anotação é?');kindLabel.htmlFor='frag-edit-kind';
+    const kind=make('select');kind.id='frag-edit-kind';for(const [value,label] of Object.entries(fragKinds)){const o=make('option',null,label);o.value=value;kind.append(o);}kind.value=f.kind;sect.append(kindLabel,kind);
+    fragEditorInput(sect,'Pessoas (separe por vírgulas)','frag-edit-people',f.people.join(', '),'text',1000);
+    fragEditorInput(sect,'Lugar (opcional)','frag-edit-place',f.place,'text',160);
+    fragEditorInput(sect,'Etiquetas (separe por vírgulas)','frag-edit-tags',f.tags.join(', '),'text',500);
+    const whenLabel=make('label',null,'Quando pode ter acontecido?');whenLabel.htmlFor='frag-edit-precision';
+    const choose=make('select');choose.id='frag-edit-precision';for(const [value,label] of [['unknown','Não sei quando'],['year','Só lembro do ano'],['month','Mês e ano'],['range-years','Entre dois anos'],['exact','Sei o dia exato']]){const o=make('option',null,label);o.value=value;choose.append(o);}choose.value=f.when?.precision||'unknown';sect.append(whenLabel,choose);
+    const dates=make('div','frag-datefields'),from=make('div'),to=make('div');dates.append(from,to);sect.append(dates);
+    const d1=fragEditorInput(from,'Ano de início','frag-edit-from-year',f.when?.start?.slice(0,4)||'','number',4);
+    const d2=fragEditorInput(to,'Ano de fim','frag-edit-to-year',f.when?.end?.slice(0,4)||'','number',4);
+    const month=fragEditorInput(from,'Mês','frag-edit-month',f.when?.start?.slice(0,7)||'','month');
+    const exact=fragEditorInput(from,'Dia exato','frag-edit-day',f.when?.start||'','date');
+    const displayDate=()=>{
+      const v=choose.value;for(const el of [d1.parentElement,d2.parentElement,month.parentElement,exact.parentElement]){ /* preserve independent labels */ }
+      // Hide labels and input nodes individually to avoid overlapping fields.
+      const all=[...from.children,...to.children];all.forEach(n=>n.hidden=true);
+      const show=(input)=>{input.hidden=false;const label=input.previousElementSibling;if(label)label.hidden=false;};
+      if(v==='year'||v==='range-years'){show(d1);if(v==='range-years')show(d2);}
+      if(v==='month')show(month);if(v==='exact')show(exact);
+      dates.hidden=v==='unknown';
+    };
+    choose.onchange=displayDate;displayDate();
+    if(f.eventId&&!eventById(f.eventId))sect.append(make('p',null,'O evento que esta lembrança havia criado foi excluído. Ela voltou a ficar pendente.'));
+    const actions=make('div','frag-editor-buttons');
+    const save=button('✓ Salvar detalhes',()=>{
+      const body=$('frag-edit-body').value.trim();if(!body)return toast('A lembrança precisa conter algum texto.');
+      let when=null,v=choose.value;
+      if(v==='year'||v==='range-years'){const a=$('frag-edit-from-year').value.trim(),b=v==='year'?a:$('frag-edit-to-year').value.trim();if(!/^\d{4}$/.test(a)||!/^\d{4}$/.test(b)||a>b)return toast('Informe um intervalo de anos válido.');when={precision:v,start:`${a}-01-01`,end:`${b}-12-31`};}
+      if(v==='month'){const a=$('frag-edit-month').value;if(!/^\d{4}-\d{2}$/.test(a))return toast('Informe um mês válido.');when={precision:'month',start:a+'-01',end:lastOfMonth(a.slice(0,4),a.slice(5,7))};}
+      if(v==='exact'){const a=$('frag-edit-day').value;if(!validDate(a))return toast('Informe uma data válida.');when={precision:'exact',start:a,end:a};}
+      f.title=$('frag-edit-title').value.trim();f.body=body;f.kind=kind.value;f.people=cleanList($('frag-edit-people').value).slice(0,20);f.tags=cleanList($('frag-edit-tags').value).slice(0,20);f.place=$('frag-edit-place').value.trim();f.when=when;f.updatedAt=fragNow();
+      persist();renderFragments();toast('Fragmento atualizado.');
+    },'primary');
+    const toEvent=button(fragConverted(f)?'↗ Editar evento':'↗ Converter em evento',()=>convertFragment(f.id));
+    const remove=button('Excluir',()=>{if(!confirm('Excluir este fragmento? O acontecimento já criado a partir dele não será apagado.'))return;data.fragments=data.fragments.filter(x=>x.id!==f.id);fragSelected=null;persist();renderFragments();toast('Fragmento excluído.');},'danger');
+    actions.append(save,toEvent,remove);sect.append(actions);
+    sect.append(make('p',null,'Converter cria um acontecimento sem apagar esta lembrança. Ao contrário, o texto original permanece no arquivo.'));
+    root.append(sect);
+  }
+  function convertFragment(id){const f=fragmentById(id);if(!f)return;
+    if(fragConverted(f)){closeFragments();openEventEditor(f.eventId);toast('Abrindo o acontecimento criado a partir deste fragmento.');return;}
+    closeFragments();
+    const targetLine=selected?.kind==='line'&& (selected.id==='main'||branchById(selected.id))?selected.id:'main';
+    openEventEditor(null,targetLine);
+    // Opening the ordinary event editor keeps classifier, dates and causal rules intact.
+    const title=$('f-title'),description=$('f-description'),people=$('f-people'),place=$('f-place');
+    title.value=(f.title||f.body.split('\n')[0].slice(0,100)).trim();
+    description.value=f.body;people.value=f.people.join(', ');place.value=f.place;
+    title.dispatchEvent(new Event('input',{bubbles:true}));description.dispatchEvent(new Event('input',{bubbles:true}));
+    if(f.when){const w=f.when,p=$('f-timePrecision');p.value=w.precision;p.dispatchEvent(new Event('change',{bubbles:true}));
+      if(w.precision==='exact')$('f-timeDay').value=w.start;
+      else if(w.precision==='month')$('f-timeMonth').value=w.start.slice(0,7);
+      else if(w.precision==='year')$('f-timeYear').value=w.start.slice(0,4);
+      else if(w.precision==='range-years'){$('f-timeFromYear').value=w.start.slice(0,4);$('f-timeToYear').value=w.end.slice(0,4);}
+    }
+    editing.sourceFragmentId=f.id;editing.fragmentDateNeedsReview=!f.when;
+    if(!f.when){
+      const banner=make('div','frag-side-tip');banner.style.gridColumn='1/-1';banner.textContent='◷ Esta lembrança não tem data. O campo do formulário contém uma data inicial apenas para facilitar a edição — ela NÃO foi inferida. Informe pelo menos o ano ou intervalo e confirme antes de salvar.';
+      const check=make('label');check.style.gridColumn='1/-1';check.style.display='flex';check.style.alignItems='center';check.style.gap='9px';check.style.fontSize='12px';const input=make('input');input.type='checkbox';input.name='fragmentDateReviewed';input.value='yes';input.style.width='18px';input.style.height='18px';check.append(input,make('span',null,'Revisei a data ou o intervalo deste acontecimento.'));
+      $('form-fields').insertBefore(banner,$('form-fields').firstChild);$('form-fields').insertBefore(check,banner.nextSibling);
+    }
+    toast('Rascunho preenchido. Confira a realidade e a data antes de salvar.');
+  }
+  function fragmentBulkImport(){const text=$('frag-import-text').value,lines=text.split(/\r?\n/).map(s=>s.replace(/^\s*(?:[-*•]|\d+[.)])\s*/, '').trim()).filter(Boolean);
+    if(!lines.length)return toast('Cole uma lembrança por linha.');if(lines.length>100)return toast('Importe até 100 linhas por vez.');
+    const known=new Set(data.fragments.map(f=>fragSearchNormalize(f.body)));let done=0,skipped=0;
+    for(const line of lines){const normal=fragSearchNormalize(line);if(known.has(normal)){skipped++;continue;}if(!fragCreate(line)){break;}known.add(normal);done++;}
+    $('frag-import-text').value='';$('frag-import-section').hidden=true;fragFilter='all';renderFragments();toast(`${done} lembrança(s) importada(s). ${skipped} repetida(s) ignorada(s).`);
+  }
+  function fragmentExportTXT(){const lines=['NEXO · Fragmentos — Arquivo de Memórias','Exportado em '+new Date().toLocaleString('pt-BR'),'','Anotações pessoais. Datas e lembranças podem ser incertas.',''];
+    data.fragments.slice().sort((a,b)=>a.createdAt.localeCompare(b.createdAt)).forEach((f,i)=>{lines.push(`${i+1}. ${fragText(f)}`,`Tipo: ${fragKinds[f.kind]||'Lembrança'}`,`Quando: ${fragmentWhenText(f)}`);if(f.tags.length)lines.push('Etiquetas: '+f.tags.join(', '));if(f.people.length)lines.push('Pessoas: '+f.people.join(', '));if(f.place)lines.push('Lugar: '+f.place);lines.push('Situação: '+(fragConverted(f)?'Convertido em evento':'Pendente'),'Texto: '+f.body,'');});
+    download('nexo-fragmentos-'+today()+'.txt',lines.join('\n'),'text/plain;charset=utf-8');
+  }
+  function setupFragments(){
+    $('open-fragments').onclick=()=>openFragments();$('open-fragments-side').onclick=()=>openFragments();$('open-fragments-quick').onclick=()=>openFragments();
+    $('fragment-close').onclick=closeFragments;
+    $('fragment-overlay').addEventListener('pointerdown',ev=>{if(ev.target===$('fragment-overlay'))closeFragments();});
+    $('frag-quick-save').onclick=fragmentQuickSave;
+    $('frag-quick').addEventListener('keydown',ev=>{if(ev.key==='Enter'&&(ev.ctrlKey||ev.metaKey)){ev.preventDefault();fragmentQuickSave();}});
+    $('frag-search').addEventListener('input',renderFragments);$('frag-datefilter').onchange=renderFragments;
+    $('frag-tabs').addEventListener('click',ev=>{const btn=ev.target.closest('button[data-frag-filter]');if(btn){fragFilter=btn.dataset.fragFilter;renderFragments();}});
+    $('frag-open-import').onclick=()=>{$('frag-import-section').hidden=false;$('frag-import-text').focus();};
+    $('frag-import-cancel').onclick=()=>{$('frag-import-section').hidden=true;};
+    $('frag-import-apply').onclick=fragmentBulkImport;$('frag-export-txt').onclick=fragmentExportTXT;
+    renderFragmentCounts();
+  }
+
   function setupUI(){
     $('add-event').onclick=()=>openEventEditor();
     $('add-branch').onclick=()=>openBranchEditor();
@@ -2071,23 +2312,23 @@
     $('overlay').addEventListener('pointerdown',ev=>{if(ev.target===$('overlay'))closeModal();});
     $('editor').addEventListener('submit',submitEditor);
     $('start-clean').onclick=()=>{if(!confirm('Apagar os exemplos fictícios e começar uma história vazia?\nIsso substitui os dados atuais. Faça um backup antes se quiser guardá-los.'))return;
-      data=hydrate({version:1,demo:false,mainPersona:'Minha versão original',events:[],branches:[],eras:[],simulations:[]});persist();selected=null;render();centerWorld(350,0,.9);closeSide();openEventEditor();};
+      data=hydrate({version:1,demo:false,mainPersona:'Minha versão original',events:[],branches:[],eras:[],simulations:[],fragments:[]});persist();selected=null;render();renderFragmentCounts();centerWorld(350,0,.9);closeSide();openEventEditor();};
     $('export-btn').onclick=()=>{download('nexo-backup-'+today()+'.json',JSON.stringify({...data,exportedAt:new Date().toISOString()},null,2));toast('Backup exportado. Guarde-o em local seguro.');};
     $('import-btn').onclick=()=>$('import-file').click();
     $('import-file').addEventListener('change',async ev=>{const file=ev.target.files?.[0];ev.target.value='';if(!file)return;
       try{if(file.size>5*1024*1024)throw Error('Arquivo muito grande.');const raw=JSON.parse(await file.text());if(!isStore(raw))throw Error('O arquivo não contém um backup compatível do NEXO.');
         if(!confirm('Importar esse backup? Os dados atuais serão substituídos.'))return;
-        data=hydrate(raw);selected=null;statsLine='main';persist();render();fitView();toast('Backup restaurado!');
+        data=hydrate(raw);selected=null;statsLine='main';persist();render();renderFragmentCounts();fitView();toast('Backup restaurado!');
       }catch(err){toast(err.message||'Não foi possível importar esse arquivo.');}
     });
   }
   function stars(){let randSeed=173;const rand=()=>{randSeed=(randSeed*16807)%2147483647;return (randSeed-1)/2147483646};const host=$('stars');
     for(let i=0;i<110;i++){const n=make('i','star'),size=rand()<.12?2.5:rand()*1.3+.5;n.style.left=rand()*100+'%';n.style.top=rand()*100+'%';n.style.width=size+'px';n.style.height=size+'px';n.style.setProperty('--duration',(1.8+rand()*5.5)+'s');n.style.setProperty('--opacity',(0.15+rand()*.6).toFixed(2));n.style.animationDelay=-rand()*7+'s';host.append(n);}}
 
-  stars();setupUI();setupNavigation();setupTour();render();
+  stars();setupUI();setupFragments();setupNavigation();setupTour();render();
   if(window.matchMedia('(max-width:720px)').matches)centerWorld(720,0,.72);
   else centerWorld(920,-30,.86);
-  setTimeout(()=>{try{if(!localStorage.getItem('nexo-tutorial-seen-v5')&&!localStorage.getItem('nexo-tutorial-seen-v4'))openTour();}catch(_){/* armazenamento bloqueado */}},850);
+  setTimeout(()=>{try{if($('fragment-overlay').hidden&&!$('overlay').classList.contains('open')&&$('story-overlay').hidden&&$('sim-overlay').hidden&&$('cross-overlay').hidden&&!localStorage.getItem('nexo-tutorial-seen-v5')&&!localStorage.getItem('nexo-tutorial-seen-v4'))openTour();}catch(_){/* armazenamento bloqueado */}},850);
   setTimeout(()=>toast(data.demo?'Explore o exemplo fictício: eras, pessoas, variantes e apresentações.':'Seus registros anteriores foram carregados.'),900);
 })();
 

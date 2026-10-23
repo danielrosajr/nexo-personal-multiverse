@@ -2,11 +2,39 @@
 
 **An interactive timeline of real memories, divergent histories, and personal “what if?” scenarios.** NEXO runs as a single static HTML file, with no external AI, backend, or required cloud account.
 
-**Release:** `0.10.0` · **Git tag:** `v0.10.0` · **Hosting:** GitHub Pages or any static file host · **Language:** Brazilian Portuguese.
+**Release:** `0.11.0` · **Git tag:** `v0.11.0` · **Hosting:** GitHub Pages or any static file host · **Language:** Brazilian Portuguese.
+
+## New in v0.11 — Fragments: Memory Inbox
+
+**Capture first, organize later.** NEXO now features a personal inbox for memories, open questions and ideas that are not ready to become timeline events. Open **◈ Fragmentos** from the timeline toolbar or sidebar (or **Lembrar** on desktop). Type anything you remember and save it **without a date, category, or timeline**.
+
+![Fragment Inbox desktop](assets/fragments-inbox-desktop.png)
+
+### Features
+
+- **Rapid capture** with keyboard shortcut `Ctrl+Enter` / `Cmd+Enter` inside the quick-capture field. Captures are initially pending.
+- **Personal organization:** optional title, freeform content, people, place, comma-separated tags, and three kinds (`memory`, `question`, `idea`). Supported dating: unknown, exact date, month, year, or a range of years.
+- **Search and filters:** case/accent-insensitive search across body, title, people, place and tags; filter pending, converted or questions, and dated or undated records.
+- **Non-destructive event conversion:** **Virar evento** opens the existing event editor with the fragment's title, text, people, place and optional temporal precision prefilled. Nothing is removed from the inbox. The created event is linked to its source fragment via `sourceFragmentId`, while the fragment stores `eventId`.
+- **Unknown-date guardrail:** undated fragments require an explicit review confirmation in the event editor. **The existing editor initially displays today's date as a UI default, not as a derived fact.** Choose the correct date or an available approximate range before confirming. If you still cannot assign a date or range, keep the note as a fragment instead.
+- **Open questions and gap prompts:** a deterministic list of reflection questions plus year gaps between recorded **main-timeline** events. Gaps mean *limited coverage*, **not** that nothing happened or that the person has forgotten those years.
+- **Bulk capture:** paste up to 100 one-line memories per import; exact duplicate lines are skipped (accent-insensitive).
+- **Plain-text export:** export the fragment inbox to `.txt` for archival and editing.
+- **Private backup:** all fragments are included automatically in the existing full JSON backup. Upgrading older backups adds an empty `fragments` array without modifying existing event data.
+
+![Mobile Inbox](assets/fragments-inbox-mobile.png)
+
+### Limits and deliberate safeguards
+
+- Up to 1,000 fragment records in the local data envelope; quick capture and import require text. Each note is up to 5,000 characters (subject to browser storage quota).
+- Dates in the memory inbox are **your estimates**. NEXO neither verifies them nor predicts details.
+- A fragment converted to an event remains in the inbox. Removing that event makes the fragment pending again; deleting the fragment does not delete the linked timeline event.
+- If you import records from an older version, existing branches, events, sims and eras remain compatible. Back up before updating in all cases.
+- NEXO remains static/offline-capable after load, but its local data is **not encrypted**, synced, or protected from someone with access to the browser profile. See [SECURITY.md](SECURITY.md).
+
+## Previous release: v0.10 — Shared Events & Semantic Branch Colors
 
 ![Cross-timeline import dialog](assets/shared-events-importer.png)
-
-## New in v0.10 — Shared Events & Semantic Branch Colors
 
 ### Three ways to bring an event into another reality
 
@@ -74,15 +102,15 @@ See [FORMULA.md](FORMULA.md) for limitations of the narrative plausibility index
 3. Suggested repository name: `nexo-personal-multiverse`. Typical URL: `https://YOUR-USERNAME.github.io/nexo-personal-multiverse/`.
 4. Alternatively, open the `index.html` file directly in a compatible browser. Storage behavior depends on the browser and page origin.
 
-## Upgrading from v0.9.0 or earlier
+## Upgrading from v0.10.0 or earlier
 
 1. Open your existing app and **export a JSON backup**, storing it privately and outside public source control.
 2. Replace the root `index.html` and refresh your documentation/assets.
 3. Keep the **same Pages origin/URL** where possible: browser-local data is tied to the origin, not to your GitHub account.
 4. Refresh and verify existing events/branches/eras/simulations. If necessary, restore using **Import JSON**. An existing `version:1` data envelope is supported.
-5. Create tag `v0.10.0` and a release titled **NEXO v0.10.0 — Shared Events & Semantic Branch Colors**.
+5. Create tag `v0.11.0` and a release titled **NEXO v0.11.0 — Fragments: Memory Inbox**.
 
-Suggested commit: `feat: add cross-timeline event sharing and semantic branch color guide`
+Suggested commit: `feat: add fragments memory inbox and guided event conversion`
 
 ## Privacy and known limitations
 

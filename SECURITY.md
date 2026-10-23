@@ -37,3 +37,7 @@ Approximate dates are stored in the same locally saved history. Although an even
 ## Version 0.10 shared occurrences
 
 Linked events can propagate edits to text, people and places across different variants *on the same device and within the same browser dataset*. Links do not publish or transmit data. Check whether a shared occurrence should retain the same personal details in each story before enabling synchronization.
+
+## v0.11 — Memory fragments
+
+Fragments can include private names, places, family history or unverified memories. They are stored locally **without encryption** and become part of the JSON backup. They are not automatically uploaded, processed by an AI service or shared with other accounts. Never commit fragment exports or personal JSON backups to a public GitHub repo. Browser profiles are not a substitute for access controls; treat exported files like a personal diary.
